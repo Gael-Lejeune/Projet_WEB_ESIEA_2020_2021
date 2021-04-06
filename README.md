@@ -1,6 +1,6 @@
 # Projet-WEB-ESIEA
 
-## Projet C, 3ème année, ESIEA
+## Projet web, 3ème année, ESIEA
 
 ### Projet réalisé par LEJEUNE Gaël et PROUX Angélique
 
