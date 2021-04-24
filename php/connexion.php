@@ -30,39 +30,53 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <h2>
-                Nom du produit
-            </h2>
-            <h1>
-                Description du produit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Images du produit
-            </h4>
 
-            <h4>
-                Spécifications
-            </h4>
-            <h1>
-                Spécifications bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+            <form name="ForInscrip" action="../acceuil.php">
+            <fieldset>
+                <legend>Connexion client :</legend>
+                <br><div class="flex-row" style="justify-content: space-around">
+                <div class="gauche">
+                    <label for="nomU">Nom d'utilisateur :</label><br>
+                    <label for="mdpU">Mot de passe :</label><br>
+                </div>
+                <div class="droite">
+                    <input type="text" id="nomU" name="nomU"><br>
+                    <input type="password" id="mdpU" name="mdpU">
+                </div>
+                
+                <div class="aligné">
                 <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Commentaires
-            </h4>
-            <h1>
-                Commentaire 1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                    <input type="submit" value="Confirmer">
+                </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <p style="margin-bottom:10cm;"></p>
+
+        <form id="admin" name="ForInscrip" action="../acceuil.php">
+            <fieldset>
+                <legend>Connexion administrateur :</legend>
+                <br><div class="flex-row" style="justify-content: space-around">
+                <div class="gauche">
+                    <label for="nomA">Nom d'administrateur :</label><br>
+                    <label for="mdpA">Mot de passe :</label><br>
+                </div>
+                <div class="droite">
+                    <input type="text" id="nomA" name="nomA"><br>
+                    <input type="password" id="mdpA" name="mdpA">
+                </div>
+                
+                <div class="aligné">
                 <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h1>
-                Commentaire 2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
+                    <input type="submit" value="Confirmer">
+                </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <p style="margin-bottom:10cm;"></p>
+
         </main>
 
         <nav class="HolyGrail-nav">
@@ -77,10 +91,8 @@
 
         <aside class="HolyGrail-ads">
             <ul class="menu">
-                <li class="menuli"><a href="#CIN">CIN</a></li>
-                <li class="menuli"><a href="#PPP">PPP</a></li>
-                <li class="menuli"><a href="#videos">Videos</a></li>
-                <li class="menuli"><a href="#dessin">Dessins</a></li>
+                <li class="menuli"><a href="#header">Client</a></li>
+                <li class="menuli"><a href="#admin">Administrateur</a></li>
             </ul>
         </aside>
     </div>

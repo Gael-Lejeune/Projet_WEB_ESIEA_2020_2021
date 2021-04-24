@@ -7,7 +7,7 @@ h1 {
   padding: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-family: 'Merriweather', serif;
+  font-family:  'Comic Sans MS';
   font-size: 12px;
   font-weight: normal;
   text-align: justify;
@@ -148,14 +148,19 @@ body {
   margin: 0;
 }
 
-.profilimg {
-  display: block;
-  width: 110px;
-  height: 110px;
-  box-shadow: 8px 8px 12px #aaa;
-  float: right;
-  margin: 15px;
-  border-radius: 500px;
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.item-flex-title {
+    width: 200px;
+}
+
+.item-flex-text {
+    width: 300px;
 }
 
 .HolyGrail-content {
@@ -168,10 +173,11 @@ body {
 }
 
 .adresse {
-  color: black;
-  text-align: right;
-  font-size: 10px;
-  margin: 10px;
+    color: black;
+    text-align: right;
+    float: right;
+    font-size: 10px;
+    margin: 10px;
 }
 
 /*************************************Photos*****************************************/
@@ -270,6 +276,18 @@ video {
   width: 100%;
   height: 100px;
 }
+
+div.gauche, div.droite {
+    font-variant: small-caps;
+    text-align: center;
+    line-height: 1.5;
+    width: 310px;
+}
+
+.aligné {
+    text-align: center;
+}
+
 
 /*************************************Menu*****************************************/
 
