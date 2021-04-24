@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiche produit</title>
+    <title>Categories</title>
     <meta name="keywords" content="Projet Web, 2021, Paris, Gaël LEJEUNE, Angélique PROUX">
     <meta name="description" content="Ce site internet est un site de vente en ligne. En tant que client, vous pourrez y trouver des produits et les commander. En tant qu'administrateur, vous pourrez ajouter et supprimer des produits et des utilisateurs.">
 
@@ -17,7 +17,7 @@
         <img class="headerimg" src="./Images/profil2.jpg" alt="erreur d'affichage" >
         <ul>
             <li class="title">Projet WEB</li>
-            <li class="subtitle">Fiche Produit</li>
+            <li class="subtitle">Produits Disponibles</li>
         </ul>
         <ul>
             <li>
@@ -68,10 +68,10 @@
         <nav class="HolyGrail-nav">
             <ul class="menu">
                 <li class="menuli"><a href="../acceuil.php">Accueil</a></li>
+                <li class="menuli"><div class="pos">Produits</div></li>
                 <li class="menuli"><a href="./categories.php">Catégories</a></li>
                 <li class="menuli"><a href="./connexion.php">Connexion</a></li>
                 <li class="menuli"><a href="./inscription.php">Inscription</a></li>
-                <li class="menuli"><div class="pos">Produit</div></li>
             </ul>
         </nav>
 
