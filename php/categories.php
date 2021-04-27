@@ -30,39 +30,36 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <h2>
-                Nom du produit
-            </h2>
-            <h1>
-                Description du produit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Images du produit
-            </h4>
+            <div class="flex-product">
 
-            <h4>
-                Spécifications
-            </h4>
-            <h1>
-                Spécifications bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Commentaires
-            </h4>
-            <h1>
-                Commentaire 1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h1>
-                Commentaire 2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
+            <div class="flex-content">
+                <a href="./produit.php"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>Nom de la catégorie</p>
+                    </a>
+            </div>
+            <div class="flex-content">
+                <a href="./produit.php"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>Nom de la catégorie</p>
+                    </a>
+            </div>
+
+            <div class="flex-content">
+                <a href="./produit.php"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>Nom de la catégorie</p>
+                    </a>
+            </div>
+            <div class="flex-content">
+                <a href="./produit.php"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>Nom de la catégorie</p>
+                    </a>
+            </div>
+
+
+            </div>
         </main>
 
         <nav class="HolyGrail-nav">
@@ -92,6 +89,6 @@
     <footer class="footerflex">
         <div class="copyright">Copyright : Gaël LEJEUNE</div>
     </footer>
-    <script src="button-appear.js"></script>
+    <script src="../js/button-appear.js"></script>
 </body>
 </html>

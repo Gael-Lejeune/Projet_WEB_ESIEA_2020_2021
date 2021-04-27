@@ -136,6 +136,6 @@
     <footer class="footerflex">
         <div class="copyright">Copyright : Gaël LEJEUNE</div>
     </footer>
-    <script src="button-appear.js"></script>
+    <script src="../js/button-appear.js"></script>
 </body>
 </html>

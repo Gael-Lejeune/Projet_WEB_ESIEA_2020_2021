@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories</title>
+    <title>Produits</title>
     <meta name="keywords" content="Projet Web, 2021, Paris, Gaël LEJEUNE, Angélique PROUX">
     <meta name="description" content="Ce site internet est un site de vente en ligne. En tant que client, vous pourrez y trouver des produits et les commander. En tant qu'administrateur, vous pourrez ajouter et supprimer des produits et des utilisateurs.">
 
@@ -30,39 +30,36 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <h2>
-                Nom du produit
-            </h2>
-            <h1>
-                Description du produit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Images du produit
-            </h4>
+            <div class="flex-product">
 
-            <h4>
-                Spécifications
-            </h4>
-            <h1>
-                Spécifications bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Commentaires
-            </h4>
-            <h1>
-                Commentaire 1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h1>
-                Commentaire 2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
+            <div class="flex-content">
+                <a href="./produit.php"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>Nom du produit<br>Catégorie du produit<br>Prix du produit</p>
+                </a>
+            </div>
+            <div class="flex-content">
+                <a href="./produit.php"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>Nom du produit<br>Catégorie du produit<br>Prix du produit</p>
+                </a>
+            </div>
+
+            <div class="flex-content">
+                <a href="./produit.php?nom=BE&amp;categorie=K-pop"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>BE<br>K-pop<br>30$</p>
+                </a>
+            </div>
+            <div class="flex-content">
+                <a href="./produit.php"  class="flex-content">
+                    <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
+                    <p>Nom du produit<br>Catégorie du produit<br>Prix du produit</p>
+                </a>
+            </div>
+
+
+            </div>
         </main>
 
         <nav class="HolyGrail-nav">
@@ -77,10 +74,6 @@
 
         <aside class="HolyGrail-ads">
             <ul class="menu">
-                <li class="menuli"><a href="#CIN">CIN</a></li>
-                <li class="menuli"><a href="#PPP">PPP</a></li>
-                <li class="menuli"><a href="#videos">Videos</a></li>
-                <li class="menuli"><a href="#dessin">Dessins</a></li>
             </ul>
         </aside>
     </div>
@@ -92,6 +85,6 @@
     <footer class="footerflex">
         <div class="copyright">Copyright : Gaël LEJEUNE</div>
     </footer>
-    <script src="button-appear.js"></script>
+    <script src="../js/button-appear.js"></script>
 </body>
 </html>

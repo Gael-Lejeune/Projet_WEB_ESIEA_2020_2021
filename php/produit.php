@@ -30,25 +30,39 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <h2>
-                Nom du produit
+            <h2 style="text-align: center" id="fiche">
+                <?php
+                    echo $_GET['nom'];
+                ?>
             </h2>
-            <h1>
-                Description du produit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+            <br><br><br>
+             <h4>
+                Fiche produit
+            </h4>
+            <h1 id="images">
+                <?php
+                    echo $_GET['categorie'];
+                    echo "<br>Prix<br>";
+                    echo "Nom du vendeur/fabricant<br>";
+                    echo "Date de fabrication/sortie<br>";
+                ?>
             </h1>
             <h4>
-                Images du produit
+                Images
             </h4>
-
+                <img class="img" src="https://th.bing.com/th/id/Rd3a557d6509d6e04e8dfdc17ebe87726?rik=E%2f2VoewbIA%2frcQ&pid=ImgRaw">
+                <img class="img" src="https://stylecaster.com/wp-content/uploads/2020/11/BTS-BE-Deluxe-Album.jpg?w=670">
+                <img class="img" src="https://consequenceofsound.net/wp-content/uploads/2020/11/bts-be-album-TRACKLIST.jpg?quality=80">
+            <p  id="caractéristiques"></p>
             <h4>
-                Spécifications
+                Caractéristiques
             </h4>
-            <h1>
-                Spécifications bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+            <h1 id="commentaires">
+                <?php
+                    echo "Dimensions : 20x30<br>";
+                    echo "Couleurs : Multicolore<br>";
+                    echo "Autres : Edition spéciale hiver<br>";
+                ?>
             </h1>
             <h4>
                 Commentaires
@@ -78,10 +92,10 @@
 
         <aside class="HolyGrail-ads">
             <ul class="menu">
-                <li class="menuli"><a href="#CIN">CIN</a></li>
-                <li class="menuli"><a href="#PPP">PPP</a></li>
-                <li class="menuli"><a href="#videos">Videos</a></li>
-                <li class="menuli"><a href="#dessin">Dessins</a></li>
+                <li class="menuli"><a href="#fiche">Fiche produit</a></li>
+                <li class="menuli"><a href="#images">Images</a></li>
+                <li class="menuli"><a href="#caractéristiques">Caractéristiques</a></li>
+                <li class="menuli"><a href="#commentaires">Commentaires</a></li>
             </ul>
         </aside>
     </div>
@@ -93,6 +107,6 @@
     <footer class="footerflex">
         <div class="copyright">Copyright : Gaël LEJEUNE</div>
     </footer>
-    <script src="button-appear.js"></script>
+    <script src="../js/button-appear.js"></script>
 </body>
 </html>

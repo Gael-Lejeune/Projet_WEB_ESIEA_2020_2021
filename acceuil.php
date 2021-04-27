@@ -45,6 +45,7 @@
                 <h2 class="item-flex-title" style="order: 2; flex-grow: 2">Règles de navigation</h2>
 
                 <h1 class="item-flex-text" style="order: 4; flex-grow: 1">
+                    <br>
                     * Via le menu de gauche, vous pouvez accéder aux pages globales : acceuil, catégories, produits, connexion.<br>
                     * Une fois connecté, vous trouverez dans le menu de gauche soit votre panier, soit une page pour les modifications des bases de données.<br>
                     * Via le menu de droite, vous pouvez accèder à différents endroits de la page sur laquelle vous êtes.
@@ -55,7 +56,7 @@
             <p id="projet" style="margin-bottom:3cm;"></p>
 
             <h2>Quelques mots sur le projet</h2>
-
+            <br>
             <h1>
                 Nous souhaitons concevoir un site web dynamique de vente en ligne.
                 <br><br>
@@ -75,6 +76,7 @@
             <p id="createurs" style="margin-bottom:3cm;"></p>
 
             <h2 >Quelques mots sur les créateurs</h2>
+            <br>
             <h1>
                 Ce site a été conçu et programmé par Gaël LEJEUNE et Angélique PROUX.
                 Ce sont tous deux des étudiants de troisième année à l'ESIEA, école d'ingénieurs en sciences et technologies du numérique.
@@ -132,6 +134,6 @@
     <footer class="footerflex">
         <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
     </footer>
-    <script src="button-appear.js"></script>
+    <script src="./js/button-appear.js"></script>
 </body>
 </html>
