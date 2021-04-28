@@ -17,35 +17,37 @@
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <h2>
-                Nom du produit
+                <?php
+                    echo 'Bienvenue '.$_GET['nomU'].'<br>';
+                ?>
             </h2>
-            <h1>
-                Description du produit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
             <h4>
-                Images du produit
+                Commandes effectuées
             </h4>
+            <h1>
+                Commande 1 | Montant : 20$
+                <br>
+                Commande 2 | Montant : 34$
+            </h1>
 
             <h4>
-                Spécifications
+                Produits dans le panier
             </h4>
             <h1>
-                Spécifications bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                Nom du produit 1 : Bla bla | Prix : 10$
                 <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                Nom du produit 2 : Bla bla bla | Prix : 1$
             </h1>
             <h4>
-                Commentaires
+                Autre
             </h4>
             <h1>
-                Commentaire 1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                Bla 1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
                 <br>
                 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
             </h1>
             <h1>
-                Commentaire 2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                Bla 2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
                 <br>
                 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
             </h1>
@@ -60,7 +62,7 @@
     </a>
 
     <footer class="footerflex">
-        <div class="copyright">Copyright : Gaël LEJEUNE</div>
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
     </footer>
 
 </body>

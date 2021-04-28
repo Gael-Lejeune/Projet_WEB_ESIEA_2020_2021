@@ -16,7 +16,7 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <form name="ForInscrip" action="../acceuil.php">
+            <form name="ForInscrip" action="../controller/acceuil.php">
             <fieldset>
                 <legend>Formulaire d'inscription (client) :</legend>
                 <br><div class="flex-row" style="justify-content: space-around">
@@ -64,7 +64,7 @@
 
         <p style="margin-bottom:6cm;"></p>
 
-        <form id="admin" name="ForInscrip" action="../acceuil.php">
+        <form id="admin" name="ForInscrip" action="../controller/acceuil.php">
             <fieldset>
                 <legend>Formulaire d'inscription (administrateur) :</legend>
                 <br><div class="flex-row" style="justify-content: space-around">
@@ -124,7 +124,7 @@
     </a>
 
     <footer class="footerflex">
-        <div class="copyright">Copyright : Gaël LEJEUNE</div>
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
     </footer>
 
 </body>

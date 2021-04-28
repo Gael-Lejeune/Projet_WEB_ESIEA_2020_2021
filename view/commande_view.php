@@ -60,7 +60,7 @@
     </a>
 
     <footer class="footerflex">
-        <div class="copyright">Copyright : Gaël LEJEUNE</div>
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
     </footer>
 
 </body>

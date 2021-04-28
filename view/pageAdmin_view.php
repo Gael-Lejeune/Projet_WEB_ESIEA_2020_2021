@@ -17,7 +17,9 @@
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <h2 id="ajoutP">
-                Nom de l'administrateur
+                <?php
+                    echo 'Bienvenue '.$_GET['nomA'].'<br>';
+                ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
@@ -99,7 +101,7 @@
     </a>
 
     <footer class="footerflex">
-        <div class="copyright">Copyright : Gaël LEJEUNE</div>
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
     </footer>
 
 </body>

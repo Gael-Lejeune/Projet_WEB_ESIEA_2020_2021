@@ -163,6 +163,23 @@ body {
     width: 300px;
 }
 
+.flex-product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.flex-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 300px;
+    color: black;
+    text-decoration: none;
+}
+
 .HolyGrail-content {
   position: sticky;
   top : 96px;
@@ -195,6 +212,12 @@ body {
   height: 30%;
   box-shadow: 8px 8px 12px #aaa;
   border-radius: 25px;
+}
+
+.img2 {
+    margin: 5px;
+    width: 30%;
+    height: 40%;
 }
 
 .photosimg {
