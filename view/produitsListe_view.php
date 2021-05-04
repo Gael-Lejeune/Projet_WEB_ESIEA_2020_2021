@@ -19,10 +19,18 @@
             <div class="flex-product">
                 <?php
                 for ($i = 0; $i < sizeof($result); $i++){
+                    // var_dump($result[$i]);
                     echo '
-                        <a href="./produit.php?id='.$result[$i]['id'].'" class="flex-content">
+                        <a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content">
                             <img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
-                            <h1>'.$result[$i]['name'].'<br>'.$result[$i]['artist'].'<br>'.$result[$i]['label'].'<br>'.$result[$i]['price'].'$</h1>
+                            <h1>'.$result[$i]['name'].
+                            '<br>'
+                            .$result[$i]['artist'].
+                            '<br>'
+                            .$result[$i]['label'].
+                            '<br>'
+                            .$result[$i]['price'].
+                            '$</h1>
                         </a>';
                 }
                 ?>

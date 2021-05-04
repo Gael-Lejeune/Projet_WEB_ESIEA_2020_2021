@@ -10,7 +10,7 @@ start_page($produit, $produitCSS);
 session_start();
 
 //Appel du model
-// require $produitModel;
+require $produitModel;
 
 //Affichage de la page
 require $produitView;
