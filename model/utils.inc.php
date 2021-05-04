@@ -17,15 +17,16 @@ function start_page($title, $css){ // fonction qui affiche tout le debut de la p
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>'.PHP_EOL.$title.'</title>
+  <title>'.$title.'</title>
   <meta name="keywords" content="Projet Web, 2021, Paris, Gaël LEJEUNE, Angélique PROUX">
   <meta name="description" content="Ce site internet est un site de vente en ligne. En tant que client, vous pourrez y trouver des produits et les commander. En tant qu\'administrateur, vous pourrez ajouter et supprimer des produits et des utilisateurs.">
 
-  <link rel="stylesheet" type="text/css" href="'.PHP_EOL.$css.'">
+  <link rel="stylesheet" type="text/css" href="'.$css.'">
   <link rel="icon" href="https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-vector-shop-icon-png-image_327584.jpg">
-  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Merriweather|Orbitron|Quicksand" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
   <!--
-  <script src="../js/button-appear.js"></script>
+    <script src="../js/button-appear.js"></script>
   -->
   </head>
   <a href="#header" id="button" class="button">

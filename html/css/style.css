@@ -7,7 +7,7 @@ h1 {
   padding: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-family:  'Comic Sans MS';
+  font-family: 'Quicksand', sans-serif;
   font-size: 12px;
   font-weight: normal;
   text-align: justify;
@@ -18,7 +18,7 @@ h2 {
   padding: 20px;
   padding-bottom: 0px;
   padding-right: 12px;
-  font-family: 'Major Mono Display', monospace;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
 
 }
@@ -26,7 +26,7 @@ h2 {
 h4 {
   margin: 0;
   padding: 15px;
-  font-family: 'Major Mono Display', monospace;
+  font-family: 'Quicksand', sans-serif;
   font-weight: normal;
   font-size: 18px;
 
@@ -92,7 +92,7 @@ header {
   margin: 0;
   margin-bottom: 3px;
   text-align: center;
-  font-family: 'Major Mono Display', monospace;
+  font-family: 'Quicksand', sans-serif;
   font-size: 30px;
   font-weight: normal;
   list-style: none;
@@ -103,7 +103,7 @@ header {
   margin: 0;
   padding-bottom: 0px;
   text-align: center;
-  font-family: 'Major Mono Display', monospace;
+  font-family: 'Quicksand', sans-serif;
   font-size: 20px;
   font-weight: normal;
 }
@@ -307,7 +307,7 @@ div.gauche, div.droite {
     width: 310px;
 }
 
-.aligné {
+.alignï¿½ {
     text-align: center;
 }
 
@@ -353,6 +353,7 @@ div.gauche, div.droite {
   padding: 1em;
   color: black;
   border: solid rgba(0, 0, 0, 0);
+  font-family: 'Quicksand', sans-serif;
 }
 
 .menu a:hover {
@@ -556,8 +557,9 @@ footer {
     margin: 0;
     margin-bottom: 3px;
     text-align: center;
-    font-family: 'Major Mono Display', monospace;
-    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+
+  font-size: 20px;
     font-weight: normal;
     list-style: none;
   }
@@ -567,8 +569,9 @@ footer {
     margin: 0;
     padding-bottom: 0px;
     text-align: center;
-    font-family: 'Major Mono Display', monospace;
-    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+
+  font-size: 14px;
     font-weight: normal;
   }
 
