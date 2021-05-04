@@ -66,7 +66,7 @@ $produitsListe='Nom : Produits';
 $produitsListeController='../controller/produitsListe.php';
 $produitsListeCSS='../html/css/style.css';
 $produitsListeView='../view/produitsListe_view.php';
-$produitsListeModel='../processing/produitsListe_processing.php';
+$produitsListeModel='../model/produitsListe_model.php';
 
 $logout='Se deconnecter';
 $logoutModel='../processing/logout_processing.php';

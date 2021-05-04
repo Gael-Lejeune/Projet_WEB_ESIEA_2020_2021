@@ -17,32 +17,17 @@
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <div class="flex-product">
+                <?php
+                for ($i = 0; $i < sizeof($result); $i++){
+                    echo '
+                        <a href="./produit.php?id='.$result[$i]['id'].'" class="flex-content">
+                            <img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
+                            <h1>'.$result[$i]['name'].'<br>'.$result[$i]['artist'].'<br>'.$result[$i]['label'].'<br>'.$result[$i]['price'].'$</h1>
+                        </a>';
+                }
+                ?>
 
-                <div class="flex-content">
-                    <a href="./produit.php"  class="flex-content">
-                        <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                        <p>Nom du produit<br>Catégorie du produit<br>Prix du produit</p>
-                    </a>
-                </div>
-                <div class="flex-content">
-                    <a href="./produit.php?nom=Rare&amp;categorie=Pop&amp;prix=40$&amp;vendeur=Amazon&amp;date=2010"  class="flex-content">
-                        <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                        <p>Rare<br>Pop<br>40$</p>
-                    </a>
-                </div>
 
-                <div class="flex-content">
-                    <a href="./produit.php?nom=BE&amp;categorie=K-pop&amp;prix=30$&amp;vendeur=BigHit&amp;date=2020"  class="flex-content">
-                        <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                        <p>BE<br>K-pop<br>30$</p>
-                    </a>
-                </div>
-                <div class="flex-content">
-                    <a href="./produit.php"  class="flex-content">
-                        <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                        <p>Nom du produit<br>Catégorie du produit<br>Prix du produit</p>
-                    </a>
-                </div>
 
             </div>
         </main>
