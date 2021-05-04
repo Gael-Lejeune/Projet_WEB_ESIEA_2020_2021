@@ -16,20 +16,18 @@ function verify_user() {
   $stmt->execute([$_GET['nomU']]);
   $user = $stmt->fetch();
 
-  if ($user && password_verify($_GET['mdpU'], $user['password']) && $user['role']=='client')
+  if ($user && ($_GET['mdpU']==$user['password']) && $user['role']=='client')
   {
-    echo "valid client!";
-    //return true;
-  } else if ($user && password_verify($_GET['mdpU'], $user['password']) && $user['role']=='admin')
+    //valid client
+    header('Location: ../controller/compte.php?nomU='.$_GET['nomU']);
+  } else if ($user && ($_GET['mdpU']==$user['password']) && $user['role']=='admin')
   {
-    echo "valid admin!";
-    //return true;
+    //valid admin
+      header('Location: ../controller/admin.php?nomU='.$_GET['nomU']);
   }
   else {
-    echo "invalid.";
-    echo "<br>".$_GET['nomU']."  ".$_GET['mdpU'];
-    echo "<br>user :".$user['mail']."  ".$user['password'];
-    //return false;
+    //invalid
+      header('Location: ../controller/connexion.php');
   }
   $db = null;
 }
