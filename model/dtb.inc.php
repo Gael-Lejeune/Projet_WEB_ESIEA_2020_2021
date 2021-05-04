@@ -27,10 +27,14 @@ function exist ($email, $password) // renvoi vrai si l'utilisateur est bien entr
 
 // Connection avec la base de donnée avec PDO
 function dtb_connect_PDO () {
-    $db = new PDO('mysql:host=put_host;dbname=put_database_name, put_port, put_database_password');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $bddname = "projet-web";
+  $db = new PDO("mysql:host=$servername;dbname=$bddname", $username, $password);
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-    return $db;
+  return $db;
 }
 
 //  // Charge uniquement les classes necessaire au fichier dans laquelle la fonction est appellé
@@ -42,4 +46,10 @@ function dtb_connect_PDO () {
 //
 //     spl_autoload_register('chargerClasse');
 // }
-// ?>
+//
+
+function get_user_info($userName) {
+
+}
+
+?>

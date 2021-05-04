@@ -19,7 +19,7 @@
             <div class="baseflex">
                 <fieldset>
                     <legend>Formulaire d'inscription (client) :</legend>
-                    <form name="ForInscrip" action="../controller/acceuil.php">
+                    <form name="ForInscrip" action="../controller/acceuil.php" method="get">
                         <ul>
                             <li>
                                 <label for="nom">Nom :</label>

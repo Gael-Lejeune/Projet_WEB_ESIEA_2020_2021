@@ -3,7 +3,7 @@
         <img class="headerimg" src="./Images/profil2.jpg" alt="erreur d'affichage" >
         <ul>
             <li class="title">Projet WEB</li>
-            <li class="subtitle">Modifications Administrateur</li>
+            <li class="subtitle">Compte</li>
         </ul>
         <ul>
             <li>
@@ -18,7 +18,7 @@
         <main class="HolyGrail-content">
             <h2 id="ajoutP">
                 <?php
-                    echo 'Bienvenue '.$_GET['nomA'].'<br>';
+                    echo 'Bienvenue '.$_GET['nomU'].'<br>';
                 ?>
             </h2>
 
@@ -53,9 +53,7 @@
                 Contacter le support
             </h4>
             <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
+                <a  href="mailto:support@exemple.fr">support@nomDuSite.fr</a>
             </h1>
             <h4 id="suppression">
                 Suppimer le compte

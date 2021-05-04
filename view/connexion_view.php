@@ -19,7 +19,7 @@
             <div class="baseflex">
                 <fieldset>
                     <legend>Connexion client : </legend>
-                    <form name="ForInscrip" action="../controller/compte.php">
+                    <form name="ForConnexion" action="../controller/verif.php" method="get">
                         <ul>
                             <li>
                             <label for="nomU">Nom d'utilisateur :</label>
