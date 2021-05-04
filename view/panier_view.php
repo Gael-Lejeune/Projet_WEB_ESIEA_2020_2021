@@ -18,7 +18,7 @@
         <main class="HolyGrail-content">
             <h2>
                 <?php
-                    echo 'Bienvenue '.$_GET['nomU'].'<br>';
+                    echo 'Panier de '.$_GET['nomU'].'<br>';
                 ?>
             </h2>
             <h4>

@@ -2,7 +2,7 @@
 
 // INDEX //
 
-$accueil='Nom';
+$accueil='Nom : Acceuil';
 $accueilController='../controller/acceuil.php';
 $accueilCSS='../html/css/style.css';
 $accueilView='../view/acceuil_view.php';
@@ -26,6 +26,12 @@ $commandesCSS='../html/css/style.css';
 $commandesView='../view/commande_view.php';
 $commandesModel='../processing/commande_processing.php';
 
+$compte='Nom : Compte';
+$compteController='../controller/compte.php';
+$compteCSS='../html/css/style.css';
+$compteView='../view/compte_view.php';
+$compteModel='../processing/compte_processing.php';
+
 $connexion='Nom : Connexion';
 $connexionController='../controller/connexion.php';
 $connexionCSS='../html/css/style.css';
@@ -39,10 +45,10 @@ $inscriptionView='../view/inscription_view.php';
 $inscriptionModel='../processing/inscription_processing.php';
 
 $pageAdmin='Nom : Administrateur';
-$pageAdminController='../controller/pageAdmin.php';
+$pageAdminController='../controller/admin.php';
 $pageAdminCSS='../html/css/style.css';
-$pageAdminView='../view/pageAdmin_view.php';
-$pageAdminModel='../processing/pageAdmin_processing.php';
+$pageAdminView='../view/admin_view.php';
+$pageAdminModel='../processing/admin_processing.php';
 
 $panier='Nom : Panier';
 $panierController='../controller/panier.php';

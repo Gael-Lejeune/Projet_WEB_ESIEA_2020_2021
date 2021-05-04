@@ -58,7 +58,7 @@
                 Bla bla bla bla bla
             </h1>
             <h4 id="suppC">
-                Modificationd'une catégorie
+                Modification d'une catégorie
             </h4>
             <h1>
                 Bla bla bla bla bla

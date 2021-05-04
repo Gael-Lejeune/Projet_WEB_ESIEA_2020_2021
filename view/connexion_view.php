@@ -17,7 +17,7 @@
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
 
-            <form name="ForInscrip" action="../controller/panier.php">
+            <form name="ForInscrip" action="../controller/compte.php">
             <fieldset>
                 <legend>Connexion client :</legend>
                 <br><div class="flex-row" style="justify-content: space-around">
@@ -40,7 +40,7 @@
 
         <p style="margin-bottom:10cm;"></p>
 
-        <form id="admin" name="ForInscrip" action="../controller/pageAdmin.php">
+        <form id="admin" name="ForInscrip" action="../controller/admin.php">
             <fieldset>
                 <legend>Connexion administrateur :</legend>
                 <br><div class="flex-row" style="justify-content: space-around">
