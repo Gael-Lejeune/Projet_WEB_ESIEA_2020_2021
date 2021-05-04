@@ -14,12 +14,12 @@
         </ul>
     </header>
 
+    <?php get_user_info($_GET['nomU']) ?>
+
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <h2 id="ajoutP">
-                <?php
-                    echo 'Bienvenue '.$_GET['nomU'].'<br>';
-                ?>
+                <?php  echo 'Bienvenue '.$username.'<br>';  ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
@@ -28,9 +28,8 @@
                 Informations client
             </h4>
             <h1>
-                Nom
-                <br>
-                Prénom
+                <?php  echo 'Nom : '.$lastname.'<br>';  ?>
+                <?php  echo 'Prénom : '.$firstname.'<br>';  ?>
             </h1>
             <h4 id="commandes">
                 Historique des commandes
@@ -44,9 +43,10 @@
                 Modifier les informations du compte
             </h4>
             <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
+              <?php  echo 'Adresse actuelle : '.$adress.'<br>';  ?>
+              <!-- ajouter champ de texte et button pour en changer -->
+              <?php  echo 'Carte de crédit actuelle : '.$creditcard.'<br>';  ?>
+              <!-- ajouter champ de texte et button pour en changer -->
             </h1>
 
             <h4 id="support">

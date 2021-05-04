@@ -18,8 +18,8 @@
         <main class="HolyGrail-content">
             <div class="baseflex">
                 <fieldset>
-                    <legend>Connexion client : </legend>
-                    <form name="ForConnexion" action="../controller/verif.php" method="get">
+                    <legend>Connexion client/admin : </legend>
+                    <form name="ForConnexion" action="../controller/verify_connexion.php" method="get">
                         <ul>
                             <li>
                             <label for="nomU">Nom d'utilisateur :</label>

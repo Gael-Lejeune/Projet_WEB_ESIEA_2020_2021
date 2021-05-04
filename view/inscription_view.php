@@ -18,7 +18,7 @@
         <main class="HolyGrail-content">
             <div class="baseflex">
                 <fieldset>
-                    <legend>Formulaire d'inscription (client) :</legend>
+                    <legend>Formulaire d'inscription :</legend>
                     <form name="ForInscrip" action="../controller/acceuil.php" method="get">
                         <ul>
                             <li>
@@ -36,10 +36,6 @@
                             <li>
                                 <label for="mail">E-mail :</label>
                                 <input type="text" id="mail" name="mail">
-                            </li>
-                            <li>
-                                <label for="tel">Téléphone portable :</label>
-                                <input type="text" id="tel" name="tel" placeholder="01 12 34 56 78">
                             </li>
                             <li>
                                 <label for="adr">Adresse :</label>
