@@ -16,106 +16,48 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <form name="ForInscrip" action="../controller/acceuil.php">
-            <fieldset>
-                <legend>Formulaire d'inscription (client) :</legend>
-                <br><div class="flex-row" style="justify-content: space-around">
-                <div class="gauche">
-                    <label for="nom">Nom :</label><br>
-                    <label for="prénom">Prénom :</label><br>
-                    <label for="nomU">Nom d'utilisateur :</label><br>
-                    <label for="mail">E-mail :</label><br>
-                    <label for="tel">Téléphone portable :</label><br>
-                    <label for="adr">Adresse :</label><br>
-                    <label for="sexe">Sexe :</label><br>
-                    <label for="nat">Nationalité :</label><br>
-                    <label for="mdpU">Mot de passe :</label><br>
-                </div>
-                <div class="droite">
-                    <input type="text" id="nom" name="nom"><br>
-                    <input type="text" id="prénom" name="prénom"><br>
-                     <input type="text" id="nomU" name="nomU"><br>
-                    <input type="text" id="mail" name="mail"><br>
-                    <input type="text" id="tel" name="tel" placeholder="01 12 34 56 78"><br>
-                    <input type="text" id="adr" name="adr"><br>
-                    <input type="radio" id="male" name="sexe" value="male">
-                    <label for="male">Masculin</label>
-                    <input type="radio" id="female" name="sexe" value="female">
-                    <label for="female">Féminin</label><br>
-                    <select id="nat" name="nat" size="1">
-                        <option>Choisir</option>
-                        <option>Français(e)</option>
-                        <option>Anglais(e)</option>
-                        <option>Allemand(e)</option>
-                        <option>Espagnol(e)</option>
-                        <option>Italien(ne)</option>
-                        <option>Chinois(e)</option>
-                    </select><br>
-                    <input type="password" id="mdpU" name="mdpU"><br>
-                </div>
+            <div class="baseflex">
+                <fieldset>
+                    <legend>Formulaire d'inscription (client) :</legend>
+                    <form name="ForInscrip" action="../controller/acceuil.php">
+                        <ul>
+                            <li>
+                                <label for="nom">Nom :</label>
+                                <input type="text" id="nom" name="nom">
+                            </li>
+                            <li>
+                                <label for="prénom">Prénom :</label>
+                                <input type="text" id="prénom" name="prénom">
+                            </li>
+                            <li>
+                                <label for="nomU">Nom d'utilisateur :</label>
+                                <input type="text" id="nomU" name="nomU">
+                            </li>
+                            <li>
+                                <label for="mail">E-mail :</label>
+                                <input type="text" id="mail" name="mail">
+                            </li>
+                            <li>
+                                <label for="tel">Téléphone portable :</label>
+                                <input type="text" id="tel" name="tel" placeholder="01 12 34 56 78">
+                            </li>
+                            <li>
+                                <label for="adr">Adresse :</label>
+                                <input type="text" id="adr" name="adr">
+                            </li>
+                            <li>
+                                <label for="mdpU">Mot de passe :</label>
+                                <input type="password" id="mdpU" name="mdpU">
+                            </li>
+                            <input class="formbutton" type="submit" value="Confirmer">
+                        </ul>
 
-                <div class="aligné">
-                <br>
-                    <input type="submit" value="Confirmer">
-                </div>
-                </div>
-            </fieldset>
-        </form>
 
-        <p style="margin-bottom:6cm;"></p>
-
-        <form id="admin" name="ForInscrip" action="../controller/acceuil.php">
-            <fieldset>
-                <legend>Formulaire d'inscription (administrateur) :</legend>
-                <br><div class="flex-row" style="justify-content: space-around">
-                <div class="gauche">
-                    <label for="nom">Nom :</label><br>
-                    <label for="prénom">Prénom :</label><br>
-                    <label for="nomA">Nom d'administrateur :</label><br>
-                    <label for="mail">E-mail :</label><br>
-                    <label for="tel">Téléphone portable :</label><br>
-                    <label for="adr">Adresse :</label><br>
-                    <label for="sexe">Sexe :</label><br>
-                    <label for="nat">Nationalité :</label><br>
-                    <label for="mdpA">Mot de passe:</label><br>
-                </div>
-                <div class="droite">
-                    <input type="text" id="nom" name="nom"><br>
-                    <input type="text" id="prénom" name="prénom"><br>
-                     <input type="text" id="nomA" name="nomA"><br>
-                    <input type="text" id="mail" name="mail"><br>
-                    <input type="text" id="tel" name="tel" placeholder="01 12 34 56 78"><br>
-                    <input type="text" id="adr" name="adr"><br>
-                    <input type="radio" id="male" name="sexe" value="male">
-                    <label for="male">Masculin</label>
-                    <input type="radio" id="female" name="sexe" value="female">
-                    <label for="female">Féminin</label><br>
-                    <select id="nat" name="nat" size="1">
-                        <option>Choisir</option>
-                        <option>Français(e)</option>
-                        <option>Anglais(e)</option>
-                        <option>Allemand(e)</option>
-                        <option>Espagnol(e)</option>
-                        <option>Italien(ne)</option>
-                        <option>Chinois(e)</option>
-                    </select><br>
-                    <input type="password" id="mdpA" name="mdpA"><br>
-                </div>
-
-                <div class="aligné">
-                <br>
-                    <input type="submit" value="Confirmer">
-                </div>
-                </div>
-            </fieldset>
-        </form>
-
-        <p style="margin-bottom:5cm;"></p>
-
+                    </form>
+                </fieldset>
+            </div>
         </main>
-
         <?php display_menus(); ?>
-
 
     </div>
 

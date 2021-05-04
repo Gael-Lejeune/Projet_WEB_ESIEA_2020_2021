@@ -18,25 +18,29 @@
         <main class="HolyGrail-content">
 
             <div class="flex-row">
-                <h2 class="item-flex-title" style="order: 1; flex-grow: 3">Informations</h2>
+                <div class="flex-col">
+                    <h2>Informations</h2>
 
-                <h1 class="item-flex-text" style="order: 3; flex-grow: 16">
-                    Ce site internet est un site de vente en ligne.<br>
-                    En tant que client, vous pourrez y trouver des produits et les commander.<br>
-                    En tant qu'administrateur, vous pourrez ajouter et supprimer des produits et des utilisateurs.<br>
-                    Il a été créé en 2021 à l'occasion d'un projet de troisième année.<br>
-                    Les langages utilisés sont : Html, CSS, JavaScript, Php, SQL.<br>
-                    Le site est composé d'une dizaine de pages et de trois bases de données.
-                </h1>
+                    <h1>
+                        Ce site internet est un site de vente en ligne.<br>
+                        En tant que client, vous pourrez y trouver des produits et les commander.<br>
+                        En tant qu'administrateur, vous pourrez ajouter et supprimer des produits et des utilisateurs.<br>
+                        Il a été créé en 2021 à l'occasion d'un projet de troisième année.<br>
+                        Les langages utilisés sont : Html, CSS, JavaScript, Php, SQL.<br>
+                        Le site est composé d'une dizaine de pages et de trois bases de données.
+                    </h1>
+                </div>
 
-                <h2 class="item-flex-title" style="order: 2; flex-grow: 2">Règles de navigation</h2>
+                <div class="flex-col">
+                    <h2>Règles de navigation</h2>
 
-                <h1 class="item-flex-text" style="order: 4; flex-grow: 1">
-                    * Via le menu de gauche, vous pouvez accéder aux pages globales : acceuil, catégories, produits, connexion.<br>
-                    * Une fois connecté, vous trouverez dans le menu de gauche soit votre panier, soit une page pour les modifications des bases de données.<br>
-                    * Via le menu de droite, vous pouvez accèder à différents endroits de la page sur laquelle vous êtes.
-                </h1>
+                    <h1>
+                        - Via le menu de gauche, vous pouvez accéder aux pages globales : acceuil, catégories, produits, connexion.<br>
+                        - Une fois connecté, vous trouverez dans le menu de gauche soit votre panier, soit une page pour les modifications des bases de données.<br>
+                        - Via le menu de droite, vous pouvez accèder à différents endroits de la page sur laquelle vous êtes.
+                    </h1>
 
+                </div>
             </div>
 
             <p id="projet" style="margin-bottom:3cm;"></p>

@@ -16,53 +16,25 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-
-            <form name="ForInscrip" action="../controller/compte.php">
-            <fieldset>
-                <legend>Connexion client :</legend>
-                <br><div class="flex-row" style="justify-content: space-around">
-                <div class="gauche">
-                    <label for="nomU">Nom d'utilisateur :</label><br>
-                    <label for="mdpU">Mot de passe :</label><br>
-                </div>
-                <div class="droite">
-                    <input type="text" id="nomU" name="nomU"><br>
-                    <input type="password" id="mdpU" name="mdpU">
-                </div>
-
-                <div class="aligné">
-                <br>
-                    <input type="submit" value="Confirmer">
-                </div>
-                </div>
-            </fieldset>
-        </form>
-
-        <p style="margin-bottom:10cm;"></p>
-
-        <form id="admin" name="ForInscrip" action="../controller/admin.php">
-            <fieldset>
-                <legend>Connexion administrateur :</legend>
-                <br><div class="flex-row" style="justify-content: space-around">
-                <div class="gauche">
-                    <label for="nomA">Nom d'administrateur :</label><br>
-                    <label for="mdpA">Mot de passe :</label><br>
-                </div>
-                <div class="droite">
-                    <input type="text" id="nomA" name="nomA"><br>
-                    <input type="password" id="mdpA" name="mdpA">
-                </div>
-
-                <div class="aligné">
-                <br>
-                    <input type="submit" value="Confirmer">
-                </div>
-                </div>
-            </fieldset>
-        </form>
-
-        <p style="margin-bottom:10cm;"></p>
-
+            <div class="baseflex">
+                <fieldset>
+                    <legend>Connexion client : </legend>
+                    <form name="ForInscrip" action="../controller/compte.php">
+                        <ul>
+                            <li>
+                            <label for="nomU">Nom d'utilisateur :</label>
+                            <input type="text" id="nomU" name="nomU" placeholder="Username">
+                            </li>
+                            <li>
+                                <label for="mdpU">Mot de passe :  </label>
+                                <input type="password" id="mdpU" name="mdpU" placeholder="password">
+                            <li>
+                                <input class="buybutton" type="submit" value="Confirmer">
+                            </li>
+                        </ul>
+                    </form>
+                </fieldset>
+            </div>
         </main>
 
         <?php display_menus(); ?>

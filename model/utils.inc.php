@@ -24,7 +24,7 @@ function start_page($title, $css){ // fonction qui affiche tout le debut de la p
   <link rel="stylesheet" type="text/css" href="'.$css.'">
   <link rel="icon" href="https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-vector-shop-icon-png-image_327584.jpg">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
   <!--
     <script src="../js/button-appear.js"></script>
   -->
