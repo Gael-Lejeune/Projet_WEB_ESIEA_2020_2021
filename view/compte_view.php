@@ -27,7 +27,7 @@
             ?>
 
             <h2 id="ajoutP">
-                <?php  echo 'Bienvenue '.$nom_client.'<br>';  ?>
+                <?php  echo 'Bienvenue <span id="txtHint">'.$nom_client.'</span><br>';  ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
@@ -56,28 +56,31 @@
               <!-- ajouter champ de texte et button pour en changer -->
               <?php  echo 'Carte de crédit actuelle : '.$carte.'<br>';  ?>
               <!-- ajouter champ de texte et button pour en changer -->
-              <div id="txtHint">
-                Nom d'utilisateur actuel : <?php echo $nom_client.'<br>'; ?>
+              <div>
+                Nom d'utilisateur actuel : <span id="txtHint"> <?php echo $nom_client.'</span><br>'; ?>
               </div>
-              <!-- à faire  -->
-
-              <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-              <script type="text/javascript">
-              $(function() {
-                $("#formUserName").submit(function(){
-                  newNameUser = $(this).find("input[name=newName]").val();
-                  $.post("../model/change_user_name.php", {newUserName: newUserName}, function(data) {
-                    alert(data);
-                  });
-                  return false;
-                });
-              });
-              </script>
-              <form action="#" id="formUserName" method="post">
-                <label for="uname">&emsp;Nouveau nom d'utilisateur : </label>
-                <input type="text" name="newName" value=""></input>
-                <input type="submit" value="changer"></input>
+              <form>
+                Nouveau nom d'utilisateur : <input type="text"/>
+                <input type="button" onclick="showHint(this.value)" value="changer"/>
               </form>
+              <!-- à faire  -->
+              <script>
+                function showHint(str) {
+                  if (str.length == 0) {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                  } else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                      if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                      }
+                    };
+                    xmlhttp.open("GET", "../model/change_user_name.php?nomU=" + "<?php echo $nom_client; ?>;newName=" + str, true);
+                    xmlhttp.send();
+                  }
+                }
+              </script>
             </h1>
 
             <h4 id="support">

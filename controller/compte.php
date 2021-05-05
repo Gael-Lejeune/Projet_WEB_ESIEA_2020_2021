@@ -9,10 +9,16 @@ start_page($compte, $compteCSS);
 //Demarrage de la session
 session_start();
 
+if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+
 //Appel du model
 require $compteModel;
 
 //Affichage de la page
 require $compteView;
+}
+else {
+	echo "Page non disponible, vous n'êtes pas connecté.";
+}
 
 end_page();

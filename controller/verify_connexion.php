@@ -19,15 +19,19 @@ function verify_user() {
   if ($user && ($_POST['mdpU']==$user['password']) && $user['role']=='client')
   {
     //valid client
+    $_SESSION['login'] = $_POST['nomU'];
+		$_SESSION['pwd'] = $_POST['mdpU'];
     header('Location: ../controller/compte.php?nomU='.$_POST['nomU']);
   } else if ($user && ($_POST['mdpU']==$user['password']) && $user['role']=='admin')
   {
     //valid admin
-      header('Location: ../controller/admin.php?nomU='.$_POST['nomU']);
+    $_SESSION['login'] = $_POST['nomU'];
+		$_SESSION['pwd'] = $_POST['mdpU'];
+    header('Location: ../controller/admin.php?nomU='.$_POST['nomU']);
   }
   else {
     //invalid
-      header('Location: ../controller/connexion.php');
+    header('Location: ../controller/connexion.php');
   }
   $db = null;
 }
