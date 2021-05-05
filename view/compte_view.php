@@ -14,6 +14,66 @@
         </ul>
     </header>
 
+    <script>
+      //fonctions pour les modifications de compte et pour la suppression
+      function changeAddressFunction() {
+        var str = document.forms["changeAddressForm"]["newAddress"].value;
+        if (str.length == 0) {
+          return;
+        } else {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("adresse").innerHTML = this.responseText;
+              document.getElementsByName('newAddress')[0].value = "";
+            }
+          };
+          xmlhttp.open("GET", "../model/change_user_address.php?newAddress=" + str, true);
+          xmlhttp.send();
+          alert("Adresse changée");
+        }
+      }
+
+      function changeCardFunction() {
+        var str = document.forms["changeCardForm"]["newCard"].value;
+        if (str.length == 0) {
+          return;
+        } else {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("carte").innerHTML = this.responseText;
+              document.getElementsByName('newCard')[0].value = "";
+            }
+          };
+          xmlhttp.open("GET", "../model/change_user_card.php?newCard=" + str, true);
+          xmlhttp.send();
+          alert("Carte changée");
+        }
+      }
+
+      function changeNameFunction() {
+        var str = document.forms["changeNameForm"]["newName"].value;
+        if (str.length == 0) {
+          document.getElementById("nomTitre").innerHTML = "";
+          document.getElementById("nomChangement").innerHTML = "";
+          return;
+        } else {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("nomTitre").innerHTML = this.responseText;
+              document.getElementById("nomChangement").innerHTML = this.responseText;
+              document.getElementsByName('newName')[0].value = "";
+            }
+          };
+          xmlhttp.open("GET", "../model/change_user_name.php?newName=" + str, true);
+          xmlhttp.send();
+          alert("Nom d'utilisateur changé");
+        }
+      }
+    </script>
+
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <?php
@@ -27,7 +87,7 @@
             ?>
 
             <h2 id="ajoutP">
-                <?php  echo 'Bienvenue <span id="txtHint">'.$nom_client.'</span><br>';  ?>
+                <?php  echo 'Bienvenue <span id="nomTitre">'.$nom_client.'</span><br>';  ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
@@ -52,35 +112,25 @@
                 Modifier les informations du compte
             </h4>
             <h1>
-              <?php  echo 'Adresse actuelle : '.$adresse.'<br>';  ?>
-              <!-- ajouter champ de texte et button pour en changer -->
-              <?php  echo 'Carte de crédit actuelle : '.$carte.'<br>';  ?>
-              <!-- ajouter champ de texte et button pour en changer -->
-              <div>
-                Nom d'utilisateur actuel : <span id="txtHint"> <?php echo $nom_client.'</span><br>'; ?>
-              </div>
-              <form>
-                Nouveau nom d'utilisateur : <input type="text"/>
-                <input type="button" onclick="showHint(this.value)" value="changer"/>
+              <?php  echo "Adresse actuelle : ".'<span id="adresse">'.$adresse.'</span><br>';  ?>
+              <form name="changeAddressForm">
+                &emsp;&emsp;Nouvelle adresse : <input type="text" name="newAddress"/>
+                <input type="button" onclick="changeAddressFunction()" value="changer"/>
               </form>
-              <!-- à faire  -->
-              <script>
-                function showHint(str) {
-                  if (str.length == 0) {
-                    document.getElementById("txtHint").innerHTML = "";
-                    return;
-                  } else {
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onreadystatechange = function() {
-                      if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("txtHint").innerHTML = this.responseText;
-                      }
-                    };
-                    xmlhttp.open("GET", "../model/change_user_name.php?nomU=" + "<?php echo $nom_client; ?>;newName=" + str, true);
-                    xmlhttp.send();
-                  }
-                }
-              </script>
+
+              <?php  echo "<br>Carte de crédit actuelle : ".'<span id="carte">'.$carte.'</span><br>';  ?>
+              <form name="changeCardForm">
+                &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
+                <input type="button" onclick="changeCardFunction()" value="changer"/>
+              </form>
+
+              <?php  echo "<br>Nom d'utilisateur actuel : ".'<span id="nomChangement">'.$nom_client.'</span><br>';  ?>
+
+              <form name="changeNameForm">
+                &emsp;&emsp;Nouveau nom d'utilisateur : <input type="text" name="newName"/>
+                <input type="button" onclick="changeNameFunction()" value="changer"/>
+              </form>
+
             </h1>
 
             <h4 id="support">
