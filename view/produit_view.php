@@ -32,28 +32,6 @@
         $amount = $result['amount'];;
         ?>
 
-<<<<<<< HEAD
-            <div class="HolyGrail-body">
-                <main class="HolyGrail-content">
-                    <h2 class="title">
-                        <?php echo $nom_produit;?>
-                    </h2>
-                    <div class="flex-row">
-                        <div class="image">
-                            <?php
-                            echo '<img class="image" src="'.$image.'">';
-                            ?>
-                        </div>
-                        <h1 class="description">
-                            <?php
-                            echo 'Artist : '.$artist;
-                            echo '<br>Catégorie : '.$categorie;
-                            echo '<br>Prix : '.$prix.'$';
-                            echo '<br>Date de sortie : '.$date;
-                            echo '<br>Restants : '.$amount;
-                            ?>
-                        </h1>
-=======
         <div class="HolyGrail-body">
             <main class="HolyGrail-content">
                 <h2 class="title">
@@ -64,7 +42,6 @@
                         <?php
                         echo '<img class="image" src="'.$image.'">';
                         ?>
->>>>>>> dc81f415761a605f9c5f999b8847a21e60be3718
                     </div>
                     <h1 class="description">
                         <?php

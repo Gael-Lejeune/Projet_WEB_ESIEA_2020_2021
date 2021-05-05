@@ -84,6 +84,16 @@
           return;
         }
       }
+
+      function logoutFunction() {
+        if ( confirm( "Vous allez être déconnecté.\n   Cliquez sur 'OK' pour confirmer, ou annulez." ) ) {
+          // Code à éxécuter si le l'utilisateur clique sur "OK"
+          window.location = "../model/logout.php";
+        } else {
+          // Code à éxécuter si l'utilisateur clique sur "Annuler"
+          return;
+        }
+      }
     </script>
 
     <div class="HolyGrail-body">
@@ -157,6 +167,14 @@
             <h1>
               <form name="deleteForm">
                 <input type="button" onclick="deleteAccountFunction()" value="supprimer le compte"/>
+              </form>
+            </h1>
+            <h4 id="déconnexion">
+                Se déconnecter
+            </h4>
+            <h1>
+              <form name="logoutForm">
+                <input type="button" onclick="logoutFunction()" value="déconnexion"/>
               </form>
             </h1>
         </main>
