@@ -7,50 +7,47 @@
         </ul>
         <ul>
             <li>
-                <button class="switch" type="button" name="button" id="theme-btn">
-                    <img src="./Images/daynight.jpeg" alt="erreur d'affichage" class="switchimg" >
-                </button>
+                <a href="<?php echo $panierController; ?>">
+                    <button class="switch" type="button" name="button" id="theme-btn">
+                        <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="erreur d'affichage" class="switchimg" >
+                    </button>
+                </a>
             </li>
         </ul>
     </header>
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <h2>
-                <?php
-                    echo 'Panier de '.$_GET['nomU'].'<br>';
-                ?>
-            </h2>
-            <h4>
-                Commandes effectuées
-            </h4>
-            <h1>
-                Commande 1 | Montant : 20$
-                <br>
-                Commande 2 | Montant : 34$
-            </h1>
-
-            <h4>
-                Produits dans le panier
-            </h4>
-            <h1>
-                Nom du produit 1 : Bla bla | Prix : 10$
-                <br>
-                Nom du produit 2 : Bla bla bla | Prix : 1$
-            </h1>
-            <h4>
-                Autre
-            </h4>
-            <h1>
-                Bla 1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h1>
-                Bla 2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
+            <?php
+            if (!isset($_SESSION['cart']) || sizeof($_SESSION['cart'])==0) {
+                echo '<h2>Votre panier est vide.</h2>
+                <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="photo du produit" class="img2">';
+            } else {
+                echo '<h4>Produits dans le panier</h4>';
+                for ($i = 0; $i < sizeof($_SESSION['cart']); $i++){
+                    $item = $_SESSION['cart'][$i];
+                    $totalPrice += $item['price']*$item['amount'];
+                    echo '
+                    <a href="./produit.php?id='.$item['id'].'" class="flex-content">
+                    <img src="'.$item['image'].'" alt="photo du produit" class="img2">
+                    <h1>'.$item['name'].
+                    '<br>'
+                    .$item['artist'].
+                    '<br>'
+                    .$item['category'].
+                    '<br>Amount : '
+                    .$item['amount'].
+                    '<br>'
+                    .$item['price']*$item['amount'].'$
+                    </h1>
+                    </a>';
+                }
+                echo '<h1>Prix total : '.$totalPrice.'</h1>';
+            }
+            ?>
+            <a href="<?php echo $deleteCartProcessing; ?>">
+                <button name="button" class="buybutton">Vider le panier</button>
+            </a>
         </main>
 
         <?php display_menus(); ?>

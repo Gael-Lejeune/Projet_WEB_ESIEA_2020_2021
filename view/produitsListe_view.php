@@ -7,9 +7,11 @@
         </ul>
         <ul>
             <li>
-                <button class="switch" type="button" name="button" id="theme-btn">
-                    <img src="./Images/daynight.jpeg" alt="erreur d'affichage" class="switchimg" >
-                </button>
+                <a href="<?php echo $panierController; ?>">
+                    <button class="switch" type="button" name="button" id="theme-btn">
+                        <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="erreur d'affichage" class="switchimg" >
+                    </button>
+                </a>
             </li>
         </ul>
     </header>
@@ -23,20 +25,24 @@
             ?>
             <div class="flex-product">
                 <?php
-                for ($i = 0; $i < sizeof($result); $i++){
-                    // var_dump($result[$i]);
-                    echo '
+                if (sizeof($result)==0) {
+                    echo '<h2>Cette catégorie est vide pour le moment. :(</h2>';
+                } else {
+                    for ($i = 0; $i < sizeof($result); $i++){
+                        // var_dump($result[$i]);
+                        echo '
                         <a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content">
-                            <img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
-                            <h1>'.$result[$i]['name'].
-                            '<br>'
-                            .$result[$i]['artist'].
-                            '<br>'
-                            .$result[$i]['label'].
-                            '<br>'
-                            .$result[$i]['price'].
-                            '$</h1>
+                        <img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
+                        <h1>'.$result[$i]['name'].
+                        '<br>'
+                        .$result[$i]['artist'].
+                        '<br>'
+                        .$result[$i]['label'].
+                        '<br>'
+                        .$result[$i]['price'].
+                        '$</h1>
                         </a>';
+                    }
                 }
                 ?>
             </div>

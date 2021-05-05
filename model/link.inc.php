@@ -54,7 +54,7 @@ $panier='Nom : Panier';
 $panierController='../controller/panier.php';
 $panierCSS='../html/css/style.css';
 $panierView='../view/panier_view.php';
-$panierModel='../processing/panier_processing.php';
+$panierModel='../model/panier_model.php';
 
 $produit='Nom : Produit';
 $produitController='../controller/produit.php';
@@ -78,3 +78,6 @@ $logo='../html/images/login.png';
 $arrow='https://img.icons8.com/nolan/50/000000/up-left.png';
 
 $navbar='../model/navbar.php';
+
+$addToCartProcessing='../processing/addToCart.php';
+$deleteCartProcessing='../processing/deleteCart.php';
