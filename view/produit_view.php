@@ -7,69 +7,75 @@
         </ul>
         <ul>
             <li>
-                <button class="switch" type="button" name="button" id="theme-btn">
-                    <img src="./Images/daynight.jpeg" alt="erreur d'affichage" class="switchimg" >
-                </button>
-            </li>
-        </ul>
-    </header>
+                <a href="<?php echo $panierController; ?>">
+                    <button class="switch" type="button" name="button" id="theme-btn">
+                        <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="erreur d'affichage" class="switchimg" >
+                    </button>
+                </a>
+            </a>
+        </li>
+    </ul>
+</header>
 
-    <div class="HolyGrail-body">
-        <main class="HolyGrail-content">
-            <?php
-            #Récupération des données à utiliser dans la page
-            $nom_produit = $result['name'];
-            $artist = $result['artist'];
-            $categorie = $result['label'];
-            $prix = $result['price'];
-            $date = $result['release_date'];
-            $image = $result['image_url'];;
-            $description = $result['description'];;
-            $amount = $result['amount'];;
-            ?>
+<div class="HolyGrail-body">
+    <main class="HolyGrail-content">
+        <?php
+        #Récupération des données à utiliser dans la page
+        $id = $result['id_item'];
+        $product_name = $result['name'];
+        $artist = $result['artist'];
+        $category = $result['label'];
+        $price = $result['price'];
+        $date = $result['release_date'];
+        $image = $result['image_url'];;
+        $description = $result['description'];;
+        $amount = $result['amount'];;
+        ?>
 
-            <div class="HolyGrail-body">
-                <main class="HolyGrail-content">
-                    <h2 class="title">
-                        <?php echo $nom_produit;?>
-                    </h2>
-                    <div class="flex-row">
-                        <div class="image">
-                            <?php
-                            echo '<img class="image" src="'.$image.'">';
-                            ?>
-                        </div>
-                        <h1 class="description">
-                            <?php
-                            echo 'Artist : '.$artist;
-                            echo '<br>Categorie : '.$categorie;
-                            echo '<br>Prix : '.$prix.'$';
-                            echo '<br>Date de sortie : '.$date;
-                            echo '<br>Restants : '.$amount;
-                            ?>
-                        </h1>
-                    </div>
-                    <h1 id="description">
+        <div class="HolyGrail-body">
+            <main class="HolyGrail-content">
+                <h2 class="title">
+                    <?php echo $product_name;?>
+                </h2>
+                <div class="flex-row">
+                    <div class="image">
                         <?php
-                        echo "Description : <br />".$description;
+                        echo '<img class="image" src="'.$image.'">';
+                        ?>
+                    </div>
+                    <h1 class="description">
+                        <?php
+                        echo 'Artist : '.$artist;
+                        echo '<br>Categorie : '.$category;
+                        echo '<br>Prix : '.$price.'$';
+                        echo '<br>Date de sortie : '.$date;
+                        echo '<br>Restants : '.$amount;
                         ?>
                     </h1>
-
-                    <button name="button" class="buybutton">Ajouter au panier</button>
-
                 </div>
-            </main>
+                <h1 id="description">
+                    <?php
+                    echo "Description : <br />".$description;
+                    ?>
+                </h1>
 
-            <?php display_menus(); ?>
+                <a href="<?php echo $addToCartProcessing.'?id='.$id.'&name='.$product_name.'&price='.$price.'&category='.$category.'&amount='.$amount.'&artist='.$artist.'&date='.$date.'&image='.$image; ?>">
+                    <button  name="button" class="buybutton">Ajouter au panier</button>
+                </a>
 
-        </div>
+            </div>
+        </main>
 
-        <a href="#header" id="button" class="button">
-            <img src="./Images/arrow.png" alt="erreur d'affichage" class="buttonimg" >
-        </a>
+        <?php display_menus(); ?>
 
-        <footer class="footerflex">
-            <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
-        </footer>
+    </div>
 
-    </body>
+    <a href="#header" id="button" class="button">
+        <img src="./Images/arrow.png" alt="erreur d'affichage" class="buttonimg" >
+    </a>
+
+    <footer class="footerflex">
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
+    </footer>
+
+</body>

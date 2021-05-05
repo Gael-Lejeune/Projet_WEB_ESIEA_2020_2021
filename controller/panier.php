@@ -10,7 +10,7 @@ start_page($panier, $panierCSS);
 session_start();
 
 //Appel du model
-// require $panierModel;
+require $panierModel;
 
 //Affichage de la page
 require $panierView;

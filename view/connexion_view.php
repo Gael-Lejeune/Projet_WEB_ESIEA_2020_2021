@@ -7,9 +7,11 @@
         </ul>
         <ul>
             <li>
-                <button class="switch" type="button" name="button" id="theme-btn">
-                    <img src="./Images/daynight.jpeg" alt="erreur d'affichage" class="switchimg" >
-                </button>
+                <a href="<?php echo $panierController; ?>">
+                    <button class="switch" type="button" name="button" id="theme-btn">
+                        <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="erreur d'affichage" class="switchimg" >
+                    </button>
+                </a>
             </li>
         </ul>
     </header>
