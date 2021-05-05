@@ -25,6 +25,7 @@
             $date = $result['release_date'];
             $image = $result['image_url'];;
             $description = $result['description'];;
+            $amount = $result['amount'];;
             ?>
 
             <div class="HolyGrail-body">
@@ -44,6 +45,7 @@
                             echo '<br>Categorie : '.$categorie;
                             echo '<br>Prix : '.$prix.'$';
                             echo '<br>Date de sortie : '.$date;
+                            echo '<br>Restants : '.$amount;
                             ?>
                         </h1>
                     </div>

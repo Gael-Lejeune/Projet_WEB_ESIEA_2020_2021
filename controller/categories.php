@@ -10,7 +10,7 @@ start_page($categories, $categoriesCSS);
 session_start();
 
 //Appel du model
-// require $categoriesModel;
+require $categoriesModel;
 
 //Affichage de la page
 require $categoriesView;

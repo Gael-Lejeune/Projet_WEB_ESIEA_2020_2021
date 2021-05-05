@@ -17,33 +17,17 @@
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <div class="flex-product">
+                <?php
+                for ($i = 0; $i < sizeof($result); $i++){
+                    // var_dump($result[$i]);
+                    echo '
+                            <a href="./produitsListe.php?category='.$result[$i]['label'].'"  class="flex-content">
+                                <img src="https://cdn0.iconfinder.com/data/icons/media-various/100/media-square-music-512.png" class="img2">
+                                <h1>'.$result[$i]['label'].'</h1>
+                            </a>';
+                }
 
-                <div class="flex-content">
-                        <a href="./produitsListe.php"  class="flex-content">
-                            <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                            <p>Nom de la catégorie</p>
-                        </a>
-                </div>
-                <div class="flex-content">
-                    <a href="./produitsListe.php"  class="flex-content">
-                        <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                        <p>Nom de la catégorie</p>
-                    </a>
-                </div>
-
-                <div class="flex-content">
-                    <a href="./produitsListe.php"  class="flex-content">
-                        <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                        <p>Nom de la catégorie</p>
-                    </a>
-                </div>
-                <div class="flex-content">
-                    <a href="./produitsListe.php"  class="flex-content">
-                        <img src="https://k7.pngheat.com/preview/778/160/982/musical-note-clip-art-notes-thumbnail.jpg" alt="photo du produit" class="img2">
-                        <p>Nom de la catégorie</p>
-                    </a>
-                </div>
-
+                ?>
             </div>
         </main>
 

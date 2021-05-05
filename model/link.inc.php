@@ -18,7 +18,7 @@ $categories='Nom : Categories';
 $categoriesController='../controller/categories.php';
 $categoriesCSS='../html/css/style.css';
 $categoriesView='../view/categories_view.php';
-$categoriesModel='../processing/categories_processing.php';
+$categoriesModel='../model/categories_model.php';
 
 $commandes='Nom : Commandes';
 $commandesController='../controller/commande.php';

@@ -16,6 +16,11 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
+            <?php
+            if (isset($_GET['category'])) {
+                echo '<h2>'.$_GET['category'].'</h2>';
+            }
+            ?>
             <div class="flex-product">
                 <?php
                 for ($i = 0; $i < sizeof($result); $i++){
@@ -34,9 +39,6 @@
                         </a>';
                 }
                 ?>
-
-
-
             </div>
         </main>
 
