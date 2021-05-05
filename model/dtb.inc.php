@@ -48,17 +48,4 @@ function dtb_connect_PDO () {
 // }
 //
 
-function get_user_info($username) {
-  $db = dtb_connect_PDO ();
-  $stmt = $db->prepare("SELECT * FROM user WHERE mail = ?");
-  $stmt->execute([$username]);
-  $user = $stmt->fetch();
-
-  $GLOBALS['username'] = $username;
-  $GLOBALS['firstname'] = $user['first_name'];
-  $GLOBALS['lastname'] = $user['last_name'];
-  $GLOBALS['creditcard'] = $user['credit_card'];
-  $GLOBALS['adress'] = $user['adress'];
-}
-
 ?>

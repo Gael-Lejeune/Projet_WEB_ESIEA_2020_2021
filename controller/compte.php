@@ -10,7 +10,7 @@ start_page($compte, $compteCSS);
 session_start();
 
 //Appel du model
-// require $pageAdminModel;
+require $compteModel;
 
 //Affichage de la page
 require $compteView;

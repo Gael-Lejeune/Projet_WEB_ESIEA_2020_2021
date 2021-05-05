@@ -19,11 +19,11 @@
             <div class="baseflex">
                 <fieldset>
                     <legend>Connexion client/admin : </legend>
-                    <form name="ForConnexion" action="../controller/verify_connexion.php" method="get">
+                    <form name="ForConnexion" action="../controller/verify_connexion.php" method="post">
                         <ul>
                             <li>
                             <label for="nomU">Nom d'utilisateur :</label>
-                            <input type="text" id="nomU" name="nomU" placeholder="Username">
+                            <input type="text" id="nomU" name="nomU" placeholder="username">
                             </li>
                             <li>
                                 <label for="mdpU">Mot de passe :  </label>

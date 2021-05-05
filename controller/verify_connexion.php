@@ -9,21 +9,21 @@ start_page($accueil, $accueilCSS);
 //Demarrage de la session
 session_start();
 
-//problème : toujours "invalid" même si les champs sont bons
+//vérification des identifiants et redirection
 function verify_user() {
   $db = dtb_connect_PDO ();
-  $stmt = $db->prepare("SELECT * FROM user WHERE mail = ?");
-  $stmt->execute([$_GET['nomU']]);
+  $stmt = $db->prepare("SELECT * FROM user WHERE user_name = ?");
+  $stmt->execute([$_POST['nomU']]);
   $user = $stmt->fetch();
 
-  if ($user && ($_GET['mdpU']==$user['password']) && $user['role']=='client')
+  if ($user && ($_POST['mdpU']==$user['password']) && $user['role']=='client')
   {
     //valid client
-    header('Location: ../controller/compte.php?nomU='.$_GET['nomU']);
-  } else if ($user && ($_GET['mdpU']==$user['password']) && $user['role']=='admin')
+    header('Location: ../controller/compte.php?nomU='.$_POST['nomU']);
+  } else if ($user && ($_POST['mdpU']==$user['password']) && $user['role']=='admin')
   {
     //valid admin
-      header('Location: ../controller/admin.php?nomU='.$_GET['nomU']);
+      header('Location: ../controller/admin.php?nomU='.$_POST['nomU']);
   }
   else {
     //invalid

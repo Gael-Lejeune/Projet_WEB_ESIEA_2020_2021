@@ -30,7 +30,7 @@ $compte='Nom : Compte';
 $compteController='../controller/compte.php';
 $compteCSS='../html/css/style.css';
 $compteView='../view/compte_view.php';
-$compteModel='../processing/compte_processing.php';
+$compteModel='../model/compte_model.php';
 
 $connexion='Nom : Connexion';
 $connexionController='../controller/connexion.php';

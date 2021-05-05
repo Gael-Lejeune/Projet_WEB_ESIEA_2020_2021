@@ -14,12 +14,20 @@
         </ul>
     </header>
 
-    <?php get_user_info($_GET['nomU']) ?>
-
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
+            <?php
+            #Récupération des données à utiliser dans la page
+            $nom_client = $result['user_name'];
+            $prenom = $result['first_name'];
+            $nom = $result['last_name'];
+            $mail = $result['mail'];
+            $adresse = $result['adress'];
+            $carte = $result['credit_card'];
+            ?>
+
             <h2 id="ajoutP">
-                <?php  echo 'Bienvenue '.$username.'<br>';  ?>
+                <?php  echo 'Bienvenue '.$nom_client.'<br>';  ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
@@ -28,8 +36,9 @@
                 Informations client
             </h4>
             <h1>
-                <?php  echo 'Nom : '.$lastname.'<br>';  ?>
-                <?php  echo 'Prénom : '.$firstname.'<br>';  ?>
+                <?php  echo 'Nom : '.$nom.'<br>';  ?>
+                <?php  echo 'Prénom : '.$prenom.'<br>';  ?>
+                <?php  echo 'Mail : '.$mail.'<br>';  ?>
             </h1>
             <h4 id="commandes">
                 Historique des commandes
@@ -43,10 +52,19 @@
                 Modifier les informations du compte
             </h4>
             <h1>
-              <?php  echo 'Adresse actuelle : '.$adress.'<br>';  ?>
+              <?php  echo 'Adresse actuelle : '.$adresse.'<br>';  ?>
               <!-- ajouter champ de texte et button pour en changer -->
-              <?php  echo 'Carte de crédit actuelle : '.$creditcard.'<br>';  ?>
+              <?php  echo 'Carte de crédit actuelle : '.$carte.'<br>';  ?>
               <!-- ajouter champ de texte et button pour en changer -->
+              <div id="txtHint">
+                Nom d'utilisateur actuel : <?php echo $nom_client.'<br>'; ?>
+              </div>
+              <!-- à faire  -->
+              <form action="">
+                <label for="uname">&emsp;Nouveau nom d'utilisateur : </label>
+                <input type="text" id="newName" name="newName" value="">
+                <button type="submit" name="ok">changer</button>
+              </form>
             </h1>
 
             <h4 id="support">
