@@ -28,6 +28,7 @@
                             <li>
                                 <label for="mdpU">Mot de passe :  </label>
                                 <input type="password" id="mdpU" name="mdpU" placeholder="password">
+                            </li>
                             <li>
                                 <input class="buybutton" type="submit" value="Confirmer">
                             </li>
@@ -35,6 +36,14 @@
                     </form>
                 </fieldset>
             </div>
+            <p style="margin-bottom:3cm;"></p>
+            <hr>
+            <h4 id="support">
+                Contacter le support
+            </h4>
+            <p>
+                <a href="mailto:support@exemple.fr">support@nomDuSite.fr</a>
+            </p>
         </main>
 
         <?php display_menus(); ?>

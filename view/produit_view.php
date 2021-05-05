@@ -42,7 +42,7 @@
                         <h1 class="description">
                             <?php
                             echo 'Artist : '.$artist;
-                            echo '<br>Categorie : '.$categorie;
+                            echo '<br>Catégorie : '.$categorie;
                             echo '<br>Prix : '.$prix.'$';
                             echo '<br>Date de sortie : '.$date;
                             echo '<br>Restants : '.$amount;

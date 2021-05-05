@@ -72,6 +72,16 @@
           alert("Nom d'utilisateur changé");
         }
       }
+
+      function deleteAccountFunction() {
+        if ( confirm( "Votre compte va être supprimé.\n   Cliquez sur 'OK' pour confirmer, ou annulez." ) ) {
+          // Code à éxécuter si le l'utilisateur clique sur "OK"
+          window.location = "../model/delete_user.php";
+        } else {
+          // Code à éxécuter si l'utilisateur clique sur "Annuler"
+          return;
+        }
+      }
     </script>
 
     <div class="HolyGrail-body">
@@ -143,9 +153,9 @@
                 Suppimer le compte
             </h4>
             <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
+              <form name="deleteForm">
+                <input type="button" onclick="deleteAccountFunction()" value="supprimer le compte"/>
+              </form>
             </h1>
         </main>
 
