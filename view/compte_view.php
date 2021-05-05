@@ -60,10 +60,23 @@
                 Nom d'utilisateur actuel : <?php echo $nom_client.'<br>'; ?>
               </div>
               <!-- à faire  -->
-              <form action="">
+
+              <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+              <script type="text/javascript">
+              $(function() {
+                $("#formUserName").submit(function(){
+                  newNameUser = $(this).find("input[name=newName]").val();
+                  $.post("../model/change_user_name.php", {newUserName: newUserName}, function(data) {
+                    alert(data);
+                  });
+                  return false;
+                });
+              });
+              </script>
+              <form action="#" id="formUserName" method="post">
                 <label for="uname">&emsp;Nouveau nom d'utilisateur : </label>
-                <input type="text" id="newName" name="newName" value="">
-                <button type="submit" name="ok">changer</button>
+                <input type="text" name="newName" value=""></input>
+                <input type="submit" value="changer"></input>
               </form>
             </h1>
 

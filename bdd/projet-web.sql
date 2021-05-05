@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 04 mai 2021 à 21:50
+-- Généré le : mer. 05 mai 2021 à 12:13
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `category` (
 INSERT INTO `category` (`id_category`, `label`) VALUES
 (1, 'Rock'),
 (2, 'Rap'),
-(3, 'Soundtrack');
+(3, 'Soundtrack'),
+(4, 'K-pop');
 
 -- --------------------------------------------------------
 
@@ -71,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `item` (
 INSERT INTO `item` (`id_item`, `name`, `price`, `id_category`, `amount`, `description`, `artist`, `release_date`, `image_url`) VALUES
 (1, 'Moral Panic', 9, 1, 15, '\"Moral Panic\" by \"Nothing But Thieves\"', 'Nothing But Thieves', '2020-10-23', 'https://m.media-amazon.com/images/I/61eBzRf0RlL._SS500_.jpg'),
 (4, 'Nausicaä of the Valley of the Wind Soundtrack', 15, 3, 3, '\"Nausicaä of the Valley of the Wind Soundtrack\" by \"Joe Hisaishi\"', 'Joe Hisaishi', '2006-08-23', 'https://static.wikia.nocookie.net/ghibli/images/9/9c/%E9%A2%A8%E3%81%AE%E8%B0%B7%E3%81%AE%E3%83%8A%E3%82%A6%E3%82%B7%E3%82%AB_%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF_~%E3%81%AF%E3%82%8B%E3%81%8B%E3%81%AA%E5%9C%B0%E3%81%B8%E3%83%BB%E3%83%BB%E3%83%BB_%28pochette_avant%29.jpg/revision/latest/scale-to-width-down/250?cb=20200314194540&path-prefix=fr'),
+(5, 'BE (Deluxe Edition)', 50, 4, 20, '\"BE (Deluxe Edition)\" by \"방탄소년단 (BTS)\"', 'BTS', '2020-11-20', 'https://pbs.twimg.com/media/En1jxdNWEAAm1-j.jpg'),
 (6, 'Hades: Original Soundtrack', 10, 3, 26, '\"Hades: Original Soundtrack\" by \"Darren Korb\"', 'Darren Korb', '2020-09-20', 'https://f4.bcbits.com/img/a2368914893_10.jpg');
 
 -- --------------------------------------------------------
@@ -124,8 +126,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `adress` varchar(200) DEFAULT NULL,
+  `user_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id_user`, `mail`, `password`, `credit_card`, `role`, `first_name`, `last_name`, `adress`, `user_name`) VALUES
+(1, 'ex@mple.com', '123ex', NULL, 'client', 'Emple', 'Ex', NULL, 'new');
 
 --
 -- Contraintes pour les tables déchargées
