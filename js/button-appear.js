@@ -14,6 +14,6 @@ function addAnimation(event) { //Ajout de l'animation si on observe un scroll
 document.addEventListener('scroll', addAnimation); //Ajout d'un listener observant un scroll
 var est_apparue = false;
 
-document.addEventListener('click', function(){
+$('.bouton_scroll').click(function(){
     window.scroll(0, 0);
 }); //Ajout d'un listener observant un click
