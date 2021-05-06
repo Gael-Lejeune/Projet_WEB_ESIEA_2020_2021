@@ -57,10 +57,6 @@
 
     </div>
 
-    <a href="#header" id="button" class="button">
-        <img src="./Images/arrow.png" alt="erreur d'affichage" class="buttonimg" >
-    </a>
-
     <footer class="footerflex">
         <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
     </footer>

@@ -393,29 +393,17 @@ div.gauche, div.droite {
     height: 32.51px;
 }
 
-.button {
-    opacity: 0;
-    display: flex;
+/* Bouton apparaissant lorsque l'utilisateur scroll */
+.bouton_scroll {
     position: fixed;
+    opacity: 35%;
     right: 15px;
-    bottom: 80px;
-    box-shadow: 8px 8px 12px #131921;
-    border-radius: 50px;
-    justify-content: center;
-    align-items: center;
+    bottom: 90px;
+    display: none;
     width: 40px;
     height: 40px;
-    z-index: 3;
-    background: #b3d9ff;
-    border-style: ridge;
-    border-color: #b3d9ff;
-}
-
-.button:hover {
-    background: #cce6ff;
-    border-style: groove;
-    border-color: #cce6ff;
-    border-radius: 50px;
+    border-radius: 5px;
+    z-index: 10;
 }
 
 .buybutton{
@@ -546,8 +534,12 @@ footer {
         right: 140px;
         bottom: 40px;
     }
-}
 
+    .bouton_scroll {
+        right: 200px;
+        bottom: 35px;
+    }
+}
 
 
 @media (max-width: 530px) {

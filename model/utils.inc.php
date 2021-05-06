@@ -25,13 +25,10 @@ function start_page($title, $css){ // fonction qui affiche tout le debut de la p
   <link rel="icon" href="https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-vector-shop-icon-png-image_327584.jpg">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
-  <!--
-    <script src="../js/button-appear.js"></script>
-  -->
-  </head>
-  <a href="#header" id="button" class="button">
-      <img src="./Images/arrow.png" alt="erreur d\'affichage" class="buttonimg" >
-  </a>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="../js/button-appear.js"></script>
+ </head>
+ <img src="../html/images/arrow.png" alt="Erreur" class="bouton_scroll">
   '.PHP_EOL;
 
 };
