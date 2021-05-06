@@ -40,7 +40,7 @@
                                 <input type="text" id="mail" name="mail">
                             </li>
                             <li>
-                                <label for="adr">Adresse :</label>
+                                <label for="adr">address :</label>
                                 <input type="text" id="adr" name="adr">
                             </li>
                             <li>

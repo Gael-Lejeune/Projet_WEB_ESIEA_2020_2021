@@ -24,7 +24,7 @@
                     // var_dump($result[$i]);
                     echo '
                             <a href="./produitsListe.php?category='.$result[$i]['label'].'"  class="flex-content">
-                                <img src="https://cdn0.iconfinder.com/data/icons/media-various/100/media-square-music-512.png" class="img2">
+                                <img src="'.$result[$i]['category_image_url'].'" class="img2">
                                 <h1>'.$result[$i]['label'].'</h1>
                             </a>';
                 }

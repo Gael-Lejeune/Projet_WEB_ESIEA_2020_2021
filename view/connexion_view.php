@@ -32,7 +32,7 @@
                                 <input type="password" id="mdpU" name="mdpU" placeholder="password">
                             </li>
                             <li>
-                                <input class="buybutton" type="submit" value="Confirmer">
+                                <input class="formbutton" type="submit" value="Confirmer">
                             </li>
                         </ul>
                     </form>

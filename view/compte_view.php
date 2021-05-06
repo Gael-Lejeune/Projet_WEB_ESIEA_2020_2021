@@ -15,7 +15,7 @@
             </li>
         </ul>
     </header>
-    
+
     <script src="../js/user_function.js"> </script>
 
     <div class="HolyGrail-body">
@@ -26,7 +26,7 @@
             $prenom = $result['first_name'];
             $nom = $result['last_name'];
             $mail = $result['mail'];
-            $adresse = $result['adress'];
+            $address = $result['address'];
             $carte = $result['credit_card'];
             ?>
 
@@ -56,10 +56,10 @@
                 Modifier les informations du compte
             </h4>
             <h1>
-              <?php  echo "Adresse actuelle : ".'<span id="adresse">'.$adresse.'</span><br>';  ?>
-              <form name="changeAddressForm">
-                &emsp;&emsp;Nouvelle adresse : <input type="text" name="newAddress"/>
-                <input type="button" onclick="changeAddressFunction()" value="changer"/>
+              <?php  echo "address actuelle : ".'<span id="address">'.$address.'</span><br>';  ?>
+              <form id="form-address" name="changeAddressForm" action="<?php echo $changeaddressProcessing; ?>" method="post">
+                &emsp;&emsp;Nouvelle address : <input type="text" name="newAddress"/>
+                <input type="submit" value="changer"/>
               </form>
 
               <?php  echo "<br>Carte de crédit actuelle : ".'<span id="carte">'.$carte.'</span><br>';  ?>

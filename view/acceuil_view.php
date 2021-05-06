@@ -78,7 +78,7 @@
                 Bla bla bla bla bla
             </h1>
 
-            <div class="adresse">
+            <div class="address">
                 Coudoux 13111
                 <br>
                 <a  href="mailto:glejeune@et.esiea.fr">glejeune@et.esiea.fr</a>
@@ -90,7 +90,7 @@
                 Bla bla bla bla bla
             </h1>
 
-            <div class="adresse">
+            <div class="address">
                 Carrières-sous-Poissy 78955
                 <br>
                 <a href="mailto:aproux@et.esiea.fr">aproux@et.esiea.fr</a>
