@@ -48,7 +48,7 @@ $pageAdmin='Nom : Administrateur';
 $pageAdminController='../controller/admin.php';
 $pageAdminCSS='../html/css/style.css';
 $pageAdminView='../view/admin_view.php';
-$pageAdminModel='../processing/admin_processing.php';
+$pageAdminModel='../model/admin_model.php';
 
 $panier='Nom : Panier';
 $panierController='../controller/panier.php';

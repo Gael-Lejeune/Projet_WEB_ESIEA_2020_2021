@@ -117,13 +117,13 @@ header {
 /*************************************SwitchCSS*****************************************/
 
 .switch{
-    background: none;
+    background: #FEBD69;
     border-radius: 50px;
     width: 60px;
     height: 60px;
     z-index: 3;
     border-style: outset;
-    border-color: #232f3e;
+    border-color: #EAEDED;
     padding: 0px;
     margin: 10px;
 }

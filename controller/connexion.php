@@ -9,10 +9,21 @@ start_page($connexion, $connexionCSS);
 //Demarrage de la session
 session_start();
 
-//Appel du model
-// require $connexionModel;
+if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
 
-//Affichage de la page
-require $connexionView;
+  echo '<script>
+    alert("Vous êtes déjà connecté. Pour consulter cette page, veuillez vous déconnecter.\n Pour cela : panier > voir mon compte > se déconnecter.");
+    window.location = "../controller/acceuil.php";
+  </script> ';
+}
+else {
+  //Appel du model
+  // require $connexionModel;
+
+  //Affichage de la page
+  require $connexionView;
+}
+
+
 
 end_page();

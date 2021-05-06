@@ -8,11 +8,16 @@ start_page($pageAdmin, $pageAdminCSS);
 
 //Demarrage de la session
 session_start();
+if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
 
-//Appel du model
-// require $pageAdminModel;
+  //Appel du model
+  require $pageAdminModel;
 
-//Affichage de la page
-require $pageAdminView;
+  //Affichage de la page
+  require $pageAdminView;
+}
+else {
+	echo "Page non disponible, vous n'êtes pas connecté.";
+}
 
 end_page();

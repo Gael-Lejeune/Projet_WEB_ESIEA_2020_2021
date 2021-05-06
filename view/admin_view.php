@@ -18,9 +18,14 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
+          <?php
+          #Récupération des données à utiliser dans la page
+          $nom_admin = $result['user_name'];
+          ?>
+
             <h2 id="ajoutP">
                 <?php
-                    echo 'Bienvenue '.$_GET['nomA'].'<br>';
+                    echo 'Bienvenue '.$nom_admin.'<br>';
                 ?>
             </h2>
 

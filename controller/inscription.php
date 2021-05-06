@@ -9,10 +9,19 @@ start_page($inscription, $inscriptionCSS);
 //Demarrage de la session
 session_start();
 
-//Appel du model
-// require $inscriptionModel;
+if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
 
-//Affichage de la page
-require $inscriptionView;
+  echo '<script>
+    alert("Vous êtes déjà connecté. Pour consulter cette page, veuillez vous déconnecter.\n Pour cela : panier > voir mon compte > se déconnecter.");
+    window.location = "../controller/acceuil.php";
+  </script> ';
+}
+else {
+  //Appel du model
+  // require $inscriptionModel;
+
+  //Affichage de la page
+  require $inscriptionView;
+}
 
 end_page();
