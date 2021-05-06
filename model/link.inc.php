@@ -14,7 +14,7 @@ $InscriptionController='../controller/Inscription.php';
 
 // GESTION UTILISATEUR //
 
-$categories='Nom : Categories';
+$categories='Nom : Catégories';
 $categoriesController='../controller/categories.php';
 $categoriesCSS='../html/css/style.css';
 $categoriesView='../view/categories_view.php';
@@ -82,3 +82,5 @@ $navbar='../model/navbar.php';
 $addToCartProcessing='../processing/addToCart.php';
 $deleteCartProcessing='../processing/deleteCart.php';
 $changeaddressProcessing='../processing/change_user_address.php';
+$changecardProcessing='../processing/change_user_card.php';
+$changenameProcessing='../processing/change_user_name.php';

@@ -56,23 +56,23 @@
                 Modifier les informations du compte
             </h4>
             <h1>
-              <?php  echo "address actuelle : ".'<span id="address">'.$address.'</span><br>';  ?>
+              <?php  echo "Adresse actuelle : ".'<span id="address">'.$address.'</span><br>';  ?>
               <form id="form-address" name="changeAddressForm" action="<?php echo $changeaddressProcessing; ?>" method="post">
                 &emsp;&emsp;Nouvelle address : <input type="text" name="newAddress"/>
                 <input type="submit" value="changer"/>
               </form>
 
               <?php  echo "<br>Carte de crédit actuelle : ".'<span id="carte">'.$carte.'</span><br>';  ?>
-              <form name="changeCardForm">
+              <form id="form-card" name="changeCardForm" action="<?php echo $changecardProcessing; ?>" method="post">
                 &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
-                <input type="button" onclick="changeCardFunction()" value="changer"/>
+                <input type="submit" value="changer"/>
               </form>
 
               <?php  echo "<br>Nom d'utilisateur actuel : ".'<span id="nomChangement">'.$nom_client.'</span><br>';  ?>
 
-              <form name="changeNameForm">
+              <form id="form-name" name="changeNameForm" action="<?php echo $changenameProcessing; ?>" method="post">
                 &emsp;&emsp;Nouveau nom d'utilisateur : <input type="text" name="newName"/>
-                <input type="button" onclick="changeNameFunction()" value="changer"/>
+                <input type="submit" value="changer"/>
               </form>
 
             </h1>
@@ -84,7 +84,7 @@
                 <a  href="mailto:support@exemple.fr">support@nomDuSite.fr</a>
             </h1>
             <h4 id="suppression">
-                Suppimer le compte
+                Supprimer le compte
             </h4>
             <h1>
               <form name="deleteForm">

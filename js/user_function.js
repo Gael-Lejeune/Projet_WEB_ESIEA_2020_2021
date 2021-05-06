@@ -10,8 +10,8 @@
                 data: $(this).serialize()
             })
             .done(function (data) {
-                console.log(data);
-                console.log(data.address);
+                //console.log(data);
+                //console.log(data.address);
                 if (data.success === true) {
                     $('#address').html(data.address).fadeIn();
                 }
@@ -24,45 +24,47 @@
             return false;
         });
 
+        $('#form-card').on('submit', function () {
+            $('#carte').fadeOut();
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize()
+            })
+            .done(function (data) {
+                if (data.success === true) {
+                    $('#carte').html(data.card).fadeIn();
+                }
+                alert(data.message);
 
-        function changeCardFunction() {
-            var str = document.forms["changeCardForm"]["newCard"].value;
-            if (str.length == 0) {
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("carte").innerHTML = this.responseText;
-                        document.getElementsByName('newCard')[0].value = "";
-                    }
-                };
-                xmlhttp.open("GET", "../model/change_user_card.php?newCard=" + str, true);
-                xmlhttp.send();
-                alert("Carte changée");
-            }
-        }
+            })
+            .fail(function () {
+                $('body').html('Fatal error');
+            });
+            return false;
+        });
 
-        function changeNameFunction() {
-            var str = document.forms["changeNameForm"]["newName"].value;
-            if (str.length == 0) {
-                document.getElementById("nomTitre").innerHTML = "";
-                document.getElementById("nomChangement").innerHTML = "";
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("nomTitre").innerHTML = this.responseText;
-                        document.getElementById("nomChangement").innerHTML = this.responseText;
-                        document.getElementsByName('newName')[0].value = "";
-                    }
-                };
-                xmlhttp.open("GET", "../model/change_user_name.php?newName=" + str, true);
-                xmlhttp.send();
-                alert("Nom d'utilisateur changé");
-            }
-        }
+        $('#form-name').on('submit', function () {
+            $('#nomChangement').fadeOut();
+            $('nomTitre').fadeOut();
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize()
+            })
+            .done(function (data) {
+                if (data.success === true) {
+                    $('#nomChangement').html(data.name).fadeIn();
+                    $('#nomTitre').html(data.name).fadeIn();
+                }
+                alert(data.message);
+
+            })
+            .fail(function () {
+                $('body').html('Fatal error');
+            });
+            return false;
+        });
 
         function deleteAccountFunction() {
             if ( confirm( "Votre compte va être supprimé.\n   Cliquez sur 'OK' pour confirmer, ou annulez." ) ) {

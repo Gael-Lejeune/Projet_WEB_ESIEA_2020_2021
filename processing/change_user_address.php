@@ -12,10 +12,10 @@ $stmt = $db->prepare("UPDATE user SET address = ? WHERE user_name = ?");
 if($stmt->execute([$newuseraddress, $nom_client])){
     $obj -> success = true;
     $obj -> address = $_POST['newAddress'];
-    $obj -> message = "address changée";
+    $obj -> message = "Adresse changée";
 } else {
     $obj -> success = false;
-    $obj -> message = "Veuillez entrer une address plus courte";
+    $obj -> message = "Veuillez entrer une addresse plus courte";
 }
 
 
