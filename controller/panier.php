@@ -8,7 +8,11 @@ start_page($panier, $panierCSS);
 
 //Demarrage de la session
 session_start();
+// var_dump($_SESSION);
 
+?>
+<script src="../js/editCart.js"></script>
+<?php
 //Appel du model
 require $panierModel;
 

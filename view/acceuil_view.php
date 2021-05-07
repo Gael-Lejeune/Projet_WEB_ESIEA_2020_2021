@@ -1,6 +1,6 @@
 <body class="HolyGrail" id="header">
     <header class="headerflex">
-        <img class="headerimg" src="https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-vector-shop-icon-png-image_327584.jpg" alt="erreur d'affichage">
+        <img class="headerimg" src="https://previews.123rf.com/images/khabarushka/khabarushka1803/khabarushka180300859/98204952-violon-de-batterie-%C3%89tiquette-de-logo-de-magasin-de-magasin-de-musique-ensemble-d-instruments-de-mu.jpg" alt="erreur d'affichage">
         <ul>
             <li class="title">Projet WEB - ESIEA 2021</li>
             <li class="subtitle">Accueil</li>
@@ -100,7 +100,7 @@
 
         </main>
 
-        <?php display_menus(); ?>
+        <?php display_menus($logged); ?>
     </div>
     <footer class="footerflex">
         <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>

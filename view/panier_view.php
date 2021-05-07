@@ -1,6 +1,6 @@
 <body class="HolyGrail" id="header">
     <header class="headerflex">
-        <img class="headerimg" src="./Images/profil2.jpg" alt="erreur d'affichage" >
+        <img class="headerimg" src="https://previews.123rf.com/images/khabarushka/khabarushka1803/khabarushka180300859/98204952-violon-de-batterie-%C3%89tiquette-de-logo-de-magasin-de-magasin-de-musique-ensemble-d-instruments-de-mu.jpg" alt="erreur d'affichage" >
         <ul>
             <li class="title">Projet WEB</li>
             <li class="subtitle">Panier</li>
@@ -24,23 +24,37 @@
                 <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="photo du produit" class="img2">';
             } else {
                 echo '<h4>Produits dans le panier</h4>';
-                for ($i = 0; $i < sizeof($_SESSION['cart']); $i++){
-                    $item = $_SESSION['cart'][$i];
-                    $totalPrice += $item['price']*$item['amount'];
-                    echo '
-                    <a href="./produit.php?id='.$item['id'].'" class="flex-content">
-                    <img src="'.$item['image'].'" alt="photo du produit" class="img2">
-                    <h1>'.$item['name'].
-                    '<br>'
-                    .$item['artist'].
-                    '<br>'
-                    .$item['category'].
-                    '<br>Amount : '
-                    .$item['amount'].
-                    '<br>'
-                    .$item['price']*$item['amount'].'$
-                    </h1>
-                    </a>';
+                    for ($j=0; $j < sizeof($_SESSION['cart']); $j++) {
+                        for ($i = 0; $i < sizeof($result); $i++){
+                        if (isset($_SESSION['cart'][$j]) &&
+                        $_SESSION['cart'][$j]['id'] == $result[$i]['id_item']) {
+                            $item = $result[$i];
+                            // var_dump($item);
+                            $totalPrice += $item['price']*$_SESSION['cart'][$j]['amount'];
+                            echo '
+                            <div id="flex-content'.$item['id_item'].'" class="flex-content">
+                                <a href="./produit.php?id='.$item['id_item'].'" class="flex-content">
+                                    <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
+                                    <h1>'.$item['name'].
+                                        '<br>'
+                                        .$item['artist'].
+                                        '<br>'
+                                        .$item['label'].
+                                        '<br>'
+                                        .$item['price']*$_SESSION['cart'][$j]['amount'].'$
+                                    </h1>
+                                </a>
+                                <div>
+                                    <button class="addToCartButton">Ajouter un exemplaire</button>
+                                    <p style="display:none">'.$item['id_item'].'</p>
+                                        <p id="amount'.$item['id_item'].'">
+                                            Amount : '.$_SESSION['cart'][$j]['amount'].
+                                        '</p>
+                                    <button class="removeFromCartButton">Retirer un exemplaire</button>
+                                </div>
+                            </div>';
+                        }
+                    }
                 }
                 echo '<h1>Prix total : '.$totalPrice.'</h1>';
             }
@@ -50,7 +64,7 @@
             </a>
         </main>
 
-        <?php display_menus(); ?>
+        <?php display_menus($logged); ?>
 
     </div>
 

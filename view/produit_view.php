@@ -1,6 +1,6 @@
 <body class="HolyGrail" id="header">
     <header class="headerflex">
-        <img class="headerimg" src="./Images/profil2.jpg" alt="erreur d'affichage" >
+        <img class="headerimg" src="https://previews.123rf.com/images/khabarushka/khabarushka1803/khabarushka180300859/98204952-violon-de-batterie-%C3%89tiquette-de-logo-de-magasin-de-magasin-de-musique-ensemble-d-instruments-de-mu.jpg" alt="erreur d'affichage" >
         <ul>
             <li class="title">Projet WEB</li>
             <li class="subtitle">Fiche Produit</li>
@@ -52,6 +52,7 @@
                         echo '<br>Restants : '.$amount;
                         ?>
                     </h1>
+                    <p id="itemId" style="display:none"><?php echo $id; ?></p>
                 </div>
                 <h1 id="description">
                     <?php
@@ -59,14 +60,29 @@
                     ?>
                 </h1>
 
-                <a href="<?php echo $addToCartProcessing.'?id='.$id.'&name='.$product_name.'&price='.$price.'&category='.$category.'&amount='.$amount.'&artist='.$artist.'&date='.$date.'&image='.$image; ?>">
-                    <button  name="button" class="buybutton">Ajouter au panier</button>
-                </a>
+                    <p id="amount">Exemplaires dans le panier :
+                        <?php
+                        if (isset($_SESSION['cart'])) {
+                            for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
+                                if (isset($_SESSION['cart'][$i]) && $_SESSION['cart'][$i]['id'] == $_GET['id']) {
+                                    $found = true;
+                                    $foundIndex = $i;
+                                }
+                            }
+                        }
+                        if (isset($found)) {
+                            echo $_SESSION['cart'][$foundIndex]['amount'];
+                        } else {
+                            echo "0";
+                        }
+                         ?>
+                    </p>
+                    <button  id="addToCartButton" class="buybutton">Ajouter au panier</button>
 
             </div>
         </main>
 
-        <?php display_menus(); ?>
+        <?php display_menus($logged); ?>
 
     </div>
 
