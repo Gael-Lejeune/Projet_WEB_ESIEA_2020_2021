@@ -46,7 +46,7 @@
 
         $('#form-name').on('submit', function () {
             $('#nomChangement').fadeOut();
-            $('nomTitre').fadeOut();
+            $('#nomTitre').fadeOut();
             $.ajax({
                 url: $(this).attr('action'),
                 method: $(this).attr('method'),

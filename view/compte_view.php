@@ -56,9 +56,9 @@
                 Modifier les informations du compte
             </h4>
             <h1>
-              <?php  echo "Adresse actuelle : ".'<span id="address">'.$address.'</span><br>';  ?>
+              <?php  echo "Adresse postale actuelle : ".'<span id="address">'.$address.'</span><br>';  ?>
               <form id="form-address" name="changeAddressForm" action="<?php echo $changeaddressProcessing; ?>" method="post">
-                &emsp;&emsp;Nouvelle address : <input type="text" name="newAddress"/>
+                &emsp;&emsp;Nouvelle addresse postale : <input type="text" name="newAddress"/>
                 <input type="submit" value="changer"/>
               </form>
 
