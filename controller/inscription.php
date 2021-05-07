@@ -9,8 +9,7 @@ start_page($inscription, $inscriptionCSS);
 //Demarrage de la session
 session_start();
 
-if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
-
+if (logincheck()) {
   echo '<script>
     alert("Vous êtes déjà connecté. Pour consulter cette page, veuillez vous déconnecter.\n Pour cela : panier > voir mon compte > se déconnecter.");
     window.location = "../controller/acceuil.php";

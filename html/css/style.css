@@ -638,3 +638,8 @@ label {
     right: 0px;
     position: relative;
 }
+
+.red-error {
+  font-size: 11px;
+  color:  #900C3F;
+}
