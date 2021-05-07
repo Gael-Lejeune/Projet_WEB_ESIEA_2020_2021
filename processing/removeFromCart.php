@@ -11,26 +11,18 @@ if (!isset($_SESSION['cart'])) {
 $found = false;
 for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
     if (isset($_SESSION['cart'][$i]) && $_SESSION['cart'][$i]['id'] == $_POST['id']) {
-        $_SESSION['cart'][$i]['amount'] = $_SESSION['cart'][$i]['amount']+1;
+        $_SESSION['cart'][$i]['amount'] = $_SESSION['cart'][$i]['amount']-1;
         // echo "found";
         $found = true;
         $foundIndex = $i;
+        $obj -> amount = $_SESSION['cart'][$i]['amount'];
     }
 }
 
-
-$item = array();
-if ($found == false) {
-    $item['id'] = $_POST['id'];
-    $item['amount'] = 1;
-    array_push($_SESSION['cart'], $item);
-}
-
 $obj -> success = true;
-if ($found) {
-    $obj -> amount = $_SESSION['cart'][$foundIndex]['amount'];
-} else {
-    $obj -> amount = $_SESSION['cart'][sizeof($_SESSION['cart'])-1]['amount'];
+if ($found && $_SESSION['cart'][$foundIndex]['amount'] == 0) {
+    unset($_SESSION['cart'][$foundIndex]);
+    $_SESSION['cart'] = array_values($_SESSION['cart']);
 }
 
 

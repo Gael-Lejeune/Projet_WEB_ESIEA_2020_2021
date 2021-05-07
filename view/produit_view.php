@@ -52,6 +52,7 @@
                         echo '<br>Restants : '.$amount;
                         ?>
                     </h1>
+                    <p id="itemId" style="display:none"><?php echo $id; ?></p>
                 </div>
                 <h1 id="description">
                     <?php
@@ -59,9 +60,24 @@
                     ?>
                 </h1>
 
-                <a href="<?php echo $addToCartProcessing.'?id='.$id.'&name='.$product_name.'&price='.$price.'&category='.$category.'&amount='.$amount.'&artist='.$artist.'&date='.$date.'&image='.$image; ?>">
-                    <button  name="button" class="buybutton">Ajouter au panier</button>
-                </a>
+                    <p id="amount">Exemplaires dans le panier :
+                        <?php
+                        if (isset($_SESSION['cart'])) {
+                            for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
+                                if (isset($_SESSION['cart'][$i]) && $_SESSION['cart'][$i]['id'] == $_GET['id']) {
+                                    $found = true;
+                                    $foundIndex = $i;
+                                }
+                            }
+                        }
+                        if (isset($found)) {
+                            echo $_SESSION['cart'][$foundIndex]['amount'];
+                        } else {
+                            echo "0";
+                        }
+                         ?>
+                    </p>
+                    <button  id="addToCartButton" class="buybutton">Ajouter au panier</button>
 
             </div>
         </main>

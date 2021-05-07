@@ -8,9 +8,12 @@ start_page($produit, $produitCSS);
 
 //Demarrage de la session
 session_start();
-
+var_dump($_SESSION);
 //Appel du model
 require $produitModel;
+?>
+<script src="../js/addToCart.js"></script>
+<?php
 
 //Affichage de la page
 require $produitView;
