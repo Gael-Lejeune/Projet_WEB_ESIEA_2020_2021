@@ -84,3 +84,5 @@ $deleteCartProcessing='../processing/deleteCart.php';
 $changeaddressProcessing='../processing/change_user_address.php';
 $changecardProcessing='../processing/change_user_card.php';
 $changenameProcessing='../processing/change_user_name.php';
+$deleteaccountProcessing= '../processing/delete_user.php';
+$logoutProcessing= '../processing/logout.php';

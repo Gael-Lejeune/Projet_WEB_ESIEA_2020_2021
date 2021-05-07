@@ -66,29 +66,50 @@
             return false;
         });
 
-        function deleteAccountFunction() {
-            if ( confirm( "Votre compte va être supprimé.\n   Cliquez sur 'OK' pour confirmer, ou annulez." ) ) {
-                // Code à éxécuter si le l'utilisateur clique sur "OK"
-                window.location = "../model/delete_user.php";
-            } else {
-                // Code à éxécuter si l'utilisateur clique sur "Annuler"
-                return;
-            }
-        }
+        $('#form-delete').on('submit', function () {
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize()
+            })
+            .done(function (data) {
+              if ( confirm("Votre compte va être supprimé.\n   Cliquez sur 'OK' pour confirmer, ou annulez.") ) {
+                  // Code à éxécuter si le l'utilisateur clique sur "OK"
+                  if (data.success === true) {
+                    alert(data.message);
+                    window.location = "../controller/inscription.php";
+                  } else {
+                    alert(data.message);
+                  }
+              }
+            })
+            .fail(function () {
+                $('body').html('Fatal error');
+            });
+            return false;
+        });
 
-        function logoutFunction() {
-            if ( confirm( "Vous allez être déconnecté.\n   Cliquez sur 'OK' pour confirmer, ou annulez." ) ) {
-                // Code à éxécuter si le l'utilisateur clique sur "OK"
-                window.location = "../model/logout.php";
-            } else {
-                // Code à éxécuter si l'utilisateur clique sur "Annuler"
-                return;
-            }
-        }
-
-
-
-
+        $('#form-logout').on('submit', function () {
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize()
+            })
+            .done(function (data) {
+              if ( confirm("Vous allez être déconnecté.\n   Cliquez sur 'OK' pour confirmer, ou annulez.") ) {
+                  // Code à éxécuter si le l'utilisateur clique sur "OK"
+                  if (data.success === true) {
+                    window.location = "../controller/connexion.php";
+                  } else {
+                    alert("Vous n'avez pas été déconnecté.\n  Veuillez réessayer.");
+                  }
+              }
+            })
+            .fail(function () {
+                $('body').html('Fatal error');
+            });
+            return false;
+        });
 
     });
 }) ();

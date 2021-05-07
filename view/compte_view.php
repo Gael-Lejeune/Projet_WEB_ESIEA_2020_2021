@@ -87,16 +87,16 @@
                 Supprimer le compte
             </h4>
             <h1>
-              <form name="deleteForm">
-                <input type="button" onclick="deleteAccountFunction()" value="supprimer le compte"/>
+              <form id="form-delete" name="deleteForm" action="<?php echo $deleteaccountProcessing; ?>" method="post">
+                <input type="submit" value="supprimer le compte"/>
               </form>
             </h1>
             <h4 id="déconnexion">
                 Se déconnecter
             </h4>
             <h1>
-              <form name="logoutForm">
-                <input type="button" onclick="logoutFunction()" value="déconnexion"/>
+              <form id="form-logout" name="logoutForm" action="<?php echo $deleteaccountProcessing; ?>" method="post">
+                <input type="submit" value="déconnexion"/>
               </form>
             </h1>
         </main>
