@@ -653,6 +653,7 @@ label {
     position: relative;
 }
 
-.albumInfo{
-    /* max-width: 35%; */
+.red-error {
+  font-size: 11px;
+  color:  #900C3F;
 }
