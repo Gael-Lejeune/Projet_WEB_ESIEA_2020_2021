@@ -8,6 +8,7 @@ start_page($accueil, $accueilCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
 
 //Appel du model
 // require $accueilModel;

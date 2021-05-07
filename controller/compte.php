@@ -8,17 +8,17 @@ start_page($compte, $compteCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
 
-if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
-
-//Appel du model
-require $compteModel;
-
-//Affichage de la page
-require $compteView;
+if (!$logged) {
+	echo "Page non disponible, vous n'êtes pas connecté.";
 }
 else {
-	echo "Page non disponible, vous n'êtes pas connecté.";
+	//Appel du model
+	require $compteModel;
+
+	//Affichage de la page
+	require $compteView;
 }
 
 end_page();

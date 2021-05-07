@@ -8,6 +8,8 @@ start_page($pageAdmin, $pageAdminCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
+
 if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
 
   //Appel du model

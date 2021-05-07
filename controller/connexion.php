@@ -8,6 +8,7 @@ start_page($connexion, $connexionCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
 
 if (logincheck()) {
   echo '<script>

@@ -8,6 +8,8 @@ start_page($produit, $produitCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
+
 //Appel du model
 require $produitModel;
 ?>

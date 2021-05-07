@@ -8,6 +8,7 @@ start_page($commandes, $commandesCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
 
 //Appel du model
 // require $commandesModel;

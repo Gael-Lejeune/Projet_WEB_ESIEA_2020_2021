@@ -8,6 +8,8 @@ start_page($panier, $panierCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
+
 // var_dump($_SESSION);
 
 ?>

@@ -8,6 +8,7 @@ start_page($categories, $categoriesCSS);
 
 //Demarrage de la session
 session_start();
+$logged = logincheck();
 
 //Appel du model
 require $categoriesModel;

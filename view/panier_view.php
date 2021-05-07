@@ -1,6 +1,6 @@
 <body class="HolyGrail" id="header">
     <header class="headerflex">
-        <img class="headerimg" src="https://previews.123rf.com/images/khabarushka/khabarushka1803/khabarushka180300859/98204952-violon-de-batterie-%C3%89tiquette-de-logo-de-magasin-de-magasin-de-musique-ensemble-d-instruments-de-mu.jpg" alt="erreur d'affichage" >
+        <img class="headerimg" src="../html/images/logo.png" alt="erreur d'affichage" >
         <ul>
             <li class="title">Projet WEB</li>
             <li class="subtitle">Panier</li>
@@ -9,7 +9,7 @@
             <li>
                 <a href="<?php echo $panierController; ?>">
                     <button class="switch" type="button" name="button" id="theme-btn">
-                        <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="erreur d'affichage" class="switchimg" >
+                        <img src="../html/images/cart.png" alt="erreur d'affichage" class="switchimg" >
                     </button>
                 </a>
             </li>
@@ -21,7 +21,7 @@
             <?php
             if (!isset($_SESSION['cart']) || sizeof($_SESSION['cart'])==0) {
                 echo '<h2>Votre panier est vide.</h2>
-                <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="photo du produit" class="img2">';
+                <img src="../html/images/cart.png" alt="photo du produit" class="img2">';
             } else {
                 echo '<h4>Produits dans le panier</h4>
                         <div class="flex-col">';

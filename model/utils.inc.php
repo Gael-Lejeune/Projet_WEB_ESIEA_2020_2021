@@ -1,6 +1,4 @@
 <?php
-$logged = logincheck();
-
 
 function start_page($title, $css){
     echo'<!DOCTYPE html>
@@ -13,7 +11,7 @@ function start_page($title, $css){
             <meta name="description" content="Ce site internet est un site de vente en ligne. En tant que client, vous pourrez y trouver des produits et les commander. En tant qu\'administrateur, vous pourrez ajouter et supprimer des produits et des utilisateurs.">
 
             <link rel="stylesheet" type="text/css" href="'.$css.'">
-            <link rel="icon" href="https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-vector-shop-icon-png-image_327584.jpg">
+            <link rel="icon" href="../html/images/logo.png">
             <link rel="preconnect" href="https://fonts.gstatic.com">
             <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
