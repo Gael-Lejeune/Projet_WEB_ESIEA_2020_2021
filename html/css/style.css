@@ -10,7 +10,7 @@ h1 {
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     font-weight: normal;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 h2 {
@@ -156,6 +156,8 @@ body {
 }
 
 .flex-row {
+    color: black;
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
@@ -164,10 +166,13 @@ body {
 }
 
 .flex-col {
+    color: black;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
+    max-width: 50%;
 }
 
 .flex-product {
@@ -185,6 +190,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 45%;
+    /* flex-wrap: wrap; */
 }
 
 .HolyGrail-content {
@@ -612,6 +618,14 @@ footer {
         height: 100%;
         border-radius: 50px;
     }
+
+    .flex-col {
+        max-width: 100%;
+    }
+
+    .flex-content {
+        max-width: 100%;
+    }
 }
 
 fieldset {
@@ -637,4 +651,8 @@ label {
 .formbutton {
     right: 0px;
     position: relative;
+}
+
+.albumInfo{
+    /* max-width: 35%; */
 }

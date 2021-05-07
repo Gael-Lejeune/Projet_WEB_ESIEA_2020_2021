@@ -50,15 +50,12 @@
                         echo '<br>Prix : '.$price.'$';
                         echo '<br>Date de sortie : '.$date;
                         echo '<br>Restants : '.$amount;
+                        echo "Description : <br /><br />".$description;
+
                         ?>
                     </h1>
                     <p id="itemId" style="display:none"><?php echo $id; ?></p>
                 </div>
-                <h1 id="description">
-                    <?php
-                    echo "Description : <br />".$description;
-                    ?>
-                </h1>
 
                     <p id="amount">Exemplaires dans le panier :
                         <?php

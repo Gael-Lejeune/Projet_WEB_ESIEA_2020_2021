@@ -23,7 +23,8 @@
                 echo '<h2>Votre panier est vide.</h2>
                 <img src="https://image.flaticon.com/icons/png/512/102/102661.png" alt="photo du produit" class="img2">';
             } else {
-                echo '<h4>Produits dans le panier</h4>';
+                echo '<h4>Produits dans le panier</h4>
+                        <div class="flex-col">';
                     for ($j=0; $j < sizeof($_SESSION['cart']); $j++) {
                         for ($i = 0; $i < sizeof($result); $i++){
                         if (isset($_SESSION['cart'][$j]) &&
@@ -33,9 +34,9 @@
                             $totalPrice += $item['price']*$_SESSION['cart'][$j]['amount'];
                             echo '
                             <div id="flex-content'.$item['id_item'].'" class="flex-content">
-                                <a href="./produit.php?id='.$item['id_item'].'" class="flex-content">
+                                <a href="./produit.php?id='.$item['id_item'].'" class="flex-row">
                                     <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
-                                    <h1>'.$item['name'].
+                                    <h1 class="albumInfo">'.$item['name'].
                                         '<br>'
                                         .$item['artist'].
                                         '<br>'
@@ -56,7 +57,7 @@
                         }
                     }
                 }
-                echo '<h1>Prix total : '.$totalPrice.'</h1>';
+                echo '</div><h1>Prix total : '.$totalPrice.'</h1>';
             }
             ?>
             <a href="<?php echo $deleteCartProcessing; ?>">
