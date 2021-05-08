@@ -6,7 +6,7 @@ $obj = new stdClass();
 
 $db = dtb_connect_PDO ();
 
-$result = $db->prepare("DELETE FROM item WHERE label = ?");
+$result = $db->prepare("DELETE FROM item WHERE name = ?");
 
 if ($_SESSION['role']=='admin') {
   //si l'utilisateur identifié est un administrateur
@@ -17,7 +17,7 @@ if ($_SESSION['role']=='admin') {
   if($count>0) {
     //Si le produit est dans une liste de commande
     $obj -> success = false;
-    $obj -> message = "Le produit n'a pas été supprimé.\nVeuillez supprimer les ".$count." listes de commandes associées puis réessayer.";
+    $obj -> message = "Le produit n'a pas été supprimé.\nVeuillez supprimer les ".$count." listes de commandes associées puis réessayer.\n\nPour cela, contactez les gestionnaires de la base de données.";
 
   } else {
     //Sinon

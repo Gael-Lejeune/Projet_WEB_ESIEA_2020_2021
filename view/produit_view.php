@@ -50,7 +50,7 @@
                         echo '<br>Prix : '.$price.'$';
                         echo '<br>Date de sortie : '.$date;
                         echo '<br>Restants : '.$amount;
-                        echo "Description : <br /><br />".$description;
+                        echo "<br>Description : <br><br>".$description;
 
                         ?>
                     </h1>
