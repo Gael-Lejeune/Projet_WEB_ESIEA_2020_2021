@@ -31,6 +31,11 @@
             return false;
         });
 
+
+
+
+
+
         $('.removeFromCartButton').click(function(){
             var id = $(this).parent().find('p').html();
             $.ajax({

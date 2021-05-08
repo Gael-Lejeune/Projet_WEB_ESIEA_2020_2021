@@ -19,7 +19,7 @@
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <h2>
-                Nom du produit
+                Commandes
             </h2>
             <h1>
                 Description du produit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla

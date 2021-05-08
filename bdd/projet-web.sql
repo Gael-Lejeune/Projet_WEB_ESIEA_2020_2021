@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 06 mai 2021 à 16:18
+-- Généré le : sam. 08 mai 2021 à 17:29
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -72,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `item` (
 
 INSERT INTO `item` (`id_item`, `name`, `price`, `id_category`, `amount`, `description`, `artist`, `release_date`, `image_url`) VALUES
 (1, 'Moral Panic', 9, 1, 15, '\"Moral Panic\" by \"Nothing But Thieves\"', 'Nothing But Thieves', '2020-10-23', 'https://m.media-amazon.com/images/I/61eBzRf0RlL._SS500_.jpg'),
-(4, 'Nausicaä of the Valley of the Wind Soundtrack', 15, 3, 3, '\"Nausicaä of the Valley of the Wind Soundtrack\" by \"Joe Hisaishi\"', 'Joe Hisaishi', '2006-08-23', 'https://lh3.googleusercontent.com/proxy/0odNku4YiiSZK6M-Mc8BhL_Kc27WbZLscSR5C6daniAb8-fkr3r0YdqePJi-qxQWl4v14muQgqsAzYjoaiB1Q55HCErlb5U4CHlxn4bEWzMPF8w43Bz9ej5FpA'),
-(5, 'BE (Deluxe Edition)', 50, 4, 20, '\"BE (Deluxe Edition)\" by \"방탄소년단 (BTS)\"', 'BTS', '2020-11-20', 'https://pbs.twimg.com/media/En1jxdNWEAAm1-j.jpg'),
+(4, 'Nausicaä of the Valley of the Wind Soundtrack', 15, 3, 3, '\"Nausicaä of the Valley of the Wind Soundtrack\" by \"Joe Hisaishi\"', 'Joe Hisaishi', '2006-08-23', 'https://m.media-amazon.com/images/I/71l3NPXJdXL._SS500_.jpg'),
+(5, 'BE (Deluxe Edition)', 50, 4, 20, '\"BE (Deluxe Edition)\" by \"방탄소년단 (BTS)\"', 'BTS', '2020-11-20', 'https://images-na.ssl-images-amazon.com/images/I/412nrLhOuCL._SX522_.jpg'),
 (6, 'Hades: Original Soundtrack', 10, 3, 26, '\"Hades: Original Soundtrack\" by \"Darren Korb\"', 'Darren Korb', '2020-09-20', 'https://f4.bcbits.com/img/a2368914893_10.jpg'),
 (7, 'La fête est finie - EPILOGUE', 21, 2, 23, '\"La fête est finie - EPILOGUE\" by \"Orelsan\"', 'Orelsan', '2018-11-15', 'https://static.fnac-static.com/multimedia/Images/FD/Comete/110926/CCP_IMG_ORIGINAL/1434387.jpg');
 
@@ -85,14 +85,21 @@ INSERT INTO `item` (`id_item`, `name`, `price`, `id_category`, `amount`, `descri
 
 DROP TABLE IF EXISTS `item_list`;
 CREATE TABLE IF NOT EXISTS `item_list` (
-  `id_item_list` int NOT NULL,
-  `user_id` int NOT NULL,
+  `shipment_id` int NOT NULL,
   `item_id` int NOT NULL,
   `amount` int NOT NULL,
-  PRIMARY KEY (`id_item_list`),
-  KEY `user_id` (`user_id`),
-  KEY `item_id` (`item_id`)
+  KEY `item_id` (`item_id`),
+  KEY `shipment_id` (`shipment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `item_list`
+--
+
+INSERT INTO `item_list` (`shipment_id`, `item_id`, `amount`) VALUES
+(1, 4, 5),
+(2, 1, 3),
+(2, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -106,11 +113,17 @@ CREATE TABLE IF NOT EXISTS `shipment` (
   `user_id` int NOT NULL,
   `order_date` date NOT NULL,
   `estimated_date` date DEFAULT NULL,
-  `item_list_id` int NOT NULL,
   PRIMARY KEY (`id_shipment`),
-  KEY `client_id` (`user_id`),
-  KEY `item_list_id` (`item_list_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `client_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `shipment`
+--
+
+INSERT INTO `shipment` (`id_shipment`, `user_id`, `order_date`, `estimated_date`) VALUES
+(1, 3, '2021-05-08', '2021-05-10'),
+(2, 3, '2021-05-08', '2021-05-11');
 
 -- --------------------------------------------------------
 
@@ -130,14 +143,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `address` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `user_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id_user`, `mail`, `password`, `credit_card`, `role`, `first_name`, `last_name`, `address`, `user_name`) VALUES
-(1, 'ex@mple.com', '123ex', '1212', 'client', 'Emple', 'Ex', 'dqzdzq', 'oui');
+(3, 'kmaeleon@laposte.net', 'oui', '', 'admin', 'Leon', 'Kmae', 'dqzqdz', 'kmaeleon');
 
 --
 -- Contraintes pour les tables déchargées
@@ -153,15 +166,14 @@ ALTER TABLE `item`
 -- Contraintes pour la table `item_list`
 --
 ALTER TABLE `item_list`
-  ADD CONSTRAINT `item_list_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `item_list_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `item_list_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `item_list_ibfk_3` FOREIGN KEY (`shipment_id`) REFERENCES `shipment` (`id_shipment`);
 
 --
 -- Contraintes pour la table `shipment`
 --
 ALTER TABLE `shipment`
-  ADD CONSTRAINT `shipment_ibfk_2` FOREIGN KEY (`item_list_id`) REFERENCES `item_list` (`id_item_list`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `shipment_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `shipment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

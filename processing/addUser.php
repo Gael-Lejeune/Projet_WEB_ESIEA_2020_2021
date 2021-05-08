@@ -66,7 +66,7 @@ if ($doCreate==true) {
   $sql = "INSERT INTO user (mail, password, credit_card, role, first_name, last_name, address, user_name)
   VALUES (?, ?, '', 'client', ?, ?, ?, ?)";
   $stmt= $db->prepare($sql);
-  if ($stmt->execute([$mail, $password, $firstname, $lastname, $address, $username])) {
+  if ($stmt->execute([$mail, md5($password), $firstname, $lastname, $address, $username])) {
     $_SESSION['login'] = $username;
 		$_SESSION['pwd'] = $password;
     $_SESSION['role'] = 'client';

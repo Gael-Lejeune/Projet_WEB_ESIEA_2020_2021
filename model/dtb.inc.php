@@ -3,9 +3,13 @@
 
 // renvoi vrai si la personne est bien connecté (en verifiant les variables SESSION) et faux dans l'autre cas
 function logincheck() {
-    if (isset($_SESSION['login']) && isset($_SESSION['login'])) {
-        return (exist($_SESSION['login'], $_SESSION['pwd'])) ? true : false;
+    if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && exist($_SESSION['login'], $_SESSION['pwd'])) {
+        return true;
     } else {
+        if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+            $_SESSION['login'] == null;
+            $_SESSION['pwd'] == null;
+        }
         return false;
     }
 }
@@ -13,7 +17,7 @@ function logincheck() {
 function exist ($user_name, $password) // renvoi vrai si l'utilisateur est bien entrer dans la base de donnée et que le mot de passe correspond, faux dans l'autre cas
 {
     $query = dtb_connect_PDO()->prepare('SELECT user_name FROM user WHERE user_name = :user_name AND password = :password');
-    $query->execute(array(':user_name' => $user_name, ':password' => $password));
+    $query->execute(array(':user_name' => $user_name, ':password' => md5($password)));
     $result = $query->fetch(PDO::FETCH_ASSOC);
 
     return !$result ? false : true;

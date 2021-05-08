@@ -24,7 +24,13 @@ $commandes='Nom : Commandes';
 $commandesController='../controller/commande.php';
 $commandesCSS='../html/css/style.css';
 $commandesView='../view/commande_view.php';
-$commandesModel='../processing/commande_processing.php';
+$commandesModel='../model/commande_model.php';
+
+$validateCommande='Nom : Valider ma commande';
+$validateCommandeController='../controller/validateCommande.php';
+$validateCommandeCSS='../html/css/style.css';
+$validateCommandeView='../view/validateCommande_view.php';
+$validateCommandeModel='../model/validateCommande_model.php';
 
 $compte='Nom : Compte';
 $compteController='../controller/compte.php';

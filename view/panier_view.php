@@ -40,7 +40,7 @@
                                         <h1 class="albumInfo">'.$item['name'].'</h1>
                                         <h1 class="albumInfo">'.$item['artist'].'</h1>
                                         <h1 class="albumInfo">'.$item['label'].'</h1>
-                                        <h1 class="albumInfo"><div class="price">'.$item['price'].'$</div></h1>
+                                        <h1 class="albumInfo"><div class="price">'.$item['price'].'</div>$</h1>
                                     </div>
                                 </a>
                                 <div>
