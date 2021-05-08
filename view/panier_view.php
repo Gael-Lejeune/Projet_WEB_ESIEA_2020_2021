@@ -56,8 +56,17 @@
                     }
                 }
                 echo '</div><h1><p>Prix total : </p><p id="totalPrice">'.$totalPrice.'</p><p>$</p></h1>';
+                $date = new DateTime();
+                $date->modify("+3 day");
+                echo '<h1>Date de reception estimée : '.$date->format("d/m/Y").'</h1>';
             }
             ?>
+            <a href="<?php echo $validateCommandeController; ?>">
+                <button name="button" class="buybutton">Passer la commande</button>
+            </a>
+            <br/>
+            <br/>
+            <br/>
             <a href="<?php echo $deleteCartProcessing; ?>">
                 <button name="button" class="buybutton">Vider le panier</button>
             </a>
@@ -68,7 +77,7 @@
     </div>
 
     <footer class="footerflex">
-        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX - 2021-<?php echo date("Y");?></div>
     </footer>
 
 </body>
