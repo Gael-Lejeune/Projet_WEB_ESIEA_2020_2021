@@ -31,6 +31,7 @@
 
             <p style="margin-bottom:1.2cm;"></p>
 
+            <hr/>
             <h2>Section produits</h2>
             <br>
             <TABLE class="tabAdmin" BORDER="1">
@@ -39,22 +40,24 @@
                 <TH> Nom du produit </TH>
                 <TH> Artiste </TH>
                 <TH> Date de publication </TH>
+                <TH> Catégorie </TH>
                 <TH> Description </TH>
                 <TH> Image </TH>
                 <TH> Prix </TH>
                 <TH> Quantité en stock </TH>
               </TR>
               <?php
-              for ($i = 0; $i < sizeof($result_categories); $i++){
+              for ($i = 0; $i < sizeof($result_items); $i++){
                 echo '
                 <TR>
                 <TH>'.$result_items[$i]['name'].'</TH>
-                <TH>'.$result_items[$i]['artist'].'</TH>
-                <TH>'.$result_items[$i]['release_date'].'</TH>
-                <TH>'.$result_items[$i]['description'].'</TH>
+                <TD>'.$result_items[$i]['artist'].'</TD>
+                <TD>'.$result_items[$i]['release_date'].'</TD>
+                <TD>'.$result_items[$i]['label'].'</TD>
+                <TD>'.$result_items[$i]['description'].'</TD>
                 <TD> <img src="'.$result_items[$i]['image_url'].'" class="img2"></TD>
                 <TD>'.$result_items[$i]['price'].'</TD>
-                <TH>'.$result_items[$i]['amount'].'</TH>
+                <TD>'.$result_items[$i]['amount'].'</TD>
                 </TR>';
               }
 
@@ -80,11 +83,20 @@
                 Suppression d'un produit
             </h4>
             <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
+              <form id="form-delete-item" name="deleteItemform" action="<?php echo $deleteitemProcessing; ?>" method="post">
+                <label for="itemname">Choisissez un produit :</label>
+                <select id="itemname" name="itemname">
+                  <?php
+                  for ($i = 0; $i < sizeof($result_items); $i++){
+                    echo '<option value="'.$result_items[$i]['name'].'">'.$result_items[$i]['name'].'</option>';
+                  }
+                  ?>
+                </select>
+                <input type="submit" value="supprimer le produit sélectionné"/>
+              </form>
             </h1>
 
+            <hr/>
             <h2>Section catégories</h2>
             <br>
             <TABLE class="tabAdmin" BORDER="1">
@@ -92,14 +104,20 @@
               <TR>
                 <TH> Nom de la catégorie </TH>
                 <TH> Image </TH>
+                <TH> Nom de la catégorie </TH>
+                <TH> Image </TH>
               </TR>
               <?php
-              for ($i = 0; $i < sizeof($result_categories); $i++){
+              for ($i = 0; $i < sizeof($result_categories); $i=$i+2){
                 echo '
                 <TR>
                 <TH>'.$result_categories[$i]['label'].'</TH>
-                <TD> <img src="'.$result_categories[$i]['category_image_url'].'" class="img2"></TD>
-                </TR>';
+                <TD> <img src="'.$result_categories[$i]['category_image_url'].'" class="img2"></TD>';
+                if (($i+1)<sizeof($result_categories)){
+                  echo '<TH>'.$result_categories[$i+1]['label'].'</TH>
+                  <TD> <img src="'.$result_categories[$i+1]['category_image_url'].'" class="img2"></TD>';
+                }
+                echo '</TR>';
               }
 
               ?>
@@ -124,11 +142,20 @@
                 Suppression d'une catégorie
             </h4>
             <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
+              <form id="form-delete-category" name="deleteCategoryform" action="<?php echo $deletecategoryProcessing; ?>" method="post">
+                <label for="categorylabel">Choisissez une catégorie :</label>
+                <select id="categorylabel" name="categorylabel">
+                  <?php
+                  for ($i = 0; $i < sizeof($result_categories); $i++){
+                    echo '<option value="'.$result_categories[$i]['label'].'">'.$result_categories[$i]['label'].'</option>';
+                  }
+                  ?>
+                </select>
+                <input type="submit" value="supprimer la catégorie sélectionnée"/>
+              </form>
             </h1>
 
+            <hr/>
             <h2>Section utilisateurs</h2>
             <br>
             <TABLE class="tabAdmin" BORDER="1">

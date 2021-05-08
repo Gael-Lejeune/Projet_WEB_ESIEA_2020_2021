@@ -88,3 +88,5 @@ $deleteaccountProcessing= '../processing/delete_user.php';
 $logoutProcessing= '../processing/logout.php';
 $adduserProcessing= '../processing/addUser.php';
 $connectuserProcessing= '../processing/verify_connexion.php';
+$deletecategoryProcessing= '../processing/delete_category.php';
+$deleteitemProcessing= '../processing/delete_item.php';

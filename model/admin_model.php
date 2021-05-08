@@ -15,6 +15,6 @@
   $query3->execute();
   $result_categories = $query3->fetchAll(PDO::FETCH_ASSOC);
 
-  $query4 = $db->prepare('SELECT * FROM item');
+  $query4 = $db->prepare('SELECT * FROM item, category WHERE item.id_category = category.id_category');
   $query4->execute();
   $result_items = $query4->fetchAll(PDO::FETCH_ASSOC);
