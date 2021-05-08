@@ -657,3 +657,10 @@ label {
   font-size: 11px;
   color:  #900C3F;
 }
+
+.tabAdmin {
+  margin: 0px;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

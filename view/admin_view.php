@@ -20,7 +20,7 @@
         <main class="HolyGrail-content">
           <?php
           #Récupération des données à utiliser dans la page
-          $nom_admin = $result['user_name'];
+          $nom_admin = $result_admin['user_name'];
           ?>
 
             <h2 id="ajoutP">
@@ -31,6 +31,35 @@
 
             <p style="margin-bottom:1.2cm;"></p>
 
+            <h2>Section produits</h2>
+            <br>
+            <TABLE class="tabAdmin" BORDER="1">
+              <CAPTION>Produits enregistrés :</CAPTION>
+              <TR>
+                <TH> Nom du produit </TH>
+                <TH> Artiste </TH>
+                <TH> Date de publication </TH>
+                <TH> Description </TH>
+                <TH> Image </TH>
+                <TH> Prix </TH>
+                <TH> Quantité en stock </TH>
+              </TR>
+              <?php
+              for ($i = 0; $i < sizeof($result_categories); $i++){
+                echo '
+                <TR>
+                <TH>'.$result_items[$i]['name'].'</TH>
+                <TH>'.$result_items[$i]['artist'].'</TH>
+                <TH>'.$result_items[$i]['release_date'].'</TH>
+                <TH>'.$result_items[$i]['description'].'</TH>
+                <TD> <img src="'.$result_items[$i]['image_url'].'" class="img2"></TD>
+                <TD>'.$result_items[$i]['price'].'</TD>
+                <TH>'.$result_items[$i]['amount'].'</TH>
+                </TR>';
+              }
+
+              ?>
+            </TABLE>
             <h4 id="modifP">
                 Ajout d'un produit
             </h4>
@@ -56,6 +85,25 @@
                 Bla bla bla bla bla
             </h1>
 
+            <h2>Section catégories</h2>
+            <br>
+            <TABLE class="tabAdmin" BORDER="1">
+              <CAPTION>Catégories enregistrées :</CAPTION>
+              <TR>
+                <TH> Nom de la catégorie </TH>
+                <TH> Image </TH>
+              </TR>
+              <?php
+              for ($i = 0; $i < sizeof($result_categories); $i++){
+                echo '
+                <TR>
+                <TH>'.$result_categories[$i]['label'].'</TH>
+                <TD> <img src="'.$result_categories[$i]['category_image_url'].'" class="img2"></TD>
+                </TR>';
+              }
+
+              ?>
+            </TABLE>
             <h4 id="modifC">
                 Ajout d'une catégorie
             </h4>
@@ -81,6 +129,34 @@
                 Bla bla bla bla bla
             </h1>
 
+            <h2>Section utilisateurs</h2>
+            <br>
+            <TABLE class="tabAdmin" BORDER="1">
+              <CAPTION>Utilisateurs enregistrés :</CAPTION>
+              <TR>
+                <TH> Nom d'utilisateur </TH>
+                <TH> Nom </TH>
+                <TH> Prénom </TH>
+                <TH> Adresse électronique </TH>
+                <TH> Adresse postale </TH>
+                <TH> Rôle </TH>
+              </TR>
+              <?php
+              for ($i = 0; $i < sizeof($result_users); $i++){
+                echo '
+                <TR>
+                <TH>'.$result_users[$i]['user_name'].'</TH>
+                <TD>'.$result_users[$i]['last_name'].'</TD>
+                <TD>'.$result_users[$i]['first_name'].'</TD>
+                <TD>'.$result_users[$i]['mail'].'</TD>
+                <TD>'.$result_users[$i]['address'].'</TD>
+                <TD>'.$result_users[$i]['role'].'</TD>
+                </TR>';
+              }
+
+              ?>
+            </TABLE>
+
             <h4 id="suppU">
                 Modification d'un utilisateur
             </h4>
@@ -93,9 +169,17 @@
                 Suppression d'un utilisateur
             </h4>
             <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
+              <form id="form-delete-user" name="deleteUserForm" action="<?php echo $deleteaccountProcessing; ?>" method="post">
+                <label for="usersId">Choisissez un utilisateur :</label>
+                <select id="usersname" name="usersname">
+                  <?php
+                  for ($i = 0; $i < sizeof($result_users); $i++){
+                    echo '<option value="'.$result_users[$i]['user_name'].'">'.$result_users[$i]['user_name'].'</option>';
+                  }
+                  ?>
+                </select>
+                <input type="submit" value="supprimer le compte sélectionné"/>
+              </form>
             </h1>
         </main>
 

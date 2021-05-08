@@ -12,12 +12,14 @@ $logged = logincheck();
 
 if ($logged) {
   if ($_SESSION['role']=='admin') {
+    echo '<script src="../js/admin_functions.js"> </script>';
+
     //Appel du model
     require $pageAdminModel;
 
     //Affichage de la page
     require $pageAdminView;
-    
+
   } else {
     echo '<script>
       alert("Page non disponible, vous n\'êtes pas administrateur.");

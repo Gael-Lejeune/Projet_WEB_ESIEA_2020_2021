@@ -4,4 +4,17 @@
 
   $query = $db->prepare("SELECT * FROM user WHERE user_name = ?");
   $query->execute([$_SESSION['login']]);
-  $result = $query->fetch(PDO::FETCH_ASSOC);
+  $result_admin = $query->fetch(PDO::FETCH_ASSOC);
+
+
+  $query2 = $db->prepare('SELECT * FROM user');
+  $query2->execute();
+  $result_users = $query2->fetchAll(PDO::FETCH_ASSOC);
+
+  $query3 = $db->prepare('SELECT * FROM category');
+  $query3->execute();
+  $result_categories = $query3->fetchAll(PDO::FETCH_ASSOC);
+
+  $query4 = $db->prepare('SELECT * FROM item');
+  $query4->execute();
+  $result_items = $query4->fetchAll(PDO::FETCH_ASSOC);
