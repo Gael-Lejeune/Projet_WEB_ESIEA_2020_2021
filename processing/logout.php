@@ -3,8 +3,7 @@
 session_start();
 $obj = new stdClass();
 
-unset($_SESSION["login"]);
-unset($_SESSION["pwd"]);
+session_destroy();
 
 $obj -> success = true;
 

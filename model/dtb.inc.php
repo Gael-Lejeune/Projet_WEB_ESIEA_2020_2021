@@ -7,8 +7,8 @@ function logincheck() {
         return true;
     } else {
         if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
-            $_SESSION['login'] == null;
-            $_SESSION['pwd'] == null;
+            unset($_SESSION["login"]);
+            unset($_SESSION["pwd"]);
         }
         return false;
     }
