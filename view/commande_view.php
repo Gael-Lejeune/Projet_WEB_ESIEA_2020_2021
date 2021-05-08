@@ -58,7 +58,7 @@
     </div>
 
     <footer class="footerflex">
-        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX - 2021-<?php echo date("Y");?></div>
     </footer>
 
 </body>

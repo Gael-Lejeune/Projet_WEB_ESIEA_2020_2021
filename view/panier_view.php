@@ -36,30 +36,37 @@
                             <div id="flex-content'.$item['id_item'].'" class="flex-content">
                                 <a href="./produit.php?id='.$item['id_item'].'" class="flex-row">
                                     <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
-                                    <h1 class="albumInfo">'.$item['name'].
-                                        '<br>'
-                                        .$item['artist'].
-                                        '<br>'
-                                        .$item['label'].
-                                        '<br>'
-                                        .$item['price']*$_SESSION['cart'][$j]['amount'].'$
-                                    </h1>
+                                    <div class="flex-col">
+                                        <h1 class="albumInfo">'.$item['name'].'</h1>
+                                        <h1 class="albumInfo">'.$item['artist'].'</h1>
+                                        <h1 class="albumInfo">'.$item['label'].'</h1>
+                                        <h1 class="albumInfo"><div class="price">'.$item['price'].'</div>$</h1>
+                                        </div>
                                 </a>
                                 <div>
                                     <button class="addToCartButton">Ajouter un exemplaire</button>
                                     <p style="display:none">'.$item['id_item'].'</p>
-                                        <p id="amount'.$item['id_item'].'">
-                                            Amount : '.$_SESSION['cart'][$j]['amount'].
-                                        '</p>
+                                        <h1 id="amount'.$item['id_item'].'">
+                                            <p>Amount : </p><p class="amount">'.$_SESSION['cart'][$j]['amount'].'</p>
+                                        </h1>
                                     <button class="removeFromCartButton">Retirer un exemplaire</button>
                                 </div>
                             </div>';
                         }
                     }
                 }
-                echo '</div><h1>Prix total : '.$totalPrice.'$</h1>';
+                echo '</div><h1><p>Prix total : </p><p id="totalPrice">'.$totalPrice.'</p><p>$</p></h1>';
+                $date = new DateTime();
+                $date->modify("+3 day");
+                echo '<h1>Date de reception estimée : '.$date->format("d/m/Y").'</h1>';
             }
             ?>
+            <a href="<?php echo $validateCommandeController; ?>">
+                <button name="button" class="buybutton">Passer la commande</button>
+            </a>
+            <br/>
+            <br/>
+            <br/>
             <a href="<?php echo $deleteCartProcessing; ?>">
                 <button name="button" class="buybutton">Vider le panier</button>
             </a>
@@ -70,7 +77,7 @@
     </div>
 
     <footer class="footerflex">
-        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX</div>
+        <div class="copyright">Copyright : Gaël LEJEUNE & Angélique PROUX - 2021-<?php echo date("Y");?></div>
     </footer>
 
 </body>

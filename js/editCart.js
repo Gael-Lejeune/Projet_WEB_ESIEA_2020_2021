@@ -13,7 +13,16 @@
             })
             .done(function (data) {
                 if (data.success === true) {
-                    $('#amount'+id).html("Amount : "+data.amount);
+                    $('#amount'+id).find('.amount').html(data.amount);
+                    let totalPrice = 0;
+                    $('.price').each(function(){
+                        totalPrice+=parseInt(
+                            $(this).parent().parent().parent().parent().find('div').find('h1').find('.amount').html()
+                            *
+                            $(this).html()
+                        );
+                    })
+                    $('#totalPrice').html(totalPrice);
                 }
             })
             .fail(function () {
@@ -37,7 +46,16 @@
                         $('#flex-content'+id).remove();
                         document.location.reload();
                     }
-                    $('#amount'+id).html("Amount : "+data.amount);
+                    $('#amount'+id).find('.amount').html(data.amount);
+                    let totalPrice = 0;
+                    $('.price').each(function(){
+                        totalPrice+=parseInt(
+                            $(this).parent().parent().parent().parent().find('div').find('h1').find('.amount').html()
+                            *
+                            $(this).html()
+                        );
+                    })
+                    $('#totalPrice').html(totalPrice);
                 }
             })
             .fail(function () {
