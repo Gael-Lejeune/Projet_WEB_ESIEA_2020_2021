@@ -36,11 +36,16 @@ function display_menus($logged){
 
     <aside class="HolyGrail-ads">
         <ul class="menu">';
-        if ($logged) {
+        if ($logged && $_SESSION['role']=='client') {
             echo '
             <li class="menuli"><a href="../controller/panier.php">Panier</a></li>
             <li class="menuli"><a href="../controller/compte.php">Mon compte</a></li>
             <li class="menuli"><a href="../controller/commande.php">Mes commandes</a></li>
+            ';
+        } else if ($logged && $_SESSION['role']=='admin') {
+            echo '
+            <li class="menuli"><a href="../controller/compte.php">Mon compte</a></li>
+            <li class="menuli"><a href="../controller/admin.php">Ma page administrateur</a></li>
             ';
         } else {
             echo '

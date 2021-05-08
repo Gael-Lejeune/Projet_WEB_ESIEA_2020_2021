@@ -31,12 +31,14 @@ if ($user) {
     //valid client
     $_SESSION['login'] = $_POST['nomU'];
     $_SESSION['pwd'] = $_POST['mdpU'];
+    $_SESSION['role'] = 'client';
     $obj -> role = "client";
   } else if ($password==$user['password'] && $user['role']=='admin')
   {
     //valid admin
     $_SESSION['login'] = $_POST['nomU'];
     $_SESSION['pwd'] = $_POST['mdpU'];
+    $_SESSION['role'] = 'admin';
     $obj -> role = "admin";
   }
   else {

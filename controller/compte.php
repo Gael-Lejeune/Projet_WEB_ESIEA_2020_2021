@@ -11,7 +11,10 @@ session_start();
 $logged = logincheck();
 
 if (!$logged) {
-	echo "Page non disponible, vous n'êtes pas connecté.";
+	echo '<script>
+    alert("Page non disponible, vous n\'êtes pas connecté.");
+    window.location = "../controller/acceuil.php";
+  </script> ';
 }
 else {
 	//Appel du model

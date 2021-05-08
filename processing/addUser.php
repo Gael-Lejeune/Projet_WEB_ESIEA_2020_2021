@@ -69,6 +69,7 @@ if ($doCreate==true) {
   if ($stmt->execute([$mail, $password, $firstname, $lastname, $address, $username])) {
     $_SESSION['login'] = $username;
 		$_SESSION['pwd'] = $password;
+    $_SESSION['role'] = 'client';
     $obj -> success = true;
   } else {
     $obj -> success = false;

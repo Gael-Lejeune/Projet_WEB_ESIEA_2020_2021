@@ -57,7 +57,7 @@
                         }
                     }
                 }
-                echo '</div><h1>Prix total : '.$totalPrice.'</h1>';
+                echo '</div><h1>Prix total : '.$totalPrice.'$</h1>';
             }
             ?>
             <a href="<?php echo $deleteCartProcessing; ?>">
