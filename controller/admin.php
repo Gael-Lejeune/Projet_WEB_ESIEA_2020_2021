@@ -10,16 +10,27 @@ start_page($pageAdmin, $pageAdminCSS);
 session_start();
 $logged = logincheck();
 
-if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+if ($logged) {
+  if ($_SESSION['role']=='admin') {
+    //Appel du model
+    require $pageAdminModel;
 
-  //Appel du model
-  require $pageAdminModel;
+    //Affichage de la page
+    require $pageAdminView;
+    
+  } else {
+    echo '<script>
+      alert("Page non disponible, vous n\'êtes pas administrateur.");
+      window.location = "../controller/compte.php";
+    </script> ';
+  }
 
-  //Affichage de la page
-  require $pageAdminView;
 }
 else {
-	echo "Page non disponible, vous n'êtes pas connecté.";
+  echo '<script>
+    alert("Page non disponible, vous n\'êtes pas connecté.");
+    window.location = "../controller/connexion.php";
+  </script> ';
 }
 
 end_page();

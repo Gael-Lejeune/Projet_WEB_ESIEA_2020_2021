@@ -13,12 +13,12 @@ $logged = logincheck();
 
 if ($logged) {
   echo '<script>
-    alert("Vous êtes déjà connecté. Pour consulter cette page, veuillez vous déconnecter.\n Pour cela : mon compte > se déconnecter.");
-    window.location = "../controller/acceuil.php";
+  alert("Vous êtes déjà connecté. Pour consulter cette page, veuillez vous déconnecter.\n Pour cela : mon compte > se déconnecter.");
+  window.location = "../controller/acceuil.php";
   </script> ';
 }
 else {
-    echo '<script src="../js/user_registration.js"></script>';
+  echo '<script src="../js/user_registration.js"></script>';
 
   //Appel du model
   // require $inscriptionModel;

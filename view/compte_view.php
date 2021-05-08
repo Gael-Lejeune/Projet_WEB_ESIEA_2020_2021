@@ -16,8 +16,6 @@
         </ul>
     </header>
 
-    <script src="../js/user_function.js"> </script>
-
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
             <?php

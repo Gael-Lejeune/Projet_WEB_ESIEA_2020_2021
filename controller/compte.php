@@ -17,6 +17,7 @@ if (!$logged) {
   </script> ';
 }
 else {
+	echo '<script src="../js/user_function.js"> </script>';
 	//Appel du model
 	require $compteModel;
 
