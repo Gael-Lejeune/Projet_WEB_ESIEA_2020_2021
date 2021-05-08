@@ -87,3 +87,4 @@ $changenameProcessing='../processing/change_user_name.php';
 $deleteaccountProcessing= '../processing/delete_user.php';
 $logoutProcessing= '../processing/logout.php';
 $adduserProcessing= '../processing/addUser.php';
+$connectuserProcessing= '../processing/verify_connexion.php';

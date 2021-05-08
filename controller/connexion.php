@@ -17,6 +17,7 @@ if (logincheck()) {
   </script> ';
 }
 else {
+  echo '<script src="../js/user_connexion.js"></script>';
   //Appel du model
   // require $connexionModel;
 

@@ -95,7 +95,7 @@
                 Se déconnecter
             </h4>
             <h1>
-              <form id="form-logout" name="logoutForm" action="<?php echo $deleteaccountProcessing; ?>" method="post">
+              <form id="form-logout" name="logoutForm" action="<?php echo $logoutProcessing; ?>" method="post">
                 <input type="submit" value="déconnexion"/>
               </form>
             </h1>

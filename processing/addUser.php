@@ -17,19 +17,28 @@ $password = $_POST['mdpU'];
 //initialisation d'une variable de contrôle
 $doCreate = true;
 
-$stmt = $db->prepare("SELECT user_name FROM user WHERE user_name = ?");
-$stmt->execute([$username]);
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
+//initialisation des messages de retour
+$obj -> lastnameMessage = "";
+$obj -> firstnameMessage = "";
+$obj -> nameMessage = "";
+$obj -> mailMessage = "";
+$obj -> pwdMessage = "";
 
-if ($row) {
-  //si le nom est déjà pris, mettre à faux "doCreate"
-  $doCreate = false;
-  $obj -> nameMessage = "Ce nom d'utilisateur est déjà choisi.";
-}
 
 if ($username =="") {
   $doCreate = false;
   $obj -> nameMessage = "Le nom d'utilisateur est vide.";
+
+} else {
+  $stmt = $db->prepare("SELECT user_name FROM user WHERE user_name = ?");
+  $stmt->execute([$username]);
+  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if ($row) {
+    //si le nom est déjà pris, mettre à faux "doCreate"
+    $doCreate = false;
+    $obj -> nameMessage = "Ce nom d'utilisateur est déjà choisi.";
+  }
 }
 
 if ($lastname =="") {
@@ -58,6 +67,8 @@ if ($doCreate==true) {
   VALUES (?, ?, '', 'client', ?, ?, ?, ?)";
   $stmt= $db->prepare($sql);
   if ($stmt->execute([$mail, $password, $firstname, $lastname, $address, $username])) {
+    $_SESSION['login'] = $username;
+		$_SESSION['pwd'] = $password;
     $obj -> success = true;
   } else {
     $obj -> success = false;

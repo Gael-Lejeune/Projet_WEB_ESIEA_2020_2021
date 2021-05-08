@@ -21,15 +21,17 @@
             <div class="baseflex">
                 <fieldset>
                     <legend>Connexion client/admin : </legend>
-                    <form name="ForConnexion" action="../controller/verify_connexion.php" method="post">
+                    <form id="form-connect" name="ForConnexion" action="<?php echo $connectuserProcessing; ?>" method="post">
                         <ul>
                             <li>
-                            <label for="nomU">Nom d'utilisateur :</label>
-                            <input type="text" id="nomU" name="nomU" placeholder="username">
+                                <label for="nomU">Nom d'utilisateur :</label>
+                                <input type="text" id="nomU" name="nomU" placeholder="username">
+                                <p id="usernameError" class="red-error"> </p>
                             </li>
                             <li>
                                 <label for="mdpU">Mot de passe :  </label>
                                 <input type="password" id="mdpU" name="mdpU" placeholder="password">
+                                <p id="passwordError" class="red-error"> </p>
                             </li>
                             <li>
                                 <input class="formbutton" type="submit" value="Confirmer">
