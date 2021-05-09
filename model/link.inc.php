@@ -101,3 +101,4 @@ $modifyitemProcessing= '../processing/modify_item.php';
 $selectcategoryProcessing= '../processing/select_category.php';
 $modifycategoryProcessing= '../processing/modify_category.php';
 $addCategoryProcessing= '../processing/addCategory.php';
+$addItemProcessing= '../processing/addItem.php';

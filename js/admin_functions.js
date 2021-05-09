@@ -49,6 +49,42 @@
         return false;
       });
 
+      $('#form-add-item').on('submit', function () {
+            $('#nameaddError').fadeOut();
+            $('#artistaddError').fadeOut();
+            $('#dateaddError').fadeOut();
+            $('#categoryaddError').fadeOut();
+            $('#urladdError').fadeOut();
+            $('#descriptionaddError').fadeOut();
+            $('#priceaddError').fadeOut();
+            $('#amountaddError').fadeOut();
+
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize()
+            })
+            .done(function (data) {
+                if (data.success == true) {
+                  alert(data.message);
+                } else {
+                  $('#nameaddError').html(data.nameMessage).fadeIn();
+                  $('#artistaddError').html(data.artistMessage).fadeIn();
+                  $('#dateaddError').html(data.dateMessage).fadeIn();
+                  $('#categoryaddError').html(data.categorieMessage).fadeIn();
+                  $('#urladdError').html(data.urlMessage).fadeIn();
+                  $('#descriptionaddError').html(data.descriptionMessage).fadeIn();
+                  $('#priceaddError').html(data.priceMessage).fadeIn();
+                  $('#amountaddError').html(data.amountMessage).fadeIn();
+                }
+
+            })
+            .fail(function () {
+                $('body').html('Fatal error');
+            });
+            return false;
+        });
+
       $('#form-delete-item').on('submit', function (e) {
         e.preventDefault();
         if (confirm("Êtes-vous certain de vouloir supprimer ce produit ?")) {

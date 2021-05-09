@@ -59,16 +59,57 @@
             <h4>
                 Ajout d'un produit
             </h4>
-            <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
-            </h1>
-            <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
-            </h1>
+            <form id="form-add-item" name="additemForm" action="<?php echo $addItemProcessing; ?>" method="post">
+              <ul>
+                <li>
+                  <label for="nameadd">Nom du produit :</label>
+                  <input type="text" id="nameadd" name="nameadd"/>
+                  <p id="nameaddError" class="red-error"> </p>
+                </li>
+                <li>
+                  <label for="artistadd">Artiste :</label>
+                  <input type="text" id="artistadd" name="artistadd">
+                  <p id="artistaddError" class="red-error"> </p>
+                </li>
+                <li>
+                  <label for="dateadd">Date de publication :</label>
+                  <input type="text" id="dateadd" name="dateadd" placeholder="yyyy-mm-dd"/>
+                  <p id="dateaddError" class="red-error"> </p>
+                </li>
+                <li>
+                  <label for="categoryadd">Catégorie :</label>
+                  <select id="categoryadd" name="categoryadd">
+                    <?php
+                    for ($i = 0; $i < sizeof($result_categories); $i++){
+                      echo '<option value="'.$result_categories[$i]['id_category'].'">'.$result_categories[$i]['label'].'</option>';
+                    }
+                    ?>
+                  </select>
+                  <p id="categoryaddError" class="red-error"> </p>
+                </li>
+                <li>
+                  <label for="urladd">Url de l'image :</label>
+                  <input type="url" id="urladd" name="urladd"/>
+                  <p id="urladdError" class="red-error"> </p>
+                </li>
+                <li>
+                  <label for="descriptionadd">Description :</label>
+                  <input type="text" id="descriptionadd" name="descriptionadd"/>
+                  <p id="descriptionaddError" class="red-error"> </p>
+                </li>
+                <li>
+                  <label for="priceadd">Prix :</label>
+                  <input type="number" id="priceadd" name="priceadd"/>
+                  <p id="priceaddError" class="red-error"> </p>
+                </li>
+                <li>
+                  <label for="amountadd">Quantité :</label>
+                  <input type="number" id="amountadd" name="amountadd"/>
+                  <p id="amountaddError" class="red-error"> </p>
+                </li>
+                <input class="formbutton" type="submit" value="Ajouter">
+              </ul>
+            </form>
             <h4>
                 Suppression d'un produit
             </h4>
@@ -117,12 +158,12 @@
                 <ul>
                   <li>
                     <label for="label">Nom de la catégorie :</label>
-                    <input type="text" id="label" name="label">
+                    <input type="text" id="label" name="label"/>
                     <p id="labelError" class="red-error"> </p>
                   </li>
                   <li>
                     <label for="urlcategory">Url de l'image :</label>
-                    <input type="url" id="urlcategory" name="urlcategory">
+                    <input type="url" id="urlcategory" name="urlcategory"/>
                     <p id="urlError" class="red-error"> </p>
                   </li>
                   <input class="formbutton" type="submit" value="Ajouter">
