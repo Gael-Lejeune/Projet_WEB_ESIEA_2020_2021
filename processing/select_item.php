@@ -52,7 +52,7 @@ if ($numitem >= 0 && $numitem < sizeof($result_items)) {
   <input type="submit" value="Enregistrer les modifications sur le produit"/>';
 } else {
   $obj -> success = false;
-  $obj -> message = "Veuillez sélectionner un produit pour en voir les caractéristiques.<br>Pour le modifier, veuillez écrire les nouvelles valeurs dans les cases correspondantes.<br>Pensez à enregistrer les modifications.";
+  $obj -> message = "Sélectionnez un produit pour en voir les caractéristiques.<br>Pour le modifier, écrivez les nouvelles valeurs dans les cases correspondantes.<br>Pensez à enregistrer les modifications.";
 }
 
 

@@ -76,27 +76,74 @@
 
 
       //catégories
-      $('#form-modify-category').on('submit', function () {
-          $('#address').fadeOut();
+      $('#form-select-category').on('change', function () {
+        $('#zoneCategory').fadeOut();
+        $.ajax({
+          url: $(this).attr('action'),
+          method: $(this).attr('method'),
+          data: $(this).serialize()
+        })
+        .done(function (data) {
+          if (data.success == true) {
+            $('#zoneCategory').html(data.message).fadeIn();
+          } else {
+            $('#zoneCategory').html(data.message).fadeIn();
+          }
+        })
+        .fail(function () {
+          $('body').html('Fatal error');
+        });
+        return false;
+      });
+
+      $('#form-modify-category').on('submit', function (e) {
+        e.preventDefault();
+        if (confirm("Êtes-vous certain de vouloir modifier cette catégorie ?")) {
+          // Code à éxécuter si le l'utilisateur clique sur "OK"
           $.ajax({
-              url: $(this).attr('action'),
-              method: $(this).attr('method'),
-              data: $(this).serialize()
+            url: $(this).attr('action'),
+            method: $(this).attr('method'),
+            data: $(this).serialize()
           })
           .done(function (data) {
-              //console.log(data);
-              //console.log(data.address);
-              if (data.success === true) {
-                  $('#address').html(data.address).fadeIn();
-              }
+            if (data.success == true) {
               alert(data.message);
-
+            } else {
+              alert(data.message);
+            }
           })
           .fail(function () {
-              $('body').html('Fatal error');
+            $('body').html('Fatal error');
           });
-          return false;
+        } else {
+          alert("Vous avez choisi de ne pas modifier cette catégorie.");
+        }
+        return false;
       });
+
+      $('#form-add-category').on('submit', function () {
+            $('#labelError').fadeOut();
+            $('#urlError').fadeOut();
+
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize()
+            })
+            .done(function (data) {
+                if (data.success == true) {
+                  alert(data.message);
+                } else {
+                  $('#labelError').html(data.labelMessage).fadeIn();
+                  $('#urlError').html(data.urlMessage).fadeIn();
+                }
+
+            })
+            .fail(function () {
+                $('body').html('Fatal error');
+            });
+            return false;
+        });
 
       $('#form-delete-category').on('submit', function (e) {
         e.preventDefault();

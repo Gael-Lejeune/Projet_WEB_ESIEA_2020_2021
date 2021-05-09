@@ -98,3 +98,6 @@ $deletecategoryProcessing= '../processing/delete_category.php';
 $deleteitemProcessing= '../processing/delete_item.php';
 $selectitemProcessing= '../processing/select_item.php';
 $modifyitemProcessing= '../processing/modify_item.php';
+$selectcategoryProcessing= '../processing/select_category.php';
+$modifycategoryProcessing= '../processing/modify_category.php';
+$addCategoryProcessing= '../processing/addCategory.php';

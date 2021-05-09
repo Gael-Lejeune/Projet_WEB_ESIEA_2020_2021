@@ -7,7 +7,7 @@
   $result_admin = $query->fetch(PDO::FETCH_ASSOC);
 
 
-  $query2 = $db->prepare('SELECT * FROM user');
+  $query2 = $db->prepare('SELECT user_name, first_name, last_name, address, mail, role FROM user');
   $query2->execute();
   $result_users = $query2->fetchAll(PDO::FETCH_ASSOC);
 

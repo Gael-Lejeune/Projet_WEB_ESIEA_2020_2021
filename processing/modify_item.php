@@ -65,8 +65,6 @@ if ($amount != "") {
 if ($obj -> success==true) {
   $obj -> message = "L'album a été modifié.";
 }
-/*
-*/
 
 
 header('Cache-Control: no-cache, must-revalidate');

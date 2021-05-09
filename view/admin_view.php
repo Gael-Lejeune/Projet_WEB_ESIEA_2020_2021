@@ -51,11 +51,10 @@
             </h1>
             <form id="form-modify-item" name="modifyItemform" action="<?php echo $modifyitemProcessing; ?>" method="post">
               <p id="zoneItem" class="form">
-                Veuillez sélectionner un produit pour en voir les caractéristiques.<br>
-                Pour le modifier, veuillez écrire les nouvelles valeurs dans les cases correspondantes.<br>
+                Sélectionnez un produit pour en voir les caractéristiques.<br>
+                Pour le modifier, écrivez les nouvelles valeurs dans les cases correspondantes.<br>
                 Pensez à enregistrer les modifications.
               </p>
-              <input type="submit" style="display:none" value="Enregistrer les modifications sur le produit"/>
             </form>
             <h4>
                 Ajout d'un produit
@@ -89,46 +88,46 @@
 
             <hr/>
             <h2>Section catégories</h2>
-            <br>
-            <TABLE class="tabAdmin" BORDER="1">
-              <CAPTION>Catégories enregistrées :</CAPTION>
-              <TR>
-                <TH> Nom de la catégorie </TH>
-                <TH> Image </TH>
-                <TH> Nom de la catégorie </TH>
-                <TH> Image </TH>
-              </TR>
-              <?php
-              for ($i = 0; $i < sizeof($result_categories); $i=$i+2){
-                echo '
-                <TR>
-                <TH>'.$result_categories[$i]['label'].'</TH>
-                <TD> <img src="'.$result_categories[$i]['category_image_url'].'" class="img2"></TD>';
-                if (($i+1)<sizeof($result_categories)){
-                  echo '<TH>'.$result_categories[$i+1]['label'].'</TH>
-                  <TD> <img src="'.$result_categories[$i+1]['category_image_url'].'" class="img2"></TD>';
-                }
-                echo '</TR>';
-              }
-
-              ?>
-            </TABLE>
+            <h4>
+              Modification d'une catégorie
+            </h4>
+            <h1>
+              <form id="form-select-category" name="selectCategoryform" action="<?php echo $selectcategoryProcessing; ?>" method="post">
+                <select id="categorynumber" name="categorynumber">
+                  <option value="-1">Sélectionner une catégorie :</option>
+                  <?php
+                  for ($i = 0; $i < sizeof($result_categories); $i++){
+                    echo '<option value="'.$i.'">'.$result_categories[$i]['label'].'</option>';
+                  }
+                  ?>
+                </select>
+              </form>
+            </h1>
+            <form id="form-modify-category" name="modifyCategoryform" action="<?php echo $modifycategoryProcessing; ?>" method="post">
+              <p id="zoneCategory" class="form">
+                Sélectionnez une catégorie pour en voir les caractéristiques.<br>
+                Pour la modifier, écrivez les nouvelles valeurs dans les cases correspondantes.<br>
+                Pensez à enregistrer les modifications.
+              </p>
+            </form>
             <h4>
                 Ajout d'une catégorie
             </h4>
-            <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
-            </h1>
-            <h4>
-                Modification d'une catégorie
-            </h4>
-            <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
-            </h1>
+              <form id="form-add-category" name="addcategoryForm" action="<?php echo $addCategoryProcessing; ?>" method="post">
+                <ul>
+                  <li>
+                    <label for="label">Nom de la catégorie :</label>
+                    <input type="text" id="label" name="label">
+                    <p id="labelError" class="red-error"> </p>
+                  </li>
+                  <li>
+                    <label for="urlcategory">Url de l'image :</label>
+                    <input type="url" id="urlcategory" name="urlcategory">
+                    <p id="urlError" class="red-error"> </p>
+                  </li>
+                  <input class="formbutton" type="submit" value="Ajouter">
+                </ul>
+              </form>
             <h4>
                 Suppression d'une catégorie
             </h4>
