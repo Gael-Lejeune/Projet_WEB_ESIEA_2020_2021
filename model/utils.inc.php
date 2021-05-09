@@ -41,6 +41,7 @@ function display_menus($logged){
             <li class="menuli"><a href="../controller/panier.php">Panier</a></li>
             <li class="menuli"><a href="../controller/compte.php">Mon compte</a></li>
             <li class="menuli"><a href="../controller/commande.php">Mes commandes</a></li>
+            <li class="menuli"><a href="../processing/logout.php">Se déconnecter</a></li>
             ';
         } else if ($logged && $_SESSION['role']=='admin') {
             echo '

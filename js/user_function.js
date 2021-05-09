@@ -92,30 +92,30 @@
           return false;
         });
 
-        $('#form-logout').on('submit', function (e) {
-          e.preventDefault();
-          if (confirm("Vous allez être déconnecté.\n   Cliquez sur 'OK' pour confirmer, ou annulez.")) {
-            // Code à éxécuter si le l'utilisateur clique sur "OK"
-            $.ajax({
-              url: $(this).attr('action'),
-              method: $(this).attr('method'),
-              data: $(this).serialize()
-            })
-            .done(function (data) {
-              if (data.success === true) {
-                window.location = "../controller/connexion.php";
-              } else {
-                alert("Vous n'avez pas été déconnecté.\n  Veuillez réessayer.");
-              }
-            })
-            .fail(function () {
-              $('body').html('Fatal error');
-            });
-          } else {
-            alert("Vous n'avez pas été déconnecté.");
-          }
-          return false;
-        });
+        // $('#form-logout').on('submit', function (e) {
+        //   e.preventDefault();
+        //   if (confirm("Vous allez être déconnecté.\n   Cliquez sur 'OK' pour confirmer, ou annulez.")) {
+        //     // Code à éxécuter si le l'utilisateur clique sur "OK"
+        //     $.ajax({
+        //       url: $(this).attr('action'),
+        //       method: $(this).attr('method'),
+        //       data: $(this).serialize()
+        //     })
+        //     .done(function (data) {
+        //       if (data.success === true) {
+        //         window.location = "../controller/connexion.php";
+        //       } else {
+        //         alert("Vous n'avez pas été déconnecté.\n  Veuillez réessayer.");
+        //       }
+        //     })
+        //     .fail(function () {
+        //       $('body').html('Fatal error');
+        //     });
+        //   } else {
+        //     alert("Vous n'avez pas été déconnecté.");
+        //   }
+        //   return false;
+        // });
 
     });
 }) ();
