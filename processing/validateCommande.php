@@ -60,7 +60,9 @@ if ($userId =="" || $creditCard=="" || $address=="" || !isset($_SESSION['cart'])
     }
 }
 
-
+if ($obj -> success == true) {
+    unset($_SESSION['cart']);
+}
 
 
 header('Cache-Control: no-cache, must-revalidate');

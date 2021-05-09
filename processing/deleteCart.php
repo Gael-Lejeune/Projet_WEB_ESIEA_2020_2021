@@ -4,7 +4,7 @@ session_start();
 
 // $_SESSION['cart'] = null;
 if (isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = null;
+    unset($_SESSION['cart']);
 }
 
 header('Location: '.$panierController);

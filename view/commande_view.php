@@ -21,36 +21,27 @@
             <h2>
                 Commandes
             </h2>
-            <h1>
-                Description du produit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Images du produit
-            </h4>
+            <?php
+            for ($i=0; $i < sizeof($shipmentArray); $i++) {
+                echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'</h1>';
+                echo '<h1>Arrivée prévue le : '.$shipmentArray[$i]['estimated_date'].'</h1>';
+                echo '<h1>Adresse de livraison : '.$shipmentArray[$i]['address'].'</h1>';
+                echo '<h1>Récapitulatif de la commande : </h1>';
+                $totalPrice = 0;
+                for ($j=0; $j < sizeof($shipmentArray[$i]['item_list']); $j++) {
+                    echo '<img src="'.$shipmentArray[$i]['item_list'][$j]['image_url'].'" alt="photo du produit" class="img2">';
+                    echo '<h1>'.$shipmentArray[$i]['item_list'][$j]['name'].' by '.$shipmentArray[$i]['item_list'][$j]['artist'].' : '.$shipmentArray[$i]['item_list'][$j]['amount'].'</h1>';
+                    $totalPrice += $shipmentArray[$i]['item_list'][$j]['amount']*$shipmentArray[$i]['item_list'][$j]['price'];
+                }
+                echo '<h1>Prix de la commande : '.$totalPrice.'$</h1>';
 
-            <h4>
-                Spécifications
-            </h4>
-            <h1>
-                Spécifications bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h4>
-                Commentaires
-            </h4>
-            <h1>
-                Commentaire 1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
-            <h1>
-                Commentaire 2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                <br>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            </h1>
+                echo '<br/>';
+                echo '<br/>';
+                echo '<br/>';
+
+            }
+
+            ?>
         </main>
 
         <?php display_menus($logged); ?>
