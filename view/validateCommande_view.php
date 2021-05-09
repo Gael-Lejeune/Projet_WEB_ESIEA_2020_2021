@@ -42,7 +42,7 @@
                                         <!-- <h1 class="albumInfo">'.$item['label'].'</h1> -->
                                         <h1 class="albumInfo">Quantité : '.$_SESSION['cart'][$j]['amount'].'</h1>
                                         <h1 class="albumInfo"><div class="price">'.$item['price'].'</div>$</h1>
-                                        </div>
+                                    </div>
                                 </a>
                             </div>';
                         }
@@ -52,45 +52,27 @@
                 $date = new DateTime();
                 $date->modify("+3 day");
                 echo '<h1>Date de reception estimée : '.$date->format("d/m/Y").' (3 jours)</h1>';
-            }
-            ?>
-            <?php
-            if (!isset($user['address'])){
-                echo 'Vous n\'avez pas encore enregistré d\'adresse de reception. Quelle addresse voulez vous utiliser ?<br/>';
-                echo '<img src="https://i.pinimg.com/564x/4e/dc/b4/4edcb460a940ff726549077935f57168.jpg" alt="erreur d\'affichage" class="img2" >
+                echo '<h1>Quelle addresse voulez vous utiliser ?</h1>
+                <img src="https://i.pinimg.com/564x/4e/dc/b4/4edcb460a940ff726549077935f57168.jpg" alt="erreur d\'affichage" class="img2" >
+                <h1>Adresse actuelle : <div id="address">'.$user['address'].'</div></h1>
                 <form id="form-address" name="changeAddressForm" action="'.$changeaddressProcessing.'" method="post">
-                  &emsp;&emsp;Nouvelle addresse postale : <input type="text" name="newAddress"/>
-                  <input type="submit" value="changer"/>
+                &emsp;&emsp;Nouvelle addresse postale : <input type="text" name="newAddress"/>
+                <input type="submit" value="changer"/>
                 </form>';
-            } else {
-                echo "Adresse postale actuelle : ".'<span id="address">'.$user['address'].'</span><br>';
-                echo '<img src="https://i.pinimg.com/564x/4e/dc/b4/4edcb460a940ff726549077935f57168.jpg" alt="erreur d\'affichage" class="img2" >
-                <form id="form-address" name="changeAddressForm" action="'.$changeaddressProcessing.'" method="post">
-                  &emsp;&emsp;Nouvelle addresse postale : <input type="text" name="newAddress"/>
-                  <input type="submit" value="changer"/>
-                  </form>';
-            }
-            echo '<br />';
-            if (!isset($user['credit_card'])){
-                echo 'Vous n\'avez pas encore enregistré de carte de paiement. Merci de rentrer votre carte :<br/>';
-                echo '<img src="https://previews.123rf.com/images/ascom73/ascom731902/ascom73190200028/119725676-credit-card-vector-icon-payment-concept-for-graphic-design-logo-web-site-social-media-mobile-app-ui-.jpg" alt="erreur d\'affichage" class="img2" >
+                echo '<br />';
+                echo '<h1>Quelle addresse voulez vous utiliser ?</h1>
+                <img src="https://previews.123rf.com/images/ascom73/ascom731902/ascom73190200028/119725676-credit-card-vector-icon-payment-concept-for-graphic-design-logo-web-site-social-media-mobile-app-ui-.jpg" alt="erreur d\'affichage" class="img2" >
+                <h1>Carte de crédit actuelle : <div id="carte">'.$user['credit_card'].'</div></h1>
                 <form id="form-card" name="changeCardForm" action="'.$changecardProcessing.'" method="post">
-                  &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
-                  <input type="submit" value="changer"/>
-                </form>';
-            } else {
-                echo "<br>Carte de crédit actuelle : ".'<span id="carte">'.$carte.'</span><br>';
-                echo '<img src="https://previews.123rf.com/images/ascom73/ascom731902/ascom73190200028/119725676-credit-card-vector-icon-payment-concept-for-graphic-design-logo-web-site-social-media-mobile-app-ui-.jpg" alt="erreur d\'affichage" class="img2" >
-                <form id="form-card" name="changeCardForm" action="'.$changecardProcessing.'" method="post">
-                  &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
-                  <input type="submit" value="changer"/>
-                </form>';
+                &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
+                <input type="submit" value="changer"/>
+                </form>
+                <div style="display:none" id="userId">'.$user['id_user'].'</div>';
             }
-            ?>
 
-            <a href="<?php echo $deleteCartProcessing; ?>">
-                <button name="button" class="buybutton">Valider la commande</button>
-            </a>
+            ?>
+            <h1 style="display:none" id="error">Veuillez remplir toutes les informations nécessaires</h1>
+                <button name="button" class="buybutton" id="validateButton">Valider la commande</button>
             <br />
             <br />
             <br />

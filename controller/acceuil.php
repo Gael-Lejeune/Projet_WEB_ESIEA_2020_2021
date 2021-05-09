@@ -10,6 +10,7 @@ start_page($accueil, $accueilCSS);
 session_start();
 $logged = logincheck();
 
+
 //Appel du model
 // require $accueilModel;
 
