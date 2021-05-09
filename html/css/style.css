@@ -12,7 +12,7 @@ h1 {
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     font-weight: normal;
-    /* text-align: justify; */
+    text-align: justify;
 }
 
 h2 {
@@ -163,8 +163,8 @@ body {
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
-    align-content: space-around;
-    justify-content: center;
+    align-items: start;
+    justify-content: space-around;
 }
 
 .flex-col {
@@ -173,8 +173,9 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: center;
-    max-width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    /* max-width: 50%; */
 }
 
 .flex-product {
@@ -191,7 +192,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    max-width: 45%;
+    width: 500px;
     /* flex-wrap: wrap; */
 }
 
@@ -661,13 +662,24 @@ label {
 }
 
 .red-error {
-  font-size: 11px;
-  color:  #900C3F;
+    font-size: 11px;
+    color:  #900C3F;
 }
 
 .tabAdmin {
-  margin: 0px;
-  padding: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    margin: 0px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo {
+    width: 40vh;
+    height: 40vh;
+    margin: 5vh;
+}
+
+.addButton {
+    width: 20px;
+    height: 20px;
 }

@@ -22,7 +22,6 @@
             <div class="flex-row">
                 <div class="flex-col">
                     <h2>Informations</h2>
-
                     <h1>
                         Ce site internet est un site de vente en ligne.<br>
                         En tant que client, vous pourrez y trouver des produits et les commander.<br>
@@ -35,7 +34,6 @@
 
                 <div class="flex-col">
                     <h2>Règles de navigation</h2>
-
                     <h1>
                         - Via le menu de gauche, vous pouvez accéder aux pages globales : acceuil, catégories, produits, connexion.<br>
                         - Une fois connecté, vous trouverez dans le menu de gauche soit votre panier, soit une page pour les modifications des bases de données.<br>
@@ -44,28 +42,28 @@
 
                 </div>
             </div>
+            <div class="flex-row">
+                <div>
+                    <h2>Quelques mots sur le projet</h2>
+                    <h1>
+                        Nous souhaitons concevoir un site web dynamique de vente en ligne.
+                        <br><br>
+                        Ce site proposera aux clients différents articles répartis en plusieurs catégories.
+                        Chaque article devra posséder sa propre fiche descriptive.
+                        En naviguant sur le site, les articles seront présentés sous forme de liste, et en cliquant sur l'un des articles on pourra accéder à sa description détaillée.
+                        Le client pourra alors choisir de l'ajouter à son panier.
+                        Il pourra ensuite consulter son panier, éventuellement supprimer ou modifier les quantités des articles choisis, puis valider sa commande.
+                        Pour valider une commande, il sera proposé au client d’enregistrer une carte si aucune n'est enregistrée à son nom ou alors de la modifier.
+                        Une fois la carte enregistrée ou bien modifiée, le client peut valider sa commande.
+                        Si la carte est valide, un message de validation de commande sera affiché à l’utilisateur.
+                        <br><br>
+                        Ce site permettra également aux administrateurs d'ajouter, de modifier ou de supprimer des produits.
+                        Les administrateurs pourront également changer les catégories et les utilisateurs.
+                    </h1>
+                </div>
+                <img src="../html/images/logo.png" alt="erreur d'affichage" class="logo" >
 
-            <p id="projet" style="margin-bottom:3cm;"></p>
-
-            <h2>Quelques mots sur le projet</h2>
-
-            <h1>
-                Nous souhaitons concevoir un site web dynamique de vente en ligne.
-                <br><br>
-                Ce site proposera aux clients différents articles répartis en plusieurs catégories.
-                Chaque article devra posséder sa propre fiche descriptive.
-                En naviguant sur le site, les articles seront présentés sous forme de liste, et en cliquant sur l'un des articles on pourra accéder à sa description détaillée.
-                Le client pourra alors choisir de l'ajouter à son panier.
-                Il pourra ensuite consulter son panier, éventuellement supprimer ou modifier les quantités des articles choisis, puis valider sa commande.
-                Pour valider une commande, il sera proposé au client d’enregistrer une carte si aucune n'est enregistrée à son nom ou alors de la modifier.
-                Une fois la carte enregistrée ou bien modifiée, le client peut valider sa commande.
-                Si la carte est valide, un message de validation de commande sera affiché à l’utilisateur.
-                <br><br>
-                Ce site permettra également aux administrateurs d'ajouter, de modifier ou de supprimer des produits.
-                Les administrateurs pourront également changer les catégories et les utilisateurs.
-            </h1>
-
-            <p id="createurs" style="margin-bottom:3cm;"></p>
+            </div>
 
             <h2 >Quelques mots sur les créateurs</h2>
             <h1>

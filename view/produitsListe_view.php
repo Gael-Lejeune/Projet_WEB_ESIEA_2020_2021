@@ -33,14 +33,14 @@
                         echo '
                         <a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content">
                         <img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
-                        <h1>'.$result[$i]['name'].
+                        <h4 class="description">'.$result[$i]['name'].
                         '<br>'
                         .$result[$i]['artist'].
                         '<br>'
                         .$result[$i]['label'].
                         '<br>'
                         .$result[$i]['price'].
-                        '$</h1>
+                        '$</h4>
                         </a>';
                     }
                 }

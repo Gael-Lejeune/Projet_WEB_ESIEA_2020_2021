@@ -24,8 +24,8 @@
                 <img src="../html/images/cart.png" alt="photo du produit" class="img2">';
             } else {
                 echo '<h4>Produits dans le panier</h4>
-                        <div class="flex-col">';
-                    for ($j=0; $j < sizeof($_SESSION['cart']); $j++) {
+                        <div class="flex-product">';
+                        for ($j=0; $j < sizeof($_SESSION['cart']); $j++) {
                         for ($i = 0; $i < sizeof($result); $i++){
                         if (isset($_SESSION['cart'][$j]) &&
                         $_SESSION['cart'][$j]['id'] == $result[$i]['id_item']) {
@@ -33,23 +33,25 @@
                             // var_dump($item);
                             $totalPrice += $item['price']*$_SESSION['cart'][$j]['amount'];
                             echo '
-                            <div id="flex-content'.$item['id_item'].'" class="flex-content">
-                                <a href="./produit.php?id='.$item['id_item'].'" class="flex-row">
-                                    <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
+                            <div id="flex-content'.$item['id_item'].'">
+                                <div class="flex-row">
+                                    <a href="./produit.php?id='.$item['id_item'].'">
+                                        <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
+                                    </a>
                                     <div class="flex-col">
-                                        <h1 class="albumInfo">'.$item['name'].'</h1>
-                                        <h1 class="albumInfo">'.$item['artist'].'</h1>
-                                        <h1 class="albumInfo">'.$item['label'].'</h1>
-                                        <h1 class="albumInfo"><div class="price">'.$item['price'].'</div>$</h1>
+                                    <h4>'.$item['name'].'<br/>
+                                    '.$item['artist'].'<br/>
+                                    '.$item['label'].'<br/>
+                                    <div class="price">'.$item['price'].'</div>$</h4>
                                     </div>
-                                </a>
-                                <div>
-                                    <button class="addToCartButton">Ajouter un exemplaire</button>
-                                    <p style="display:none">'.$item['id_item'].'</p>
+                                    <div class="flex-col">
+                                    <img src="../html/images/arrow.png" alt="photo du produit" class="addToCartButton addButton">
+                                        <p style="display:none">'.$item['id_item'].'</p>
                                         <h1 id="amount'.$item['id_item'].'">
                                             <p>Amount : </p><p class="amount">'.$_SESSION['cart'][$j]['amount'].'</p>
                                         </h1>
-                                    <button class="removeFromCartButton">Retirer un exemplaire</button>
+                                    <img src="../html/images/arrowd.png" alt="photo du produit" class="removeFromCartButton addButton">
+                                </div>
                                 </div>
                             </div>';
                         }

@@ -47,6 +47,7 @@ function display_menus($logged){
             echo '
             <li class="menuli"><a href="../controller/compte.php">Mon compte</a></li>
             <li class="menuli"><a href="../controller/admin.php">Ma page administrateur</a></li>
+            <li class="menuli"><a href="../processing/logout.php">Se déconnecter</a></li>
             ';
         } else {
             echo '
