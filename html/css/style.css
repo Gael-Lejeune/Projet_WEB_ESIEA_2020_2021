@@ -186,9 +186,9 @@ body {
 }
 
 .flex-content {
+    display: flex;
     color: black;
     text-decoration: none;
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -646,6 +646,7 @@ fieldset {
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-bottom: 25vh;
 }
 
 input {
@@ -682,4 +683,24 @@ label {
 .addButton {
     width: 20px;
     height: 20px;
+}
+
+.informations {
+    width: 50%;
+}
+
+.formli {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartElement {
+    width: 70vw;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
 }

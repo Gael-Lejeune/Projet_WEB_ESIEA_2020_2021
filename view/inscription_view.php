@@ -23,41 +23,48 @@
                     <legend>Formulaire d'inscription :</legend>
                     <form id="form-register" name="ForInscrip" action="<?php echo $adduserProcessing; ?>" method="post">
                       <ul>
-                        <li>
+                        <li class="formli">
                           <label for="nom">Nom :</label>
                           <input type="text" id="nom" name="nom">
-                          <p id="lastnameError" class="red-error"> </p>
                         </li>
-                        <li>
+                        <p id="lastnameError" class="red-error"> </p>
+                        <li class="formli">
                           <label for="prénom">Prénom :</label>
                           <input type="text" id="prénom" name="prénom">
-                          <p id="firstnameError" class="red-error"> </p>
                         </li>
-                        <li>
+                        <p id="firstnameError" class="red-error"> </p>
+                        <li class="formli">
                           <label for="nomU">Nom d'utilisateur :</label>
                           <input type="text" id="nomU" name="nomU">
-                          <p id="usernameError" class="red-error"> </p>
                         </li>
-                        <li>
+                        <p id="usernameError" class="red-error"> </p>
+                        <li class="formli">
                           <label for="mail">Adresse électronique :</label>
-                          <input type="text" id="mail" name="mail">
-                          <p id="mailError" class="red-error"> </p>
+                          <input type="email" id="mail" name="mail">
                         </li>
-                        <li>
+                        <p id="mailError" class="red-error"> </p>
+                        <li class="formli">
                           <label for="adr">Adresse postale* :</label>
                           <input type="text" id="adr" name="adr">
-                          <p class="red-error">*Ce champ peut rester vide.</p>
                         </li>
-                        <li>
+                        <p class="red-error">*Ce champ peut rester vide.</p>
+                        <li class="formli">
                           <label for="mdpU">Mot de passe :</label>
                           <input type="password" id="mdpU" name="mdpU">
-                          <p id="passwordError" class="red-error"> </p>
                         </li>
+                        <p id="passwordError" class="red-error"> </p>
                         <input class="formbutton" type="submit" value="Confirmer">
                       </ul>
                     </form>
                 </fieldset>
             </div>
+            <hr>
+            <h4 id="support">
+                Contacter le support
+            </h4>
+            <p>
+                <a href="mailto:support@exemple.fr">support@nomDuSite.fr</a>
+            </p>
         </main>
         <?php display_menus($logged); ?>
 

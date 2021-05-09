@@ -24,20 +24,24 @@
             <?php
             if (isset($shipmentArray)) {
                 for ($i=0; $i < sizeof($shipmentArray); $i++) {
-                    echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'</h1>';
-                    echo '<h1>Arrivée prévue le : '.$shipmentArray[$i]['estimated_date'].'</h1>';
-                    echo '<h1>Adresse de livraison : '.$shipmentArray[$i]['address'].'</h1>';
-                    echo '<h1>Récapitulatif de la commande : </h1>';
+                    echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'<br/>
+                    Arrivée prévue le : '.$shipmentArray[$i]['estimated_date'].'<br/>
+                    Adresse de livraison : '.$shipmentArray[$i]['address'].'</h1>
+                    <h1>Récapitulatif de la commande : </h1>';
                     $totalPrice = 0;
                     for ($j=0; $j < sizeof($shipmentArray[$i]['item_list']); $j++) {
-                        echo '<img src="'.$shipmentArray[$i]['item_list'][$j]['image_url'].'" alt="photo du produit" class="img2">';
-                        echo '<h1>'.$shipmentArray[$i]['item_list'][$j]['name'].' by '.$shipmentArray[$i]['item_list'][$j]['artist'].' : '.$shipmentArray[$i]['item_list'][$j]['amount'].'</h1>';
+                        echo '
+                        <div class="flex-row">
+                        <img src="'.$shipmentArray[$i]['item_list'][$j]['image_url'].'" alt="photo du produit" class="img2">
+                        <h4>'.$shipmentArray[$i]['item_list'][$j]['name'].' by '.$shipmentArray[$i]['item_list'][$j]['artist'].' : '.$shipmentArray[$i]['item_list'][$j]['amount'].'</h4>
+                        </div>
+                        ';
                         $totalPrice += $shipmentArray[$i]['item_list'][$j]['amount']*$shipmentArray[$i]['item_list'][$j]['price'];
                     }
                     echo '<h1>Prix de la commande : '.$totalPrice.'$</h1>';
 
                     echo '<br/>';
-                    echo '<br/>';
+                    echo '<hr/>';
                     echo '<br/>';
 
                 }

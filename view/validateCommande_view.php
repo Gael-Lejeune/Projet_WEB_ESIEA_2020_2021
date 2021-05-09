@@ -33,17 +33,18 @@
                             // var_dump($item);
                             $totalPrice += $item['price']*$_SESSION['cart'][$j]['amount'];
                             echo '
-                            <div id="flex-content'.$item['id_item'].'" class="flex-content">
-                                <a href="./produit.php?id='.$item['id_item'].'" class="flex-row">
-                                    <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
+                            <div id="flex-content'.$item['id_item'].'" class="cartElement">
+                                <div class="flex-row">
+                                    <a href="./produit.php?id='.$item['id_item'].'" class="flex-row">
+                                        <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
+                                    </a>
                                     <div class="flex-col">
-                                        <h1 class="albumInfo">'.$item['name'].'</h1>
-                                        <!-- <h1 class="albumInfo">'.$item['artist'].'</h1> -->
-                                        <!-- <h1 class="albumInfo">'.$item['label'].'</h1> -->
-                                        <h1 class="albumInfo">Quantité : '.$_SESSION['cart'][$j]['amount'].'</h1>
-                                        <h1 class="albumInfo"><div class="price">'.$item['price'].'</div>$</h1>
+                                    <h4>'.$item['name'].'<br/>
+                                    '.$item['artist'].'<br/>
+                                    '.$item['label'].'<br/>
+                                    <div class="price">'.$item['price'].'</div>$</h4>
                                     </div>
-                                </a>
+                                </div>
                             </div>';
                         }
                     }
@@ -53,21 +54,29 @@
                 $date->modify("+3 day");
                 echo '<h1>Date de reception estimée : '.$date->format("d/m/Y").' (3 jours)</h1>';
                 echo '<h1>Quelle addresse voulez vous utiliser ?</h1>
-                <img src="https://i.pinimg.com/564x/4e/dc/b4/4edcb460a940ff726549077935f57168.jpg" alt="erreur d\'affichage" class="img2" >
-                <h1>Adresse actuelle : <div id="address">'.$user['address'].'</div></h1>
-                <form id="form-address" name="changeAddressForm" action="'.$changeaddressProcessing.'" method="post">
-                &emsp;&emsp;Nouvelle addresse postale : <input type="text" name="newAddress"/>
-                <input type="submit" value="changer"/>
-                </form>';
+                <div class="flex-row">
+                    <img src="https://i.pinimg.com/564x/4e/dc/b4/4edcb460a940ff726549077935f57168.jpg" alt="erreur d\'affichage" class="img2" >
+                    <div class="flex-col">
+                        <h1>Adresse actuelle : <div id="address">'.$user['address'].'</div></h1>
+                        <form id="form-address" name="changeAddressForm" action="'.$changeaddressProcessing.'" method="post">
+                            &emsp;&emsp;Nouvelle addresse postale : <input type="text" name="newAddress"/>
+                            <input type="submit" value="changer"/>
+                        </form>
+                    </div>
+                </div>';
                 echo '<br />';
                 echo '<h1>Quelle addresse voulez vous utiliser ?</h1>
-                <img src="https://previews.123rf.com/images/ascom73/ascom731902/ascom73190200028/119725676-credit-card-vector-icon-payment-concept-for-graphic-design-logo-web-site-social-media-mobile-app-ui-.jpg" alt="erreur d\'affichage" class="img2" >
-                <h1>Carte de crédit actuelle : <div id="carte">'.$user['credit_card'].'</div></h1>
-                <form id="form-card" name="changeCardForm" action="'.$changecardProcessing.'" method="post">
-                &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
-                <input type="submit" value="changer"/>
-                </form>
-                <div style="display:none" id="userId">'.$user['id_user'].'</div>';
+                <div class="flex-row">
+                    <img src="https://previews.123rf.com/images/ascom73/ascom731902/ascom73190200028/119725676-credit-card-vector-icon-payment-concept-for-graphic-design-logo-web-site-social-media-mobile-app-ui-.jpg" alt="erreur d\'affichage" class="img2" >
+                    <div class="flex-col">
+                        <h1>Carte de crédit actuelle : <div id="carte">'.$user['credit_card'].'</div></h1>
+                        <form id="form-card" name="changeCardForm" action="'.$changecardProcessing.'" method="post">
+                            &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
+                            <input type="submit" value="changer"/>
+                        </form>
+                    </div>
+                    <div style="display:none" id="userId">'.$user['id_user'].'</div>
+                </div>';
             }
 
             ?>

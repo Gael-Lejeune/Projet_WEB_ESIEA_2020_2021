@@ -20,7 +20,7 @@
         <main class="HolyGrail-content">
 
             <div class="flex-row">
-                <div class="flex-col">
+                <div class="flex-col informations">
                     <h2>Informations</h2>
                     <h1>
                         Ce site internet est un site de vente en ligne.<br>
@@ -32,7 +32,7 @@
                     </h1>
                 </div>
 
-                <div class="flex-col">
+                <div class="flex-col informations">
                     <h2>Règles de navigation</h2>
                     <h1>
                         - Via le menu de gauche, vous pouvez accéder aux pages globales : acceuil, catégories, produits, connexion.<br>

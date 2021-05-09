@@ -23,16 +23,16 @@
                     <legend>Connexion client/admin : </legend>
                     <form id="form-connect" name="ForConnexion" action="<?php echo $connectuserProcessing; ?>" method="post">
                         <ul>
-                            <li>
+                            <li class="formli">
                                 <label for="nomU">Nom d'utilisateur :</label>
                                 <input type="text" id="nomU" name="nomU" placeholder="username">
-                                <p id="usernameError" class="red-error"> </p>
                             </li>
-                            <li>
+                            <p id="usernameError" class="red-error"> </p>
+                            <li class="formli">
                                 <label for="mdpU">Mot de passe :  </label>
                                 <input type="password" id="mdpU" name="mdpU" placeholder="password">
-                                <p id="passwordError" class="red-error"> </p>
                             </li>
+                            <p id="passwordError" class="red-error"> </p>
                             <li>
                                 <input class="formbutton" type="submit" value="Confirmer">
                             </li>
@@ -40,7 +40,6 @@
                     </form>
                 </fieldset>
             </div>
-            <p style="margin-bottom:3cm;"></p>
             <hr>
             <h4 id="support">
                 Contacter le support
