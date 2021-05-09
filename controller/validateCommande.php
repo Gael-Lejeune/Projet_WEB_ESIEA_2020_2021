@@ -12,9 +12,9 @@ $logged = logincheck();
 
 // var_dump($_SESSION);
 
-?>
+
 echo '<script src="../js/user_function.js"> </script>';
-<?php
+echo '<script src="../js/validateCommande.js"> </script>';
 //Appel du model
 require $validateCommandeModel;
 

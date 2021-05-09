@@ -1,5 +1,5 @@
 <?php
-var_dump($_SESSION);
+// var_dump($_SESSION);
 
 if (isset($_SESSION['cart']) && sizeof($_SESSION['cart'])!=0){
     $db = dtb_connect_PDO(); //connection a la base de donnée avec PDO
@@ -15,9 +15,10 @@ if (isset($_SESSION['cart']) && sizeof($_SESSION['cart'])!=0){
 
 
 
-    $query = $db->prepare('SELECT * FROM user WHERE id_user = ?');
+    $query = $db->prepare('SELECT * FROM user WHERE user_name = ?');
     $query->execute([$_SESSION['login']]);
     $user = $query->fetch(PDO::FETCH_ASSOC);
+    // var_dump($user);
 
     $totalPrice = null;
 }
