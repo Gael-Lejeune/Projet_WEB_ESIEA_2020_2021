@@ -23,7 +23,7 @@
           $nom_admin = $result_admin['user_name'];
           ?>
 
-            <h2 id="ajoutP">
+            <h2>
                 <?php
                     echo 'Bienvenue '.$nom_admin.'<br>';
                 ?>
@@ -34,36 +34,30 @@
             <hr/>
             <h2>Section produits</h2>
             <br>
-            <TABLE class="tabAdmin" BORDER="1">
-              <CAPTION>Produits enregistrés :</CAPTION>
-              <TR>
-                <TH> Nom du produit </TH>
-                <TH> Artiste </TH>
-                <TH> Date de publication </TH>
-                <TH> Catégorie </TH>
-                <TH> Description </TH>
-                <TH> Image </TH>
-                <TH> Prix </TH>
-                <TH> Quantité en stock </TH>
-              </TR>
-              <?php
-              for ($i = 0; $i < sizeof($result_items); $i++){
-                echo '
-                <TR>
-                <TH>'.$result_items[$i]['name'].'</TH>
-                <TD>'.$result_items[$i]['artist'].'</TD>
-                <TD>'.$result_items[$i]['release_date'].'</TD>
-                <TD>'.$result_items[$i]['label'].'</TD>
-                <TD>'.$result_items[$i]['description'].'</TD>
-                <TD> <img src="'.$result_items[$i]['image_url'].'" class="img2"></TD>
-                <TD>'.$result_items[$i]['price'].'</TD>
-                <TD>'.$result_items[$i]['amount'].'</TD>
-                </TR>';
-              }
-
-              ?>
-            </TABLE>
-            <h4 id="modifP">
+            <h4>
+              Modification d'un produit
+            </h4>
+            <h1>
+              <form id="form-select-item" name="selectItemform" action="<?php echo $selectitemProcessing; ?>" method="post">
+                <select id="itemnumber" name="itemnumber">
+                  <option value="-1">Sélectionner un produit :</option>
+                  <?php
+                  for ($i = 0; $i < sizeof($result_items); $i++){
+                    echo '<option value="'.$i.'">'.$result_items[$i]['name'].' - '.$result_items[$i]['artist'].'</option>';
+                  }
+                  ?>
+                </select>
+              </form>
+            </h1>
+            <form id="form-modify-item" name="modifyItemform" action="<?php echo $modifyitemProcessing; ?>" method="post">
+              <p id="zoneItem" class="form">
+                Veuillez sélectionner un produit pour en voir les caractéristiques.<br>
+                Pour le modifier, veuillez écrire les nouvelles valeurs dans les cases correspondantes.<br>
+                Pensez à enregistrer les modifications.
+              </p>
+              <input type="submit" style="display:none" value="Enregistrer les modifications sur le produit"/>
+            </form>
+            <h4>
                 Ajout d'un produit
             </h4>
             <h1>
@@ -71,15 +65,12 @@
                 <br>
                 Bla bla bla bla bla
             </h1>
-            <h4 id="suppP">
-                Modification d'un produit
-            </h4>
             <h1>
                 Bla bla bla bla bla
                 <br>
                 Bla bla bla bla bla
             </h1>
-            <h4 id="ajoutC">
+            <h4>
                 Suppression d'un produit
             </h4>
             <h1>
@@ -122,7 +113,7 @@
 
               ?>
             </TABLE>
-            <h4 id="modifC">
+            <h4>
                 Ajout d'une catégorie
             </h4>
             <h1>
@@ -130,7 +121,7 @@
                 <br>
                 Bla bla bla bla bla
             </h1>
-            <h4 id="suppC">
+            <h4>
                 Modification d'une catégorie
             </h4>
             <h1>
@@ -138,7 +129,7 @@
                 <br>
                 Bla bla bla bla bla
             </h1>
-            <h4 id="modifU">
+            <h4>
                 Suppression d'une catégorie
             </h4>
             <h1>
@@ -184,7 +175,7 @@
               ?>
             </TABLE>
 
-            <h4 id="suppU">
+            <h4>
                 Modification d'un utilisateur
             </h4>
             <h1>

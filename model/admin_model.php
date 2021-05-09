@@ -18,3 +18,6 @@
   $query4 = $db->prepare('SELECT * FROM item, category WHERE item.id_category = category.id_category');
   $query4->execute();
   $result_items = $query4->fetchAll(PDO::FETCH_ASSOC);
+
+  $_SESSION['tab_categories'] = $result_categories;
+  $_SESSION['tab_items'] = $result_items;

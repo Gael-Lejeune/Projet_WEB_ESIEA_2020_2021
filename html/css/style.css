@@ -328,6 +328,11 @@ div.gauche, div.droite {
     text-align: center;
 }
 
+.form {
+    text-align: center;
+    max-width: 904px;
+}
+
 
 /*************************************Menu*****************************************/
 

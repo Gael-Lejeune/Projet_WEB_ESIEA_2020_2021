@@ -3,6 +3,52 @@
     $(() => {
 
       //produits
+      $('#form-select-item').on('change', function () {
+        $('#zoneItem').fadeOut();
+        $.ajax({
+          url: $(this).attr('action'),
+          method: $(this).attr('method'),
+          data: $(this).serialize()
+        })
+        .done(function (data) {
+          if (data.success == true) {
+            $('#zoneItem').html(data.message).fadeIn();
+          } else {
+            $('#zoneItem').html(data.message).fadeIn();
+          }
+        })
+        .fail(function () {
+          $('body').html('Fatal error');
+        });
+        return false;
+      });
+
+
+      $('#form-modify-item').on('submit', function (e) {
+        e.preventDefault();
+        if (confirm("Êtes-vous certain de vouloir modifier ce produit ?")) {
+          // Code à éxécuter si le l'utilisateur clique sur "OK"
+          $.ajax({
+            url: $(this).attr('action'),
+            method: $(this).attr('method'),
+            data: $(this).serialize()
+          })
+          .done(function (data) {
+            if (data.success == true) {
+              alert(data.message);
+            } else {
+              alert(data.message);
+            }
+          })
+          .fail(function () {
+            $('body').html('Fatal error');
+          });
+        } else {
+          alert("Vous avez choisi de ne pas modifier ce produit.");
+        }
+        return false;
+      });
+
       $('#form-delete-item').on('submit', function (e) {
         e.preventDefault();
         if (confirm("Êtes-vous certain de vouloir supprimer ce produit ?")) {
@@ -23,7 +69,7 @@
               $('body').html('Fatal error');
           });
         } else {
-          alert("Vous avez choisi de ne pas supprimer cette produit.");
+          alert("Vous avez choisi de ne pas supprimer ce produit.");
         }
         return false;
       });
@@ -143,7 +189,7 @@
 
 
         $('#form-address').on('submit', function () {
-            $('#address').fadeOut();
+          $('#address').fadeOut();
             $.ajax({
                 url: $(this).attr('action'),
                 method: $(this).attr('method'),
@@ -153,7 +199,7 @@
                 //console.log(data);
                 //console.log(data.address);
                 if (data.success === true) {
-                    $('#address').html(data.address).fadeIn();
+                  $('#address').html(data.address).fadeIn();
                 }
                 alert(data.message);
 
