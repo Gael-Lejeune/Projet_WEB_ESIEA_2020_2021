@@ -32,7 +32,7 @@
                         // var_dump($result[$i]);
                         if ($result[$i]['amount'] == 0) {
                             echo '<a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content outOfStock">';
-                            echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
+                            echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img">
                             <h4 class="description">'.$result[$i]['name'].
                             '<br/>'
                             .$result[$i]['artist'].
@@ -42,7 +42,7 @@
                             </a>';
                         } else {
                             echo '<a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content">';
-                            echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
+                            echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img">
                             <h4 class="description">'.$result[$i]['name'].
                             '<br/>'
                             .$result[$i]['artist'].

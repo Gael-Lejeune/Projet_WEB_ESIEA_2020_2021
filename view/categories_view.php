@@ -24,7 +24,7 @@
                     // var_dump($result[$i]);
                     echo '
                             <a href="./produitsListe.php?category='.$result[$i]['label'].'"  class="flex-content">
-                                <img src="'.$result[$i]['category_image_url'].'" class="img2">
+                                <img src="'.$result[$i]['category_image_url'].'" class="img">
                                 <h1 class="description">'.$result[$i]['label'].'</h1>
                             </a>';
                 }

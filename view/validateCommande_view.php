@@ -21,7 +21,7 @@
             <?php
             if (!isset($_SESSION['cart']) || sizeof($_SESSION['cart'])==0) {
                 echo '<h2>Votre panier est vide.</h2>
-                <img src="../html/images/cart.png" alt="photo du produit" class="img2">';
+                <img src="../html/images/cart.png" alt="photo du produit" class="img">';
             } else {
                 echo '<h4>Produits dans le panier</h4>
                 <div class="flex-col">';
@@ -36,7 +36,7 @@
                             <div id="flex-content'.$item['id_item'].'" class="cartElement">
                             <div class="flex-row">
                             <a href="./produit.php?id='.$item['id_item'].'" class="flex-row">
-                            <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
+                            <img src="'.$item['image_url'].'" alt="photo du produit" class="img">
                             </a>
                             <div>
                             <h4 class="albumDescription">'.$item['name'].'</h4>

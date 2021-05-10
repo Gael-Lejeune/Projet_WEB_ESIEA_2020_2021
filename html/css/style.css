@@ -13,7 +13,6 @@ h1 {
     font-size: 20px;
     font-weight: normal;
     text-align: justify;
-    /* margin-right: 10px; */
 }
 
 h2 {
@@ -162,10 +161,8 @@ body {
     text-decoration: none;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
     align-items: start;
     justify-content: center;
-    /* justify-content: space-around; */
 }
 
 .flex-col {
@@ -176,7 +173,6 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    /* max-width: 50%; */
 }
 
 .flex-product {
@@ -195,7 +191,6 @@ body {
     align-items: center;
     width: 500px;
     margin: 5px;
-    /* flex-wrap: wrap; */
 }
 
 .HolyGrail-content {
@@ -217,127 +212,20 @@ body {
 
 /*************************************Photos*****************************************/
 
-.image {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 50%;
-    border-radius: 5px;
-}
-
 .img {
-    margin: 10px;
-    width: 30%;
-    /* height: 30%; */
-    box-shadow: 8px 8px 12px #aaa;
-    border-radius: 25px;
-}
-
-.img2 {
     margin: 5px;
     max-width: 20vh;
     border-radius: 10px;
-    /* height: 40%; */
 }
 
 .smallImage {
     margin: 5px;
     max-width: 10vh;
     border-radius: 5px;
-    /* height: 40%; */
 }
-
-.photosimg {
-    margin: 10px;
-    margin-bottom: 25px;
-    width: 510px;
-    height: 340px;
-    box-shadow: 8px 8px 12px #aaa;
-    border-radius: 25px;
-}
-
-.dessinimg {
-    margin: 10px;
-    margin-bottom: 25px;
-    width: 378px;
-    height: 533px;
-    box-shadow: 8px 8px 12px #aaa;
-    border-radius: 25px;
-}
-
-.travaux {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: baseline;
-    margin-bottom: 25px;
-    border-radius: 5px;
-}
-
-.pdf {
-    margin: 5px;
-    width: 600px;
-    height: 500px;
-    box-shadow: 8px 8px 12px #aaa;
-    border-radius: 5px;
-}
-
-.download {
-    display: flex;
-    margin: 30px;
-    width: 25%;
-    height: auto;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.downloadimg {
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-}
-
-video {
-    margin: 10px;
-    width: 500px;
-    height: 300px;
-    box-shadow: 8px 8px 12px #aaa;
-    border-radius: 5px;
-}
-
 
 
 /*************************************Form*****************************************/
-
-
-.answer{
-    border: ridge;
-    border-radius: 3px;
-    border-color: black;
-}
-
-.mail {
-    width: 300px;
-}
-
-.ameliorer {
-    width: 100%;
-    height: 100px;
-}
-
-div.gauche, div.droite {
-    font-variant: small-caps;
-    text-align: center;
-    line-height: 1.5;
-    width: 310px;
-}
-
-.align {
-    text-align: center;
-}
 
 .form {
     text-align: center;
@@ -349,11 +237,9 @@ div.gauche, div.droite {
 
 .HolyGrail-nav {
     position: fixed;
-    /* 12em is the width of the columns */
     flex: 0 0 2em;
     background: #232f3e;
     flex-direction: row;
-    /* box-shadow: 8px 8px 12px #131921; */
     order: -1;
     z-index: 3;
     width: 100%;
@@ -368,16 +254,6 @@ div.gauche, div.droite {
     padding: 0;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.pos {
-    background: #232f3e;
-    text-decoration: none;
-    display: block;
-    padding: 1em;
-    color: white;
-    border: solid rgba(0, 0, 0, 0);
-    border-radius: 25px;
 }
 
 .menu a {
@@ -396,7 +272,6 @@ div.gauche, div.droite {
     background: #232f3e;
     border-style: solid;
     border-color: white ;
-    /* border-width: 1px; */
 }
 
 /*************************************Ads*****************************************/
@@ -412,12 +287,7 @@ div.gauche, div.droite {
 }
 
 /*************************************Backtotop*****************************************/
-.buttonimg{
-    width: 19.45px;
-    height: 32.51px;
-}
 
-/* Bouton apparaissant lorsque l'utilisateur scroll */
 .bouton_scroll {
     position: fixed;
     opacity: 35%;
@@ -433,16 +303,6 @@ div.gauche, div.droite {
 .buybutton{
     right: 40px;
     position: absolute;
-}
-
-.visible {
-    animation: buttonappear ease-in 0.2s;
-    opacity: 1;
-}
-
-.invisible {
-    animation: buttondisappear ease-in 0.2s;
-    opacity: 0;
 }
 
 @keyframes buttonappear {
@@ -507,11 +367,6 @@ footer {
         margin : 20px;
     }
 
-    .profilimg {
-        width: 225px;
-        height: 225px;
-    }
-
     .headerflex{
         /* box-shadow: 128px 8px 12px #131921; */
     }
@@ -530,7 +385,6 @@ footer {
     }
 
     .HolyGrail-nav, .HolyGrail-ads {
-        /* 12em is the width of the columns */
         flex: 0 0 8em;
         top : 69.6px;
     }
@@ -544,19 +398,10 @@ footer {
         border-radius: 1px;
     }
 
-    .pos {
-        border-radius: 5px;
-    }
+
 
     .menuli {
-        /* border-top: 1px solid rgba(255,255,255,0.3); */
-        /* border-bottom: 1px solid rgba(0,0,0,0.1); */
         width: 100%;
-    }
-
-    .button{
-        right: 140px;
-        bottom: 40px;
     }
 
     .bouton_scroll {
@@ -565,19 +410,6 @@ footer {
     }
 }
 
-
-@media (max-width: 530px) {
-
-    .photosimg {
-        width: 331.5px;
-        height: 221px;
-    }
-
-    video {
-        width: 331.5px;
-        height: 221px;
-    }
-}
 
 @media (max-width: 400px) {
 
@@ -657,14 +489,12 @@ fieldset {
     display: flex;
     justify-content: center;
     align-content: center;
-    /* margin-bottom: 25vh; */
 }
 
 .leftFlex {
     display: flex;
     justify-content: start;
     align-content: center;
-    /* margin-bottom: 25vh; */
 }
 
 input {
@@ -746,7 +576,6 @@ label {
 .itemImage {
     margin: 10px;
     width: 20vw;
-    /* height: 30%; */
     box-shadow: 8px 8px 12px #aaa;
     border-radius: 25px;
 

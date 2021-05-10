@@ -64,7 +64,7 @@
                 }
             } else {
                 echo '<h2>Vous n\'avez encore effectué aucune commande.</h2>
-                <img src="../html/images/cart.png" alt="photo du produit" class="img2">';
+                <img src="../html/images/cart.png" alt="photo du produit" class="img">';
             }
             ?>
 
