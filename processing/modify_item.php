@@ -17,6 +17,7 @@ $artist = $_POST['artist'];
 $date = $_POST['date'];
 $category = $_POST['categorylabel'];
 $description = $_POST['description'];
+$url = $_POST['urlitem'];
 $price = $_POST['price'];
 $amount = $_POST['amount'];
 
@@ -47,6 +48,12 @@ if ($category != "") {
 if ($description != "") {
   $stmt = $db->prepare("UPDATE item SET description = ? WHERE id_item = ?");
   $stmt->execute([$description, $iditem]);
+  $obj -> success = true;
+}
+
+if ($url != "") {
+  $stmt = $db->prepare("UPDATE item SET image_url = ? WHERE id_item = ?");
+  $stmt->execute([$url, $iditem]);
   $obj -> success = true;
 }
 

@@ -232,8 +232,15 @@
                 <fieldset>
                     <form id="form-modify-user" name="modifyUserform" action="<?php echo $modifyuserProcessing; ?>" method="post">
                         <li class="formli">
-                            <label for="currentuser">Nom d'utilisateur actuel :</label>
-                            <input type="text" name="currentuser">
+                            <label for="currentuser">Nom d'utilisateur actuel : </label>
+                            <select id="currentuser" name="currentuser">
+                                <option value="-1">Sélectionner un utilisateur :</option>
+                                    <?php
+                                    for ($i = 0; $i < sizeof($result_users); $i++){
+                                        echo '<option value="'.$result_users[$i]['user_name'].'">'.$result_users[$i]['user_name'].'</option>';
+                                    }
+                                    ?>
+                            </select>
                         </li><br/>
                         <li class="formli">
                             <label for="usermodify">Nouveau nom d'utilisateur :</label>
