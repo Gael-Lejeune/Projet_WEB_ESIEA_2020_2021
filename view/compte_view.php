@@ -91,6 +91,7 @@
             </h4>
             <h1>
                 <form id="form-delete" name="deleteForm" action="<?php echo $deleteaccountProcessing; ?>" method="post">
+                    <input name="usersname" value="<?php echo $_SESSION['login']; ?>" type="hidden"/>
                     <input type="submit" value="supprimer le compte"/>
                 </form>
             </h1>
