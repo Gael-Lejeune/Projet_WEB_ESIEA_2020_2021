@@ -23,10 +23,15 @@
             </h2>
             <?php
             if (isset($shipmentArray)) {
-                for ($i=0; $i < sizeof($shipmentArray); $i++) {
+                for ($i=sizeof($shipmentArray)-1; $i >= 0; $i--) {
                     $totalPrice = 0;
-                    echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'</h1>
-                    <div class="cartElement">';
+                    if ($shipmentArray[$i]['estimated_date_format']<new DateTime()) {
+                        echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'</h1>
+                        <div class="cartElement pastShipment">';
+                    } else {
+                        echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'</h1>
+                        <div class="cartElement">';
+                    }
                     echo '<div class="flex-col">';
 
                     for ($j=0; $j < sizeof($shipmentArray[$i]['item_list']); $j++) {

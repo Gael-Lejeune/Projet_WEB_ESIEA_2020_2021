@@ -21,6 +21,7 @@ if (isset($shipments) && sizeof($shipments) != 0) {
         $shipment['order_date'] = new DateTime($shipments[$i]['order_date']);
         $shipment['order_date'] = $shipment['order_date']->format("d/m/Y");
         $shipment['estimated_date'] = new DateTime($shipments[$i]['estimated_date']);
+        $shipment['estimated_date_format'] = new DateTime($shipments[$i]['estimated_date']);
         $shipment['estimated_date'] = $shipment['estimated_date']->format("d/m/Y");
         $shipment['address'] = $shipments[$i]['address'];
         $itemList = array();
