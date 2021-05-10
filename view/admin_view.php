@@ -25,15 +25,17 @@
 
             <h2 class="pageTitle">
                 <?php
-                echo 'Bienvenue '.$nom_admin.'<br>';
+                echo 'Bienvenue '.$nom_admin.'<br/>';
                 ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
-
+            <br/>
+            <br/>
+            <br/>
             <hr/>
             <h2>Section produits</h2>
-            <br>
+            <br/>
             <h4>
                 Modification d'un produit
             </h4>
@@ -51,8 +53,8 @@
             </h1>
             <form id="form-modify-item" name="modifyItemform" action="<?php echo $modifyitemProcessing; ?>" method="post">
                 <p id="zoneItem" class="form">
-                    Sélectionnez un produit pour en voir les caractéristiques.<br>
-                    Pour le modifier, écrivez les nouvelles valeurs dans les cases correspondantes.<br>
+                    Sélectionnez un produit pour en voir les caractéristiques.<br/>
+                    Pour le modifier, écrivez les nouvelles valeurs dans les cases correspondantes.<br/>
                     Pensez à enregistrer les modifications.
                 </p>
             </form>
@@ -63,7 +65,7 @@
             <!-- <h4>
                 Ajout d'un produit
             </h4> -->
-            <div class="baseflex">
+            <div class="leftFlex">
                 <fieldset>
                     <legend>Ajout d'un produit</legend>
                     <form id="form-add-item" name="additemForm" action="<?php echo $addItemProcessing; ?>" method="post">
@@ -137,7 +139,8 @@
                     <input type="submit" value="supprimer le produit sélectionné"/>
                 </form>
             </h1>
-
+            <br/>
+            <br/>
             <hr/>
             <h2>Section catégories</h2>
             <h4>
@@ -157,15 +160,15 @@
             </h1>
             <form id="form-modify-category" name="modifyCategoryform" action="<?php echo $modifycategoryProcessing; ?>" method="post">
                 <p id="zoneCategory" class="form">
-                    Sélectionnez une catégorie pour en voir les caractéristiques.<br>
-                    Pour la modifier, écrivez les nouvelles valeurs dans les cases correspondantes.<br>
+                    Sélectionnez une catégorie pour en voir les caractéristiques.<br/>
+                    Pour la modifier, écrivez les nouvelles valeurs dans les cases correspondantes.<br/>
                     Pensez à enregistrer les modifications.
                 </p>
             </form>
             <h4>
                 Ajout d'une catégorie
             </h4>
-            <div class="baseflex">
+            <div class="leftFlex">
                 <fieldset>
                     <form id="form-add-category" name="addcategoryForm" action="<?php echo $addCategoryProcessing; ?>" method="post">
                         <ul>
@@ -200,10 +203,12 @@
                     <input type="submit" value="supprimer la catégorie sélectionnée"/>
                 </form>
             </h1>
-
+            <br/>
+            <br/>
+            <br/>
             <hr/>
             <h2>Section utilisateurs</h2>
-            <br>
+            <br/>
             <TABLE class="tabAdmin" BORDER="1">
                 <CAPTION>Utilisateurs enregistrés :</CAPTION>
                 <TR>
@@ -233,7 +238,7 @@
             <h4>
                 Modification d'un utilisateur
             </h4>
-            <div class="baseflex">
+            <div class="leftFlex">
                 <fieldset>
                     <form id="form-modify-user" name="modifyUserform" action="<?php echo $modifyuserProcessing; ?>" method="post">
                         <li class="formli">

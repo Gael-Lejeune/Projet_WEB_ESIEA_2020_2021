@@ -29,7 +29,7 @@
             ?>
 
             <h2 id="ajoutP" class="pageTitle">
-                <?php  echo 'Bienvenue <span id="nomTitre">'.$nom_client.'</span><br>';  ?>
+                <?php  echo 'Bienvenue <span id="nomTitre">'.$nom_client.'</span><br/>';  ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
@@ -38,9 +38,9 @@
                 Informations client
             </h2>
             <h1>
-                <?php  echo 'Nom : '.$nom.'<br>';  ?>
-                <?php  echo 'Prénom : '.$prenom.'<br>';  ?>
-                <?php  echo 'Mail : '.$mail.'<br>';  ?>
+                <?php  echo 'Nom : '.$nom.'<br/>';  ?>
+                <?php  echo 'Prénom : '.$prenom.'<br/>';  ?>
+                <?php  echo 'Mail : '.$mail.'<br/>';  ?>
             </h1>
             <!-- <h2 id="modifications"> Modifier les informations du compte </h2> -->
             <div class="baseflex" id="modifications">

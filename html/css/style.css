@@ -660,6 +660,13 @@ fieldset {
     /* margin-bottom: 25vh; */
 }
 
+.leftFlex {
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    /* margin-bottom: 25vh; */
+}
+
 input {
     height: 20px;
 }

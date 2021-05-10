@@ -34,21 +34,21 @@
                             echo '<a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content outOfStock">';
                             echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
                             <h4 class="description">'.$result[$i]['name'].
-                            '<br>'
+                            '<br/>'
                             .$result[$i]['artist'].
-                            '<br>'
+                            '<br/>'
                             .$result[$i]['label'].
-                            '<br>Rupture de stock</h4>
+                            '<br/>Rupture de stock</h4>
                             </a>';
                         } else {
                             echo '<a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content">';
                             echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
                             <h4 class="description">'.$result[$i]['name'].
-                            '<br>'
+                            '<br/>'
                             .$result[$i]['artist'].
-                            '<br>'
+                            '<br/>'
                             .$result[$i]['label'].
-                            '<br>'
+                            '<br/>'
                             .$result[$i]['price'].
                             '$</h4>
                             </a>';
