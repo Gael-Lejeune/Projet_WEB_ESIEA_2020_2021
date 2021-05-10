@@ -46,7 +46,6 @@ if ($userId =="" || $creditCard=="" || $address=="" || !isset($_SESSION['cart'])
     $rowString = '(' . rtrim(str_repeat('?,', $cols), ',') . '),';
     $valString = rtrim(str_repeat($rowString, $rows), ',');
     $query= $db->prepare("INSERT INTO item_list (shipment_id, item_id, amount) VALUES" .$valString);
-    // echo "INSERT INTO item_list (shipment_id, item_id, amount) VALUES" . $valString;
     $bindArray = array();
     array_walk_recursive($itemList, function($item) use (&$bindArray) {
         $bindArray[] = $item;

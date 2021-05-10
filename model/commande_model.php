@@ -1,6 +1,5 @@
 <?php
 $db = dtb_connect_PDO(); //connection a la base de donnée avec PDO
-// echo 'SELECT * FROM item, category WHERE item.id_category = category.id_category AND item.id_item IN ('.str_repeat('?, ', count($_SESSION['cart']) - 1) . '?)';
 $query = $db->prepare('SELECT shipment.id_shipment, shipment.order_date, shipment.estimated_date, shipment.address FROM shipment,user WHERE shipment.user_id = user.id_user AND user.user_name = ?');
 $query->execute([$_SESSION['login']]);
 $shipments = $query->fetchAll(PDO::FETCH_ASSOC);

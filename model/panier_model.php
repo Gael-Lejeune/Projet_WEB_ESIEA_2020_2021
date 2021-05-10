@@ -1,7 +1,6 @@
 <?php
 if (isset($_SESSION['cart']) && sizeof($_SESSION['cart'])!=0){
     $db = dtb_connect_PDO(); //connection a la base de donnée avec PDO
-    // echo 'SELECT * FROM item, category WHERE item.id_category = category.id_category AND item.id_item IN ('.str_repeat('?, ', count($_SESSION['cart']) - 1) . '?)';
     $query = $db->prepare('SELECT * FROM item, category WHERE item.id_category = category.id_category AND item.id_item IN ('.str_repeat('?, ', count($_SESSION['cart']) - 1) . '?)');
 
     $itemList = array();
