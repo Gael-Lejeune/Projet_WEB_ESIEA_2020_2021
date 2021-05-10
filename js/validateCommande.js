@@ -18,7 +18,7 @@
                 })
                 .done(function (data) {
                     if (data.success === true) {
-                        window.location = "../controller/commande.php";
+                        window.location = "../processing/fakePayment.php";
                     }
                 })
                 .fail(function () {

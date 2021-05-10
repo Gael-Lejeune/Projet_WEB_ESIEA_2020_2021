@@ -96,7 +96,9 @@
 
             ?>
             <h1 style="display:none" id="error">Veuillez remplir toutes les informations nécessaires</h1>
-            <button name="button" class="buybutton" id="validateButton">Valider la commande</button>
+            <?php if (isset($_SESSION['cart']) && sizeof($_SESSION['cart']) != 0)
+                echo '<button name="button" class="buybutton" id="validateButton">Valider la commande</button>';
+            ?>
             <br />
             <br />
             <br />
