@@ -65,8 +65,12 @@
                 $date = new DateTime();
                 $date->modify("+3 day");
                 echo '<h1>Date de reception estimée : '.$date->format("d/m/Y").'</h1>';
-                echo '<a href="'.$validateCommandeController.'">
-                        <button name="button" class="buybutton">Passer la commande</button>
+                if ($logged) {
+                    echo '<a href="'.$validateCommandeController.'">';
+                } else {
+                    echo '<a href="'.$connexionController.'">';
+                }
+                echo '<button name="button" class="buybutton">Passer la commande</button>
                     </a>
                     <br/>
                     <br/>
