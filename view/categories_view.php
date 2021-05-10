@@ -2,7 +2,7 @@
     <header class="headerflex">
         <img class="headerimg" src="../html/images/logo.png" alt="erreur d'affichage" >
         <ul>
-            <li class="title">Projet WEB</li>
+            <li class="title">Spautifaï</li>
             <li class="subtitle">Catégories Disponibles</li>
         </ul>
         <ul>

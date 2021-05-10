@@ -2,7 +2,7 @@
 
 // INDEX //
 
-$accueil='Nom : Accueil';
+$accueil='Spautifaï : Accueil';
 $accueilController='../controller/accueil.php';
 $accueilCSS='../html/css/style.css';
 $accueilView='../view/accueil_view.php';
@@ -14,61 +14,61 @@ $InscriptionController='../controller/Inscription.php';
 
 // GESTION UTILISATEUR //
 
-$categories='Nom : Catégories';
+$categories='Spautifaï : Catégories';
 $categoriesController='../controller/categories.php';
 $categoriesCSS='../html/css/style.css';
 $categoriesView='../view/categories_view.php';
 $categoriesModel='../model/categories_model.php';
 
-$commandes='Nom : Commandes';
+$commandes='Spautifaï : Commandes';
 $commandesController='../controller/commande.php';
 $commandesCSS='../html/css/style.css';
 $commandesView='../view/commande_view.php';
 $commandesModel='../model/commande_model.php';
 
-$validateCommande='Nom : Valider ma commande';
+$validateCommande='Spautifaï : Valider ma commande';
 $validateCommandeController='../controller/validateCommande.php';
 $validateCommandeCSS='../html/css/style.css';
 $validateCommandeView='../view/validateCommande_view.php';
 $validateCommandeModel='../model/validateCommande_model.php';
 
-$compte='Nom : Compte';
+$compte='Spautifaï : Compte';
 $compteController='../controller/compte.php';
 $compteCSS='../html/css/style.css';
 $compteView='../view/compte_view.php';
 $compteModel='../model/compte_model.php';
 
-$connexion='Nom : Connexion';
+$connexion='Spautifaï : Connexion';
 $connexionController='../controller/connexion.php';
 $connexionCSS='../html/css/style.css';
 $connexionView='../view/connexion_view.php';
 $connexionModel='../processing/connexion_processing.php';
 
-$inscription='Nom : Inscription';
+$inscription='Spautifaï : Inscription';
 $inscriptionController='../controller/formulaire_inscription.php';
 $inscriptionCSS='../html/css/style.css';
 $inscriptionView='../view/inscription_view.php';
 $inscriptionModel='../processing/inscription_processing.php';
 
-$pageAdmin='Nom : Administrateur';
+$pageAdmin='Spautifaï : Administrateur';
 $pageAdminController='../controller/admin.php';
 $pageAdminCSS='../html/css/style.css';
 $pageAdminView='../view/admin_view.php';
 $pageAdminModel='../model/admin_model.php';
 
-$panier='Nom : Panier';
+$panier='Spautifaï : Panier';
 $panierController='../controller/panier.php';
 $panierCSS='../html/css/style.css';
 $panierView='../view/panier_view.php';
 $panierModel='../model/panier_model.php';
 
-$produit='Nom : Produit';
+$produit='Spautifaï : Produit';
 $produitController='../controller/produit.php';
 $produitCSS='../html/css/style.css';
 $produitView='../view/produit_view.php';
 $produitModel='../model/produit_model.php';
 
-$produitsListe='Nom : Produits';
+$produitsListe='Spautifaï : Produits';
 $produitsListeController='../controller/produitsListe.php';
 $produitsListeCSS='../html/css/style.css';
 $produitsListeView='../view/produitsListe_view.php';
