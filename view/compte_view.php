@@ -55,7 +55,7 @@
                                 &emsp;&emsp;Nouvelle addresse postale :
                                 <input type="text" name="newAddress"/>
                             </li>
-                            <input class="formbutton" type="submit" value="changer"/>
+                            <input class="formbutton" type="submit" value="Changer"/>
                         </ul>
                     </form>
 
@@ -68,7 +68,7 @@
                                 &emsp;&emsp;Nouvelle carte :
                                 <input type="text" name="newCard"/>
                             </li>
-                            <input class="formbutton" type="submit" value="changer"/>
+                            <input class="formbutton" type="submit" value="Changer"/>
                         </ul>
                     </form>
 
@@ -81,20 +81,11 @@
                                 &emsp;&emsp;Nouveau nom d'utilisateur :
                                 <input type="text" name="newName"/>
                             </li>
-                            <input type="submit" value="changer"/>
+                            <input class="formbutton" type="submit" value="Changer"/>
                         </ul>
                     </form>
                 </fieldset>
             </div>
-
-            <h4 id="déconnexion">
-                Se déconnecter
-            </h4>
-            <h1>
-                <form id="form-logout" name="logoutForm" action="<?php echo $logoutProcessing; ?>" method="post">
-                    <input type="submit" value="déconnexion"/>
-                </form>
-            </h1>
             <h4 id="suppression">
                 Supprimer le compte
             </h4>

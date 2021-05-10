@@ -44,7 +44,6 @@ li {
     list-style: none;
 }
 
-
 .menuli {
     text-align: center;
     padding: 0px;
@@ -165,7 +164,8 @@ body {
     flex-direction: row;
     /* flex-wrap: wrap; */
     align-items: start;
-    justify-content: space-around;
+    justify-content: center;
+    /* justify-content: space-around; */
 }
 
 .flex-col {
@@ -194,6 +194,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 500px;
+    margin: 5px;
     /* flex-wrap: wrap; */
 }
 
@@ -430,7 +431,7 @@ div.gauche, div.droite {
 }
 
 .buybutton{
-    right: 0px;
+    right: 40px;
     position: absolute;
 }
 
@@ -656,7 +657,7 @@ fieldset {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-bottom: 25vh;
+    /* margin-bottom: 25vh; */
 }
 
 input {
@@ -668,8 +669,8 @@ label {
 }
 
 .formbutton {
-    right: 0px;
-    position: relative;
+    margin-left: 75%;
+    margin-top: 10px;
 }
 
 .red-error {
@@ -705,7 +706,7 @@ label {
 }
 
 .cartElement {
-    width: 70vw;
+    min-width: 70vw;
     color: black;
     text-decoration: none;
     display: flex;
@@ -713,6 +714,12 @@ label {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+    border: solid;
+    border-radius: 10px;
+    margin: 5px;
+    border-color: lightgray;
+    border-width: 2px;
+    padding-right: 20px;
 }
 
 .pageTitle {
@@ -746,4 +753,17 @@ th,td{
     background: rgb(255, 136, 136);
     color: white;
     border-radius: 20px;
+}
+
+.albumDescription {
+    font-size: 18px;
+    padding: 0px;
+    margin-top: 5px;
+    min-width: 100px;
+}
+
+.rightP {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
 }

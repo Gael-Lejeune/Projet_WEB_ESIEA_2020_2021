@@ -58,6 +58,13 @@
                     </form>
                 </fieldset>
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <hr>
             <h4 id="support">
                 Contacter le support

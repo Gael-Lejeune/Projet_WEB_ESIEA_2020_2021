@@ -18,17 +18,17 @@
 
     <div class="HolyGrail-body">
         <main class="HolyGrail-content">
-            <h2>
-                Commandes
+            <h2 class="pageTitle">
+                Vos commandes
             </h2>
             <?php
             if (isset($shipmentArray)) {
                 for ($i=0; $i < sizeof($shipmentArray); $i++) {
-                    echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'<br/>
-                    Arrivée prévue le : '.$shipmentArray[$i]['estimated_date'].'<br/>
-                    Adresse de livraison : '.$shipmentArray[$i]['address'].'</h1>
-                    <h1>Récapitulatif de la commande : </h1>';
                     $totalPrice = 0;
+                    echo '<h1>Commande du : '.$shipmentArray[$i]['order_date'].'</h1>
+                    <div class="cartElement">';
+                    echo '<div class="flex-col">';
+
                     for ($j=0; $j < sizeof($shipmentArray[$i]['item_list']); $j++) {
                         // var_dump($shipmentArray[0]);
                         echo '
@@ -39,11 +39,17 @@
                         <h4>
                         '.$shipmentArray[$i]['item_list'][$j]['name'].' by '.$shipmentArray[$i]['item_list'][$j]['artist'].'
                         </h4>
-                        <h4>Quantité : '.$shipmentArray[$i]['item_list'][$j]['amount'].'</h4>
+                        <h4 class="albumDescription">Quantité : '.$shipmentArray[$i]['item_list'][$j]['amount'].'</h4>
                         </div>
                         ';
                         $totalPrice += $shipmentArray[$i]['item_list'][$j]['amount']*$shipmentArray[$i]['item_list'][$j]['price'];
                     }
+                    echo '</div>
+                    <div class="flex-col">
+                    <h4 class="albumDescription">Arrivée prévue le : '.$shipmentArray[$i]['estimated_date'].'</h4>
+                    <h4 class="albumDescription">Adresse de livraison : '.$shipmentArray[$i]['address'].'</h4>
+                    </div>
+                    </div>';
                     echo '<h1>Prix de la commande : '.$totalPrice.'$</h1>';
 
                     echo '<br/>';

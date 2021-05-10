@@ -39,11 +39,9 @@
                     <?php echo $product_name;?>
                 </h2>
                 <div class="flex-row">
-                    <div class="image">
                         <?php
                         echo '<img class="itemImage" src="'.$image.'">';
                         ?>
-                    </div>
                     <div>
                         <?php echo '
                         <h4>
@@ -65,14 +63,14 @@
                     </div>
                     <p id="itemId" style="display:none"><?php echo $id; ?></p>
                 </div>
-                <h4>
-                    Description : <br/><?php echo $description; ?>
-                </h4>
-
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 <?php
                 if ($amount > 0) {
                     // code...
-                    echo '<p id="amount">Exemplaires dans le panier :';
+                    echo '<h1 id="amount" class="rightP">Exemplaires dans le panier : ';
                     if (isset($_SESSION['cart'])) {
                         for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
                             if (isset($_SESSION['cart'][$i]) && $_SESSION['cart'][$i]['id'] == $_GET['id']) {
@@ -87,11 +85,15 @@
                         echo "0";
                     }
 
-                    echo '</p>
+                    echo '</h1>
                     <button  id="addToCartButton" class="buybutton">Ajouter au panier</button>';
 
                 }
                 ?>
+                <h4 class="albumDescription">
+                    Description : <br/><?php echo $description; ?>
+                </h4>
+
             </div>
         </main>
 

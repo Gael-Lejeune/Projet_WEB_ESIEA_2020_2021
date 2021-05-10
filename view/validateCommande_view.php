@@ -38,14 +38,14 @@
                             <a href="./produit.php?id='.$item['id_item'].'" class="flex-row">
                             <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
                             </a>
-                            <div class="flex-col">
-                            <h4>'.$item['name'].'<br/>
-                            '.$item['artist'].'<br/>
-                            '.$item['label'].'<br/>
-                            <div class="price">'.$item['price'].'</div>$</h4>
+                            <div>
+                            <h4 class="albumDescription">'.$item['name'].'</h4>
+                            <h4 class="albumDescription">'.$item['artist'].'</h4>
+                            <h4 class="albumDescription">'.$item['label'].'</h4>
+                            <h1 class="albumDescription">Prix : <div class="price">'.$item['price'].'</div>$</h1>
                             </div>
                             </div>
-                            <h4>Quantité : '.$_SESSION['cart'][$j]['amount'].'</h4>
+                            <h4 class="albumDescription">Quantité : '.$_SESSION['cart'][$j]['amount'].'</h4>
                             </div>';
                         }
                     }
@@ -70,7 +70,7 @@
                                 &emsp;&emsp;Nouvelle addresse postale :
                                 <input type="text" name="newAddress"/>
                             </li>
-                            <input type="submit" value="changer"/>
+                            <input type="submit" value="Changer"/>
                         </ul>
                     </form>
                     <form id="form-card" name="changeCardForm" action="'.$changecardProcessing.'" method="post">
@@ -84,7 +84,7 @@
                             &emsp;&emsp;Nouvelle carte :
                             <input type="text" name="newCard"/>
                         </li>
-                        <input type="submit" value="changer"/>
+                        <input type="submit" value="Changer"/>
                         </ul>
                     </form>
                     <div style="display:none" id="userId">'.$user['id_user'].'</div>

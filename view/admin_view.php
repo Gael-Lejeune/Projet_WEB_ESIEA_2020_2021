@@ -23,7 +23,7 @@
             $nom_admin = $result_admin['user_name'];
             ?>
 
-            <h2>
+            <h2 class="pageTitle">
                 <?php
                 echo 'Bienvenue '.$nom_admin.'<br>';
                 ?>
@@ -56,11 +56,16 @@
                     Pensez à enregistrer les modifications.
                 </p>
             </form>
-            <h4>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <!-- <h4>
                 Ajout d'un produit
-            </h4>
+            </h4> -->
             <div class="baseflex">
                 <fieldset>
+                    <legend>Ajout d'un produit</legend>
                     <form id="form-add-item" name="additemForm" action="<?php echo $addItemProcessing; ?>" method="post">
                         <ul>
                             <li class="formli">

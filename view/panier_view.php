@@ -42,18 +42,18 @@
                                         <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
                                     </a>
                                     <div class="">
-                                        <h4>'.$item['name'].'</h4>
-                                        <h4>'.$item['artist'].'</h4>
-                                        <h4>'.$item['label'].'</h4>
-                                        <h4 id="stock'.$item['id_item'].'">Disponible :<div class="stock">'.$item['amount'].'</div></h4>
-                                        <div class="price">'.$item['price'].'</div>$</h4>
+                                        <h4 class="albumDescription">'.$item['name'].'</h4>
+                                        <h4 class="albumDescription">'.$item['artist'].'</h4>
+                                        <h4 class="albumDescription">'.$item['label'].'</h4>
+                                        <h1 class="albumDescription" id="stock'.$item['id_item'].'">Disponible :<div class="stock">'.$item['amount'].'</div></h1>
+                                        <h1 class="albumDescription">Prix : <div class="price">'.$item['price'].'</div>$</h1>
                                     </div>
                                 </div>
                                 <div class="flex-col">
                                     <img src="../html/images/arrow.png" alt="photo du produit" class="addToCartButton addButton">
                                     <p style="display:none">'.$item['id_item'].'</p>
                                     <h1 id="amount'.$item['id_item'].'">
-                                        <p>Amount : </p><p class="amount">'.$_SESSION['cart'][$j]['amount'].'</p>
+                                        <p>Quantité : </p><p class="amount">'.$_SESSION['cart'][$j]['amount'].'</p>
                                     </h1>
                                     <img src="../html/images/arrowd.png" alt="photo du produit" class="removeFromCartButton addButton">
                                 </div>
@@ -77,7 +77,10 @@
                     <br/>
                     <a href="'.$deleteCartProcessing.'">
                         <button name="button" class="buybutton">Vider le panier</button>
-                    </a>';
+                    </a>
+                    <br/>
+                    <br/>
+                    ';
             }
             ?>
 
