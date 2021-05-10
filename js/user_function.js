@@ -32,7 +32,7 @@
                 data: $(this).serialize()
             })
             .done(function (data) {
-                if (data.success === true) {
+                if (data.success == true) {
                     $('#carte').html(data.card).fadeIn();
                 }
                 alert(data.message);
