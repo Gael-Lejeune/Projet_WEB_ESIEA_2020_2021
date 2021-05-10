@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS `item`;
 CREATE TABLE IF NOT EXISTS `item` (
   `id_item` int NOT NULL AUTO_INCREMENT,
   `id_category` int NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `price` int NOT NULL,
   `amount` int NOT NULL,
   `description` varchar(500) NOT NULL,
