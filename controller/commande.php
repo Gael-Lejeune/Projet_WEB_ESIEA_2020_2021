@@ -10,10 +10,18 @@ start_page($commandes, $commandesCSS);
 session_start();
 $logged = logincheck();
 
-//Appel du model
-require $commandesModel;
+if (!$logged) {
+	echo '<script>
+    alert("Page non disponible, vous n\'êtes pas connecté.");
+    window.location = "../controller/accueil.php";
+  </script> ';
+}
+else {
+  //Appel du model
+  require $commandesModel;
 
-//Affichage de la page
-require $commandesView;
+  //Affichage de la page
+  require $commandesView;
+}
 
 end_page();
