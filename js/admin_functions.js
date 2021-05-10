@@ -27,7 +27,7 @@
       $('#form-modify-item').on('submit', function (e) {
         e.preventDefault();
         if (confirm("Êtes-vous certain de vouloir modifier ce produit ?")) {
-          // Code à éxécuter si le l'utilisateur clique sur "OK"
+          // Code à éxécuter si le l'administrateur clique sur "OK"
           $.ajax({
             url: $(this).attr('action'),
             method: $(this).attr('method'),
@@ -77,7 +77,6 @@
                   $('#priceaddError').html(data.priceMessage).fadeIn();
                   $('#amountaddError').html(data.amountMessage).fadeIn();
                 }
-
             })
             .fail(function () {
                 $('body').html('Fatal error');
@@ -88,7 +87,7 @@
       $('#form-delete-item').on('submit', function (e) {
         e.preventDefault();
         if (confirm("Êtes-vous certain de vouloir supprimer ce produit ?")) {
-          // Code à éxécuter si le l'utilisateur clique sur "OK"
+          // Code à éxécuter si le l'administrateur clique sur "OK"
           $.ajax({
               url: $(this).attr('action'),
               method: $(this).attr('method'),
@@ -135,7 +134,7 @@
       $('#form-modify-category').on('submit', function (e) {
         e.preventDefault();
         if (confirm("Êtes-vous certain de vouloir modifier cette catégorie ?")) {
-          // Code à éxécuter si le l'utilisateur clique sur "OK"
+          // Code à éxécuter si le l'administrateur clique sur "OK"
           $.ajax({
             url: $(this).attr('action'),
             method: $(this).attr('method'),
@@ -173,7 +172,6 @@
                   $('#labelError').html(data.labelMessage).fadeIn();
                   $('#urlError').html(data.urlMessage).fadeIn();
                 }
-
             })
             .fail(function () {
                 $('body').html('Fatal error');
@@ -184,7 +182,7 @@
       $('#form-delete-category').on('submit', function (e) {
         e.preventDefault();
         if (confirm("Êtes-vous certain de vouloir supprimer cette catégorie ?")) {
-          // Code à éxécuter si le l'utilisateur clique sur "OK"
+          // Code à éxécuter si le l'administrateur clique sur "OK"
           $.ajax({
               url: $(this).attr('action'),
               method: $(this).attr('method'),
@@ -208,27 +206,29 @@
 
 
       //utilisateurs
-      $('#form-modify-user').on('submit', function () {
+      $('#form-modify-user').on('submit', function (e) {
+        e.preventDefault();
+        if ( confirm("Toute modification doit être faite avec l'accord de l'utilisateur concerné.\nCliquez sur 'OK' si vous l'avez, ou annulez.") ) {
+          // Code à éxécuter si le l'administrateur clique sur "OK"
           $.ajax({
               url: $(this).attr('action'),
               method: $(this).attr('method'),
               data: $(this).serialize()
           })
           .done(function (data) {
-            if ( confirm("Vous allez modifier un utilisateur.\n   Cliquez sur 'OK' pour confirmer, ou annulez.") ) {
-                // Code à éxécuter si le l'utilisateur clique sur "OK"
                 if (data.success === true) {
                   alert(data.message);
-                  window.location = "../controller/inscription.php";
                 } else {
                   alert(data.message);
                 }
-            }
           })
           .fail(function () {
               $('body').html('Fatal error');
           });
-          return false;
+        } else {
+          alert("Vous avez choisi de ne pas modifier l'utilisateur.");
+        }
+        return false;
       });
 
 
@@ -256,42 +256,6 @@
         }
         return false;
       });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        $('#form-address').on('submit', function () {
-          $('#address').fadeOut();
-            $.ajax({
-                url: $(this).attr('action'),
-                method: $(this).attr('method'),
-                data: $(this).serialize()
-            })
-            .done(function (data) {
-                //console.log(data);
-                //console.log(data.address);
-                if (data.success === true) {
-                  $('#address').html(data.address).fadeIn();
-                }
-                alert(data.message);
-
-            })
-            .fail(function () {
-                $('body').html('Fatal error');
-            });
-            return false;
-        });
 
     });
 }) ();

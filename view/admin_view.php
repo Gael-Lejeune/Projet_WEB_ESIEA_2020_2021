@@ -218,11 +218,22 @@
             <h4>
                 Modification d'un utilisateur
             </h4>
-            <h1>
-                Bla bla bla bla bla
-                <br>
-                Bla bla bla bla bla
-            </h1>
+            <form id="form-modify-user" name="modifyUserform" action="<?php echo $modifyuserProcessing; ?>" method="post">
+              Nom d'utilisateur actuel : <input type="text" name="currentuser">
+              <br><br>
+              Nouveau nom d'utilisateur : <input type="text" name="usermofify">
+              Nom : <input type="text" name="namemofify">
+              Prénom : <input type="text" name="firstnamemofify">
+              <br>Mot de passe : <input type="text" name="pwdmofify">
+              Adresse électronique : <input type="mail" name="mailmofify">
+              Adresse postale : <input type="text" name="addressmofify">
+              <br>Rôle : <select name="rolemofify">
+              <option value="">Sélectionnez un rôle</option>
+              <option value="client">client</option>
+              <option value="admin">administrateur</option>
+              </select>
+                <input type="submit" value="enregistrer les modifications"/>
+            </form>
             <h4>
                 Suppression d'un utilisateur
             </h4>

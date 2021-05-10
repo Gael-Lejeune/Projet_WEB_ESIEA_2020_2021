@@ -20,7 +20,7 @@ if ($_SESSION['role']=='client') {
 
 } else if ($_SESSION['role']=='admin') {
   //si l'utilisateur identifié est un administrateur
-  $condition = $db->prepare("SELECT * FROM user  WHERE user_name = ?");
+  $condition = $db->prepare("SELECT role FROM user  WHERE user_name = ?");
   $condition->execute([$_POST['usersname']]);
   $condition = $condition->fetch();
 
