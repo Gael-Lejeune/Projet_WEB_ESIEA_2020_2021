@@ -13,10 +13,17 @@ $db = dtb_connect_PDO ();
 //Récupération des champs
 $idcategory = $_POST['idcategory'];
 $nameCategory = $_POST['nameCategory'];
+$url = $_POST['urlcategory'];
 
 if ($nameCategory != "") {
   $stmt = $db->prepare("UPDATE category SET label = ? WHERE id_category = ?");
   $stmt->execute([$nameCategory, $idcategory]);
+  $obj -> success = true;
+}
+
+if ($url != "") {
+  $stmt = $db->prepare("UPDATE category SET category_image_url = ? WHERE id_category = ?");
+  $stmt->execute([$url, $idcategory]);
   $obj -> success = true;
 }
 

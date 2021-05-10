@@ -75,6 +75,8 @@ if($condition) {
     $obj -> message = "L'utilisateur a été modifié.";
   }
 
+} else {
+  $obj -> message = "Veuillez choisir un utilisateur.";
 }
 
 

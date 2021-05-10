@@ -44,7 +44,7 @@ if ($numitem >= 0 && $numitem < sizeof($result_items)) {
   </TR>
   <TR>
   <TD>'.$result_items[$numitem]['description'].'<br><input type="text" name="description"></input></TD>
-  <TD> <img src="'.$result_items[$numitem]['image_url'].'" class="img2"></TD>
+  <TD> <img src="'.$result_items[$numitem]['image_url'].'" class="img2"><br><input type="url" name="urlitem"></input></TD>
   <TD>'.$result_items[$numitem]['price'].'<br><input type="number" name="price"></input></TD>
   <TD>'.$result_items[$numitem]['amount'].'<br><input type="number" name="amount"></input></TD>
   </TR>

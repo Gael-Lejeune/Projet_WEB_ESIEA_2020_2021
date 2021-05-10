@@ -5,18 +5,31 @@ session_start();
 $obj = new stdClass();
 
 $db = dtb_connect_PDO ();
-$newusercard = $_REQUEST['newCard'];
+$newusercard = $_POST['newCard'];
 $nom_client = $_SESSION['login'];
 
-$stmt = $db->prepare("UPDATE user SET credit_card = ? WHERE user_name = ?");
-if($stmt->execute([$newusercard, $nom_client])){
-  $obj -> success = true;
-  $obj -> card = $newusercard;
-  $obj -> message = "Carte changée";
-} else {
+try {
+  $num = (int)$newusercard;
+  if(strlen($num)==16){
+    $stmt = $db->prepare("UPDATE user SET credit_card = ? WHERE user_name = ?");
+    if($stmt->execute([$num, $nom_client])){
+      $obj -> success = true;
+      $obj -> card = $num;
+      $obj -> message = "Carte changée";
+    } else {
+      $obj -> success = false;
+      $obj -> message = "Veuillez entrer une carte valide.";
+    }
+  }  else {
+    $obj -> success = false;
+    $obj -> message = "Veuillez entrer une carte valide (16 chiffres).";
+  }
+} catch (\Exception $e) {
   $obj -> success = false;
-  $obj -> message = "Veuillez entrer une carte valide.";
+  $obj -> message = "Veuillez entrer une carte valide (16 chiffres).";
 }
+
+
 
 
 header('Cache-Control: no-cache, must-revalidate');
