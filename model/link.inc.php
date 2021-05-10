@@ -2,7 +2,7 @@
 
 // INDEX //
 
-$accueil='Nom : accueil';
+$accueil='Nom : Accueil';
 $accueilController='../controller/accueil.php';
 $accueilCSS='../html/css/style.css';
 $accueilView='../view/accueil_view.php';
