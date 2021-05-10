@@ -95,7 +95,7 @@
             <br/>
             <h1>
                 Angélique PROUX :<br/>
-                Bla bla bla bla bla
+                Passionnée de musique et future ingénieure.
             </h1>
 
             <div class="address">
