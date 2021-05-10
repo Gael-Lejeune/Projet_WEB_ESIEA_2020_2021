@@ -7,10 +7,6 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
 DROP TABLE IF EXISTS `item`;
 CREATE TABLE IF NOT EXISTS `item` (
   `id_item` int NOT NULL AUTO_INCREMENT,
@@ -71,4 +67,28 @@ ALTER TABLE `item_list`
 
 ALTER TABLE `shipment`
   ADD CONSTRAINT `shipment_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  INSERT INTO `category` (`id_category`, `label`, `category_image_url`) VALUES
+  (1, 'Soundtrack', 'https://blog.musicteachershelper.com/wp-content/images/soundtrack.jpg'),
+  (2, 'Pop', 'https://www.europavox.com/wp-content/uploads/2019/01/david-byrne-pop.jpeg'),
+  (3, 'Rock', 'https://www.webstickersmuraux.com/fr/img/asmu272-jpg/folder/products-listado-merchant/autocollants-rock-and-roll-homer-.jpg'),
+  (4, 'K-Pop', 'https://media.istockphoto.com/vectors/handdrawn-orangepink-kpop-lettering-sticker-vector-id1176672144?k=6&m=1176672144&s=612x612&w=0&h=SzqQYOaonu2FdbAuTvryw3CsiCW0De8Y2GGAVXMLgvw='),
+  (5, 'Rap', 'https://blogs.chillingfrogs.com/blogb024/wp-content/uploads/sites/478/2019/04/mot-neon-rap-microphone-dans-contour-flamme_1262-11901.jpg'),
+  (6, 'J-Pop', 'http://pm1.narvii.com/6626/423ccbb355bd8398fc497753ea85650ef028cab2_00.jpg');
+
+
 COMMIT;
