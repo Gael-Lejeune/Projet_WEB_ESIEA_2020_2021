@@ -12,13 +12,13 @@ $db = dtb_connect_PDO ();
 
 //Récupération des champs
 $currentname = $_POST['currentuser'];
-$username = $_POST['usermofify'];
-$name = $_POST['namemofify'];
-$firstname = $_POST['firstnamemofify'];
-$pwd = $_POST['pwdmofify'];
-$mail = $_POST['mailmofify'];
-$address = $_POST['addressmofify'];
-$role = $_POST['rolemofify'];
+$username = $_POST['usermodify'];
+$name = $_POST['namemodify'];
+$firstname = $_POST['firstnamemodify'];
+$pwd = $_POST['pwdmodify'];
+$mail = $_POST['mailmodify'];
+$address = $_POST['addressmodify'];
+$role = $_POST['rolemodify'];
 
 
 $condition = $db->prepare("SELECT id_user FROM user  WHERE user_name = ?");

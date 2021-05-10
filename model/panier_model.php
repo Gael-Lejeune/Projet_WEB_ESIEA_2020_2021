@@ -11,10 +11,10 @@ if (isset($_SESSION['cart']) && sizeof($_SESSION['cart'])!=0){
 
     $query->execute($itemList);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($_SESSION['cart']);
+    // var_dump($_SESSION['cart']);
     // $_SESSION['cart'] = null;
     $totalPrice = null;
 
-    var_dump($result);
+    // var_dump($result);
 
 }

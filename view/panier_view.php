@@ -41,7 +41,7 @@
                                     <a href="./produit.php?id='.$item['id_item'].'">
                                         <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
                                     </a>
-                                    <div class="flex-col">
+                                    <div class="">
                                         <h4>'.$item['name'].'</h4>
                                         <h4>'.$item['artist'].'</h4>
                                         <h4>'.$item['label'].'</h4>

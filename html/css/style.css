@@ -240,6 +240,13 @@ body {
     /* height: 40%; */
 }
 
+.smallImage {
+    margin: 5px;
+    max-width: 10vh;
+    border-radius: 5px;
+    /* height: 40%; */
+}
+
 .photosimg {
     margin: 10px;
     margin-bottom: 25px;
@@ -725,4 +732,12 @@ label {
     box-shadow: 8px 8px 12px #aaa;
     border-radius: 25px;
 
+}
+
+th,td{
+    padding: 5px;
+}
+
+.tabAdmin{
+    border-collapse: collapse;
 }
