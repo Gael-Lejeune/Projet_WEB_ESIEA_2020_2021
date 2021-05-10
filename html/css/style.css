@@ -741,3 +741,9 @@ th,td{
 .tabAdmin{
     border-collapse: collapse;
 }
+
+.outOfStock {
+    background: rgb(255, 136, 136);
+    color: white;
+    border-radius: 20px;
+}

@@ -28,7 +28,7 @@ function end_page(){ // fonction qui affiche la fin de la partie html
 function display_menus($logged){
     echo '<nav class="HolyGrail-nav">
         <ul class="menu">
-            <li class="menuli"><a href="../controller/acceuil.php">Acceuil</a></li>
+            <li class="menuli"><a href="../controller/Accueil.php">accueil</a></li>
             <li class="menuli"><a href="../controller/produitsListe.php">Produits</a></li>
             <li class="menuli"><a href="../controller/categories.php">Catégories</a></li>
         </ul>

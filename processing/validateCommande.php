@@ -54,6 +54,10 @@ if ($userId =="" || $creditCard=="" || $address=="" || !isset($_SESSION['cart'])
 
     if ($query->execute($bindArray)) {
         $obj -> success = true;
+        for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
+            $stmt = $db->prepare("UPDATE item SET amount = amount - ? WHERE id_item = ?");
+            $stmt->execute([$_SESSION['cart'][$i]['amount'], $_SESSION['cart'][$i]['id']]);
+        }
     } else {
         $obj -> success = false;
         $obj -> message = "Something's wrong";

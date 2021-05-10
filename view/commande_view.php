@@ -30,8 +30,9 @@
                     <h1>Récapitulatif de la commande : </h1>';
                     $totalPrice = 0;
                     for ($j=0; $j < sizeof($shipmentArray[$i]['item_list']); $j++) {
+                        // var_dump($shipmentArray[0]);
                         echo '
-                        <a href="./produit.php?id='.$shipmentArray[$i]['item_list'][$j]['image_url'].'">
+                        <a href="./produit.php?id='.$shipmentArray[$i]['item_list'][$j]['id_item'].'">
                         <div class="flex-content">
                         <img src="'.$shipmentArray[$i]['item_list'][$j]['image_url'].'" alt="photo du produit" class="smallImage">
                         </a>

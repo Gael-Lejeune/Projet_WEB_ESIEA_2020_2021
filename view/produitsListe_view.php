@@ -30,18 +30,30 @@
                 } else {
                     for ($i = 0; $i < sizeof($result); $i++){
                         // var_dump($result[$i]);
-                        echo '
-                        <a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content">
-                        <img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
-                        <h4 class="description">'.$result[$i]['name'].
-                        '<br>'
-                        .$result[$i]['artist'].
-                        '<br>'
-                        .$result[$i]['label'].
-                        '<br>'
-                        .$result[$i]['price'].
-                        '$</h4>
-                        </a>';
+                        if ($result[$i]['amount'] == 0) {
+                            echo '<a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content outOfStock">';
+                            echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
+                            <h4 class="description">'.$result[$i]['name'].
+                            '<br>'
+                            .$result[$i]['artist'].
+                            '<br>'
+                            .$result[$i]['label'].
+                            '<br>Rupture de stock</h4>
+                            </a>';
+                        } else {
+                            echo '<a href="./produit.php?id='.$result[$i]['id_item'].'" class="flex-content">';
+                            echo '<img src="'.$result[$i]['image_url'].'" alt="photo du produit" class="img2">
+                            <h4 class="description">'.$result[$i]['name'].
+                            '<br>'
+                            .$result[$i]['artist'].
+                            '<br>'
+                            .$result[$i]['label'].
+                            '<br>'
+                            .$result[$i]['price'].
+                            '$</h4>
+                            </a>';
+                        }
+
                     }
                 }
                 ?>

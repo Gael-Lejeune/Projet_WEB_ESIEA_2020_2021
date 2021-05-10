@@ -2,11 +2,11 @@
 
 // INDEX //
 
-$accueil='Nom : Acceuil';
-$accueilController='../controller/acceuil.php';
+$accueil='Nom : accueil';
+$accueilController='../controller/accueil.php';
 $accueilCSS='../html/css/style.css';
-$accueilView='../view/acceuil_view.php';
-$accueilModel='../model/acceuil_model.php';
+$accueilView='../view/accueil_view.php';
+$accueilModel='../model/accueil_model.php';
 
 $CategoriesController='../controller/Categories.php';
 $ConnexionController='../controller/Connexion.php';

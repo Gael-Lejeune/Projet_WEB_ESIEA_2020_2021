@@ -58,7 +58,7 @@
                         <h4>
                             Date de sortie : '.$date.'
                         </h4>
-                        <h4>
+                        <h4 id="stock">
                             Restants : '.$amount.'
                         </h4>
                         '; ?>
@@ -68,8 +68,11 @@
                 <h4>
                     Description : <br/><?php echo $description; ?>
                 </h4>
-                <p id="amount">Exemplaires dans le panier :
-                    <?php
+
+                <?php
+                if ($amount > 0) {
+                    // code...
+                    echo '<p id="amount">Exemplaires dans le panier :';
                     if (isset($_SESSION['cart'])) {
                         for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
                             if (isset($_SESSION['cart'][$i]) && $_SESSION['cart'][$i]['id'] == $_GET['id']) {
@@ -83,10 +86,12 @@
                     } else {
                         echo "0";
                     }
-                    ?>
-                </p>
-                <button  id="addToCartButton" class="buybutton">Ajouter au panier</button>
 
+                    echo '</p>
+                    <button  id="addToCartButton" class="buybutton">Ajouter au panier</button>';
+
+                }
+                ?>
             </div>
         </main>
 

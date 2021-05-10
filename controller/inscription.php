@@ -14,7 +14,7 @@ $logged = logincheck();
 if ($logged) {
   echo '<script>
   alert("Vous êtes déjà connecté. Pour consulter cette page, veuillez vous déconnecter.\n Pour cela : mon compte > se déconnecter.");
-  window.location = "../controller/acceuil.php";
+  window.location = "../controller/accueil.php";
   </script> ';
 }
 else {

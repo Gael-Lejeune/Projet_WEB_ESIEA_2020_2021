@@ -35,7 +35,7 @@
                 <div class="flex-col informations">
                     <h2>Règles de navigation</h2>
                     <h1>
-                        - Via le menu de gauche, vous pouvez accéder aux pages globales : acceuil, catégories, produits, connexion.<br>
+                        - Via le menu de gauche, vous pouvez accéder aux pages globales : accueil, catégories, produits, connexion.<br>
                         - Une fois connecté, vous trouverez dans le menu de gauche soit votre panier, soit une page pour les modifications des bases de données.<br>
                         - Via le menu de droite, vous pouvez accèder à différents endroits de la page sur laquelle vous êtes.
                     </h1>

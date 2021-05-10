@@ -1,2 +1,2 @@
 <?php
-header ('location:controller/acceuil.php'); //Renvoie sur le controller de l'index du site
+header ('location:controller/accueil.php'); //Renvoie sur le controller de l'index du site

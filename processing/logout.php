@@ -5,4 +5,4 @@ $obj = new stdClass();
 
 session_destroy();
 
-header('Location: ../controller/acceuil.php');
+header('Location: ../controller/accueil.php');

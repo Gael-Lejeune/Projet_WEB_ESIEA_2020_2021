@@ -6,7 +6,7 @@ $query->execute([$_SESSION['login']]);
 $shipments = $query->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($shipments);
 if (isset($shipments) && sizeof($shipments) != 0) {
-    $query = $db->prepare('SELECT id_shipment,order_date,estimated_date,address,item_list.amount,name,artist,price,image_url FROM shipment,item_list,item WHERE shipment.id_shipment = item_list.shipment_id AND item.id_item = item_list.item_id AND shipment.id_shipment IN ('.str_repeat('?, ', count($shipments) - 1) . '?)');
+    $query = $db->prepare('SELECT id_shipment,order_date,estimated_date,address,item_list.amount,name,artist,price,image_url,item.id_item FROM shipment,item_list,item WHERE shipment.id_shipment = item_list.shipment_id AND item.id_item = item_list.item_id AND shipment.id_shipment IN ('.str_repeat('?, ', count($shipments) - 1) . '?)');
     $shipmentList = array();
     for ($i=0; $i < sizeof($shipments); $i++) {
         array_push($shipmentList, $shipments[$i]['id_shipment']);

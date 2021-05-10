@@ -7,4 +7,4 @@
 Création d'un site web de vente.
 
 #### Description
-Site web contenant une page d'acceuil, une page sur chaque article proposé, une page d'identification pour les clients et une pour les administrateurs, une page pour le panier du client.
+Site web contenant une page d'accueil, une page sur chaque article proposé, une page d'identification pour les clients et une pour les administrateurs, une page pour le panier du client.
