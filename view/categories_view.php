@@ -25,7 +25,7 @@
                     echo '
                             <a href="./produitsListe.php?category='.$result[$i]['label'].'"  class="flex-content">
                                 <img src="'.$result[$i]['category_image_url'].'" class="img2">
-                                <h1>'.$result[$i]['label'].'</h1>
+                                <h1 class="description">'.$result[$i]['label'].'</h1>
                             </a>';
                 }
 

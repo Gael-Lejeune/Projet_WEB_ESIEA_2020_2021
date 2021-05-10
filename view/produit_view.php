@@ -26,7 +26,8 @@
         $artist = $result['artist'];
         $category = $result['label'];
         $price = $result['price'];
-        $date = $result['release_date'];
+        $date = new DateTime($result['release_date']);
+        $date = $date->format("d/m/Y");
         $image = $result['image_url'];;
         $description = $result['description'];;
         $amount = $result['amount'];;
@@ -40,41 +41,51 @@
                 <div class="flex-row">
                     <div class="image">
                         <?php
-                        echo '<img class="image" src="'.$image.'">';
+                        echo '<img class="itemImage" src="'.$image.'">';
                         ?>
                     </div>
-                    <h1 class="description">
-                        <?php
-                        echo 'Artist : '.$artist;
-                        echo '<br>Categorie : '.$category;
-                        echo '<br>Prix : '.$price.'$';
-                        echo '<br>Date de sortie : '.$date;
-                        echo '<br>Restants : '.$amount;
-                        echo "<br>Description : <br><br>".$description;
-
-                        ?>
-                    </h1>
+                    <div>
+                        <?php echo '
+                        <h4>
+                            Artist : '.$artist.'
+                        </h4>
+                        <h4>
+                            Categorie : '.$category.'
+                        </h4>
+                        <h4>
+                            Prix : '.$price.'$
+                        </h4>
+                        <h4>
+                            Date de sortie : '.$date.'
+                        </h4>
+                        <h4>
+                            Restants : '.$amount.'
+                        </h4>
+                        '; ?>
+                    </div>
                     <p id="itemId" style="display:none"><?php echo $id; ?></p>
                 </div>
-
-                    <p id="amount">Exemplaires dans le panier :
-                        <?php
-                        if (isset($_SESSION['cart'])) {
-                            for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
-                                if (isset($_SESSION['cart'][$i]) && $_SESSION['cart'][$i]['id'] == $_GET['id']) {
-                                    $found = true;
-                                    $foundIndex = $i;
-                                }
+                <h4>
+                    Description : <br/><?php echo $description; ?>
+                </h4>
+                <p id="amount">Exemplaires dans le panier :
+                    <?php
+                    if (isset($_SESSION['cart'])) {
+                        for ($i=0; $i < sizeof($_SESSION['cart']); $i++) {
+                            if (isset($_SESSION['cart'][$i]) && $_SESSION['cart'][$i]['id'] == $_GET['id']) {
+                                $found = true;
+                                $foundIndex = $i;
                             }
                         }
-                        if (isset($found)) {
-                            echo $_SESSION['cart'][$foundIndex]['amount'];
-                        } else {
-                            echo "0";
-                        }
-                         ?>
-                    </p>
-                    <button  id="addToCartButton" class="buybutton">Ajouter au panier</button>
+                    }
+                    if (isset($found)) {
+                        echo $_SESSION['cart'][$foundIndex]['amount'];
+                    } else {
+                        echo "0";
+                    }
+                    ?>
+                </p>
+                <button  id="addToCartButton" class="buybutton">Ajouter au panier</button>
 
             </div>
         </main>

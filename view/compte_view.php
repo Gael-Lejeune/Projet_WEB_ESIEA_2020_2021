@@ -28,60 +28,83 @@
             $carte = $result['credit_card'];
             ?>
 
-            <h2 id="ajoutP">
+            <h2 id="ajoutP" class="pageTitle">
                 <?php  echo 'Bienvenue <span id="nomTitre">'.$nom_client.'</span><br>';  ?>
             </h2>
 
             <p style="margin-bottom:1.2cm;"></p>
 
-            <h4 id="infos">
+            <h2 id="infos">
                 Informations client
-            </h4>
+            </h2>
             <h1>
                 <?php  echo 'Nom : '.$nom.'<br>';  ?>
                 <?php  echo 'Prénom : '.$prenom.'<br>';  ?>
                 <?php  echo 'Mail : '.$mail.'<br>';  ?>
             </h1>
-            <h4 id="modifications">
-                Modifier les informations du compte
+            <!-- <h2 id="modifications"> Modifier les informations du compte </h2> -->
+            <div class="baseflex" id="modifications">
+                <fieldset>
+                    <legend>Modifier les informations du compte</legend>
+                    <form id="form-address" name="changeAddressForm" action="<?php echo $changeaddressProcessing; ?>" method="post">
+                        <ul>
+                            <li>
+                                <h1>Adresse postale actuelle : <span id="address"><?php echo $address; ?></span></h1></li>
+                            </li>
+                            <li class="formli">
+                                &emsp;&emsp;Nouvelle addresse postale :
+                                <input type="text" name="newAddress"/>
+                            </li>
+                            <input class="formbutton" type="submit" value="changer"/>
+                        </ul>
+                    </form>
+
+                    <form id="form-card" name="changeCardForm" action="<?php echo $changecardProcessing; ?>" method="post">
+                        <ul>
+                            <li>
+                                <h1>Carte de crédit actuelle : <span id="carte"><?php echo $carte; ?></span></h1>
+                            </li>
+                            <li class="formli">
+                                &emsp;&emsp;Nouvelle carte :
+                                <input type="text" name="newCard"/>
+                            </li>
+                            <input class="formbutton" type="submit" value="changer"/>
+                        </ul>
+                    </form>
+
+                    <form id="form-name" name="changeNameForm" action="<?php echo $changenameProcessing; ?>" method="post">
+                        <ul>
+                            <li>
+                                <h1>Nom d'utilisateur actuel : <span id="nomChangement"><?php echo $nom_client; ?></span></h1>
+                            </li>
+                            <li class="formli">
+                                &emsp;&emsp;Nouveau nom d'utilisateur :
+                                <input type="text" name="newName"/>
+                            </li>
+                            <input type="submit" value="changer"/>
+                        </ul>
+                    </form>
+                </fieldset>
+            </div>
+
+            <h4 id="déconnexion">
+                Se déconnecter
             </h4>
-              <?php  echo "<h1>Adresse postale actuelle : ".'<span id="address">'.$address.'</span></h1>';  ?>
-              <form id="form-address" name="changeAddressForm" action="<?php echo $changeaddressProcessing; ?>" method="post">
-                &emsp;&emsp;Nouvelle addresse postale : <input type="text" name="newAddress"/>
-                <input type="submit" value="changer"/>
-              </form>
+            <h1>
+                <form id="form-logout" name="logoutForm" action="<?php echo $logoutProcessing; ?>" method="post">
+                    <input type="submit" value="déconnexion"/>
+                </form>
+            </h1>
+            <h4 id="suppression">
+                Supprimer le compte
+            </h4>
+            <h1>
+                <form id="form-delete" name="deleteForm" action="<?php echo $deleteaccountProcessing; ?>" method="post">
+                    <input type="submit" value="supprimer le compte"/>
+                </form>
+            </h1>
 
-              <?php  echo "<h1>Carte de crédit actuelle : ".'<span id="carte">'.$carte.'</span></h1>';  ?>
-              <form id="form-card" name="changeCardForm" action="<?php echo $changecardProcessing; ?>" method="post">
-                &emsp;&emsp;Nouvelle carte : <input type="text" name="newCard"/>
-                <input type="submit" value="changer"/>
-              </form>
-
-              <?php  echo "<h1>Nom d'utilisateur actuel : ".'<span id="nomChangement">'.$nom_client.'</span></h1>';  ?>
-
-              <form id="form-name" name="changeNameForm" action="<?php echo $changenameProcessing; ?>" method="post">
-                &emsp;&emsp;Nouveau nom d'utilisateur : <input type="text" name="newName"/>
-                <input type="submit" value="changer"/>
-              </form>
-              <br />
-              <h4 id="suppression">
-                  Supprimer le compte
-              </h4>
-              <h1>
-                  <form id="form-delete" name="deleteForm" action="<?php echo $deleteaccountProcessing; ?>" method="post">
-                      <input type="submit" value="supprimer le compte"/>
-                  </form>
-              </h1>
-              <h4 id="déconnexion">
-                  Se déconnecter
-              </h4>
-              <h1>
-                  <form id="form-logout" name="logoutForm" action="<?php echo $logoutProcessing; ?>" method="post">
-                      <input type="submit" value="déconnexion"/>
-                  </form>
-              </h1>
-              <hr />
-
+            <hr />
             <h4 id="support">
                 Contacter le support
             </h4>

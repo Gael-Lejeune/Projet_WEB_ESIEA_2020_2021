@@ -12,6 +12,8 @@
             .done(function (data) {
                 if (data.success === true) {
                     $('#amount').html("Exemplaires dans le panier : " + data.amount).fadeIn();
+                } else {
+                    
                 }
             })
             .fail(function () {

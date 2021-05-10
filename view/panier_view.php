@@ -29,6 +29,9 @@
                     for ($i = 0; $i < sizeof($result); $i++){
                         if (isset($_SESSION['cart'][$j]) &&
                         $_SESSION['cart'][$j]['id'] == $result[$i]['id_item']) {
+                            if ($_SESSION['cart'][$j]['amount'] > $result[$i]['amount']) {
+                                $_SESSION['cart'][$j]['amount'] = $result[$i]['amount'];
+                            }
                             $item = $result[$i];
                             // var_dump($item);
                             $totalPrice += $item['price']*$_SESSION['cart'][$j]['amount'];
@@ -39,9 +42,10 @@
                                         <img src="'.$item['image_url'].'" alt="photo du produit" class="img2">
                                     </a>
                                     <div class="flex-col">
-                                        <h4>'.$item['name'].'<br/>
-                                        '.$item['artist'].'<br/>
-                                        '.$item['label'].'<br/>
+                                        <h4>'.$item['name'].'</h4>
+                                        <h4>'.$item['artist'].'</h4>
+                                        <h4>'.$item['label'].'</h4>
+                                        <h4 id="stock'.$item['id_item'].'">Disponible :<div class="stock">'.$item['amount'].'</div></h4>
                                         <div class="price">'.$item['price'].'</div>$</h4>
                                     </div>
                                 </div>
@@ -61,13 +65,13 @@
                 $date = new DateTime();
                 $date->modify("+3 day");
                 echo '<h1>Date de reception estimée : '.$date->format("d/m/Y").'</h1>';
-                echo '<a href="<?php echo $validateCommandeController; ?>">
+                echo '<a href="'.$validateCommandeController.'">
                         <button name="button" class="buybutton">Passer la commande</button>
                     </a>
                     <br/>
                     <br/>
                     <br/>
-                    <a href="<?php echo $deleteCartProcessing; ?>">
+                    <a href="'.$deleteCartProcessing.'">
                         <button name="button" class="buybutton">Vider le panier</button>
                     </a>';
             }

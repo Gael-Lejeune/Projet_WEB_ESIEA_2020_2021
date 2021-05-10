@@ -23,6 +23,13 @@
                         );
                     })
                     $('#totalPrice').html(totalPrice);
+                } else {
+                    $("#stock"+id).animate({marginLeft: "20px"}, 100);
+                    $("#stock"+id).animate({marginLeft: "0px"}, 100);
+                    $("#stock"+id).animate({marginLeft: "20px"}, 100);
+                    $("#stock"+id).animate({marginLeft: "0px"}, 100);
+                    $("#stock"+id).animate({marginLeft: "20px"}, 100);
+                    $("#stock"+id).animate({marginLeft: "0px"}, 100);
                 }
             })
             .fail(function () {
