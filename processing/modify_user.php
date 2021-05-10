@@ -66,9 +66,14 @@ if($condition) {
   }
 
   if ($role != "") {
-    $stmt = $db->prepare("UPDATE user SET role = ? WHERE id_user = ?");
-    $stmt->execute([$role, $id]);
-    $obj -> success = true;
+    $condition = $db->prepare("SELECT role FROM user  WHERE id_user = ?");
+    $condition->execute([$id]);
+    $condition = $condition->fetch();
+    if($condition['role']=='client') {
+      $stmt = $db->prepare("UPDATE user SET role = ? WHERE id_user = ?");
+      $stmt->execute([$role, $id]);
+      $obj -> success = true;
+    } 
   }
 
   if ($obj -> success==true) {

@@ -71,26 +71,27 @@
           if (confirm("Votre compte va être supprimé.\n   Cliquez sur 'OK' pour confirmer, ou annulez.")) {
             // Code à éxécuter si le l'utilisateur clique sur "OK"
             $.ajax({
-                url: $(this).attr('action'),
-                method: $(this).attr('method'),
-                data: $(this).serialize()
+              url: $(this).attr('action'),
+              method: $(this).attr('method'),
+              data: $(this).serialize()
             })
             .done(function (data) {
-                  if (data.success === true) {
-                    alert(data.message);
-                    window.location = "../controller/inscription.php";
-                  } else {
-                    alert(data.message);
-                  }
+              if (data.success === true) {
+                alert(data.message);
+                window.location = "../controller/inscription.php";
+              } else {
+                alert(data.message);
+              }
             })
             .fail(function () {
-                $('body').html('Fatal error');
+              $('body').html('Fatal error');
             });
           } else {
             alert("Votre compte n'a pas été supprimé.");
           }
           return false;
         });
+
 
         // $('#form-logout').on('submit', function (e) {
         //   e.preventDefault();

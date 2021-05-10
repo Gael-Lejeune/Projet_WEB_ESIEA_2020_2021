@@ -6,7 +6,7 @@ $obj = new stdClass();
 
 $db = dtb_connect_PDO ();
 
-$result = $db->prepare("DELETE FROM user  WHERE user_name = ?");
+$result = $db->prepare("DELETE FROM user WHERE user_name = ?");
 
 if ($_SESSION['role']=='client') {
   //si l'utilisateur identifié est un client
